@@ -15,11 +15,12 @@ return new class extends Migration
     {
         Schema::create('flights', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('parent_id');
             $table->string('title');
             $table->string('keywords');
-            $table->string('description');
-            $table->string('image');
-            $table->string('status');
+            $table->string('description')->nullable();
+            $table->string('image')->nullable();
+            $table->string('status', 6,);
 
             $table->timestamps();
         });

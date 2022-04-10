@@ -1,10 +1,12 @@
 <?php
 
-use GuzzleHttp\Psr7\Request;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers;
-use App\Http\Controllers\AdminPanel\HomeControlle as AdminHome; //you can use both of them i think
-use App\Http\Controllers\HomeController;
+use Inertia\Inertia;
+use App\Http\Controllers\AdminPanel\HomeController;
+use App\Http\Controllers\AdminPanel\categoryController;
+use App\Http\Controllers\Controller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +17,20 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', function () {
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->name('dashboard');
+
 
 
 Route::get('/', function () {
@@ -60,17 +76,10 @@ Route::post('/save', [HomeController::class, 'save '])->name('save');
 
 //Auth::routes();
 
-
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-Route::post('/home', [HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -84,13 +93,21 @@ Route::get('/admin', [HomeControlle::class, 'index'])->name('admin');
     Route : : get('/ show-number/ (id)') .function ($sid){
         return $id;
     }
-
     Route : : get('/ show-number/ (id)') .function ($sid){
         return $id;
     }
-
     Route : : get('/ show-number/ (id)') .function ($sid){
         return $id;
     }
-
 */
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// ****************     ADMIN PANEL ROUTES
+Route::get('/admin', [HomeController::class, 'index'])->name('admin');
+
+// ADMIN PANEL CATEGORY ROUTETS
+
+Route::get('/admin/ category', [categoryController::class, 'index'])->name('admin_category');
+Route::get('/admin/category', [categoryController::class, 'create'])->name('admin_create_create');
+Route::post('/admincategory', [categoryController::class, 'store'])->name('admin_create_store');
