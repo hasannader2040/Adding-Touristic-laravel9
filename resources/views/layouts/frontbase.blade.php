@@ -16,9 +16,10 @@
     <meta name="keywords" content="">
     <title> @yield Travelair Agency </title>
     <!-- Bootstrap -->
-    <link href={{ asset('assets') }}/bootstrap.min.css" rel="stylesheet">
+    <link href={{ asset('assets') }}/"bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800,800i"
+        rel="stylesheet">
     <!-- owl-carousel -->
     <link href={{ asset('assets') }} "owl.carousel.css" rel="stylesheet">
     <link href={{ asset('assets') }} "owl.theme.default.css" rel="stylesheet">
@@ -36,26 +37,26 @@
 
 
 <body>
-    @include("home.header")
+    @include('home.header')
 
 
     @section('sidebar')
-        @include("home.sidebar")
+        @include('home.sidebar')
 
-    @include("home.sidebar")
+        @include('home.sidebar')
 
     @show -->
 
-    @show
+@show
 
-    @section('slider')
-    @show
+@section('slider')
+@show
 
-        @yield('content')
+@yield('content')
 
 
-    @include("home.footer")
-    @yield('foot')
+@include('home.footer')
+@yield('foot')
 </body>
 
 </html>

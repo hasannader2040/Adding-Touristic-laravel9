@@ -16,7 +16,15 @@ class categoryController extends Controller
      */
     public function index()
     {
-        return view('admin.category.index');
+        $data = Category::all();
+
+        //echo "category list";
+        return view(
+            'admin.category.index',
+            [
+                'data' => $data
+            ]
+        );
     }
 
     /**
@@ -26,6 +34,7 @@ class categoryController extends Controller
      */
     public function create()
     {
+        //  echo "category create";
         return view('admin.category.create');
     }
 
@@ -40,11 +49,13 @@ class categoryController extends Controller
 
         $data = new category();  // its  fot insarting it
 
+        $data->parent_id = 0;
         $data->title = $request->title;
         $data->keywordes = $request->keywordes;
         $data->desctiption = $request->desctiption;
         $data->status = $request->status;
         $data->save();
+        return redirect('admin/category');
     }
 
     /**
@@ -53,7 +64,7 @@ class categoryController extends Controller
      * @param  \App\Models\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function show(Photo $photo)
+    public function show(category $show, $add)
     {
         //
     }

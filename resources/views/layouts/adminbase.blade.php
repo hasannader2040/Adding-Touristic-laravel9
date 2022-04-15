@@ -1,54 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="/assets/panel/"
+    data-template="vertical-menu-template-free">
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
     <title> @yield("title")</title>
 
+    <meta name="description" content="" />
 
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('panel/img/favicon/favicon.ico') }}" />
 
-    <title>SB Admin 2 - Dashboard</title>
-
-    <!-- Custom fonts for this template-->
-
-    {{-- I have to see what are the file that I have to change them in the 7 video in the 26 minutes --}}
-
-    <link href="panel/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet" />
 
-    <!-- Custom styles for this template-->
-    <link href="panel/css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="{{ asset('assets/panel/vendor/fonts/boxicons.css') }}" />
 
-    @yield("head")
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{{ asset('assets') }}/panel/vendor/css/core.css"
+        class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{ asset('assets') }}/panel/vendor/css/theme-default.css"
+        class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{ asset('assets') }}/panel/css/demo.css" />
 
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="{{ asset('assets') }}/panel/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <link rel="stylesheet" href="{{ asset('assets') }}/panel/vendor/libs/apex-charts/apex-charts.css" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script href="{{ asset('assets') }}/panel/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script href="{{ asset('assets') }}/panel/vendor/js/config.js"></script>
 </head>
+
+@yield("head")
+</head>
+
 
 <body id="page-top">
 
+
+
+
     @include('admin.header')
 
-
-    {{-- @section('sidebar')
-    @include('admin.sidebar')
-    @include('admin.sidebar') --}}
-
-    <div class="container">
-        @yield('content')
+    <div class="content-wrapper">
+        <div class="container-xxl flex-grow-1 container-p-y">
+            @yield('content')
+        </div>
     </div>
 
     @include('admin.footer')
 
-    {{-- @yield('foot') --}}
+    @yield('foot')
 
+
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="/assets/panel/vendor/libs/jquery/jquery.js"></script>
+    <script src="/assets/panel/vendor/libs/popper/popper.js"></script>
+    <script src="/assets/panel/vendor/js/bootstrap.js"></script>
+    <script src="/assets/panel/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="/assets/panel/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="/assets/panel/vendor/libs/apex-charts/apexcharts.js"></script>
+
+    <!-- Main JS -->
+    <script src="/assets/panel/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="/assets/panel/js/dashboards-analytics.js"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 
 </html>

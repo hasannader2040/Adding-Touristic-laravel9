@@ -103,11 +103,23 @@ Route::get('/admin', [HomeControlle::class, 'index'])->name('admin');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
 // ****************     ADMIN PANEL ROUTES
 Route::get('/admin', [HomeController::class, 'index'])->name('admin');
 
+
 // ADMIN PANEL CATEGORY ROUTETS
 
-Route::get('/admin/ category', [categoryController::class, 'index'])->name('admin_category');
-Route::get('/admin/category', [categoryController::class, 'create'])->name('admin_create_create');
-Route::post('/admincategory', [categoryController::class, 'store'])->name('admin_create_store');
+Route::get('/admin/category', [categoryController::class, 'index'])->name('admin_category');
+
+Route::get('/admin/category/create', [categoryController::class, 'create'])->name('admin_create');
+Route::post('/admin/category/store', [categoryController::class, 'store'])->name('admin_create_store');
+Route::get('/admin/category/edit/{id}', [categoryController::class, 'edit'])->name('admin_create_edit');
+Route::post('/admin/category/update/{id}', [categoryController::class, 'update'])->name('admin_create_update');
+Route::get('/admin/category/show/{id}', [categoryController::class, 'show'])->name('admin_create_show');
+Route::get('/admin/category/destroy/{id}', [categoryController::class, 'destroy'])->name('admin_create_destroy');
+//Route::post('/admin/category/show/{id}', [categoryController::class, 'show'])->name('admin_create_show');
+
+
+
+// there are some additional things I have to add them
