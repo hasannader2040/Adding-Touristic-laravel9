@@ -45,13 +45,9 @@
     <script href="{{ asset('assets') }}/panel/vendor/js/config.js"></script>
 </head>
 
+
+
 @yield("head")
-</head>
-
-
-<body id="page-top">
-
-
 
 
     @include('admin.header')

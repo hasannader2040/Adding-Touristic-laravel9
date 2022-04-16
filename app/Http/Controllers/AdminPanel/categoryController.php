@@ -64,9 +64,15 @@ class categoryController extends Controller
      * @param  \App\Models\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function show(category $show, $add)
+    public function show(category $category, $id)
     {
-        //
+        //echo "show area : " ,$id ;
+        $data=category::find($id);
+        return view("admin.category.show",
+        [
+            'data'=>$data
+        ]
+        );
     }
 
     /**
@@ -75,9 +81,15 @@ class categoryController extends Controller
      * @param  \App\Models\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Photo $photo)
+    public function edit(category $category , $id)
     {
-        //
+        //echo "edit this page with id parameter" , $id; // just for trying to make sure its working or not
+        $data=category::find($id);
+        return view("admin.category.edit",
+            [
+                'data'=>$data
+            ]
+        );
     }
 
     /**
@@ -87,9 +99,19 @@ class categoryController extends Controller
      * @param  \App\Models\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Photo $photo)
+    public function update(category $category, $id, $request)
     {
-        //
+        {
+
+            $data=category::find($id);
+            $data->parent_id = 0;
+            $data->title = $request->title;
+            $data->keywordes = $request->keywordes;
+            $data->desctiption = $request->desctiption;
+            $data->status = $request->status;
+            $data->save();
+            return redirect('admin/category');
+        }
     }
 
     /**
