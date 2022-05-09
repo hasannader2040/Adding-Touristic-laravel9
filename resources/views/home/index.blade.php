@@ -1,6 +1,6 @@
 @extends('layouts.frontbase')
 
-@section('title', 'front-end tamplte')
+@section('title', 'front-end template')
 
 
 @endsection

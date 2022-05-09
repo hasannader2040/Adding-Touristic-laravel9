@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="/assets/panel/"
     data-template="vertical-menu-template-free">
@@ -7,7 +8,7 @@
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
     <title> @yield("title")</title>
-
+<body>
     <meta name="description" content="" />
 
     <!-- Favicon -->
@@ -21,24 +22,24 @@
         rel="stylesheet" />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="{{ asset('assets/panel/vendor/fonts/boxicons.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/panel/vendor/fonts/boxicons.css')}}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="{{ asset('assets') }}/panel/vendor/css/core.css"
+    <link rel="stylesheet" href="{{ asset('assets')}}/panel/vendor/css/core.css"
         class="template-customizer-core-css" />
-    <link rel="stylesheet" href="{{ asset('assets') }}/panel/vendor/css/theme-default.css"
+    <link rel="stylesheet" href="{{ asset('assets')}}/panel/vendor/css/theme-default.css"
         class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="{{ asset('assets') }}/panel/css/demo.css" />
+    <link rel="stylesheet" href="{{ asset('assets')}}/panel/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="{{ asset('assets') }}/panel/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="{{ asset('assets')}}/panel/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-    <link rel="stylesheet" href="{{ asset('assets') }}/panel/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="{{ asset('assets')}}/panel/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script href="{{ asset('assets') }}/panel/vendor/js/helpers.js"></script>
+    <script href="{{ asset('assets') }}/panel/panel/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
@@ -51,6 +52,9 @@
 
 
     @include('admin.header')
+    @section('sidebar')
+        @include('admin.sidebar')
+    @show
 
     <div class="content-wrapper">
         <div class="container-xxl flex-grow-1 container-p-y">
@@ -62,8 +66,7 @@
 
     @yield('foot')
 
-
-
+<!-- I have missing code and index -->
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src="/assets/panel/vendor/libs/jquery/jquery.js"></script>
@@ -72,7 +75,7 @@
     <script src="/assets/panel/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
     <script src="/assets/panel/vendor/js/menu.js"></script>
-    <!-- endbuild -->
+    <!-- end build -->
 
     <!-- Vendors JS -->
     <script src="/assets/panel/vendor/libs/apex-charts/apexcharts.js"></script>

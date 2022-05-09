@@ -16,13 +16,14 @@ class categoryController extends Controller
      */
     public function index()
     {
-        $data = Category::all();
+      $data = Category::get();
 
         //echo "category list";
         return view(
             'admin.category.index',
             [
                 'data' => $data
+
             ]
         );
     }
@@ -46,8 +47,9 @@ class categoryController extends Controller
      */
     public function store(Request $request)
     {
+        return $request;
 
-        $data = new category();  // its  fot insarting it
+        $data = new category();  // its  fot inserting it
 
         $data->parent_id = 0;
         $data->title = $request->title;
@@ -68,6 +70,7 @@ class categoryController extends Controller
     {
         //echo "show area : " ,$id ;
         $data=category::find($id);
+        //return $id;
         return view("admin.category.show",
         [
             'data'=>$data
@@ -81,37 +84,45 @@ class categoryController extends Controller
      * @param  \App\Models\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function edit(category $category , $id)
+    public function edit(Request $req,$id,)
+
+
     {
-        //echo "edit this page with id parameter" , $id; // just for trying to make sure its working or not
+      // echo "edit this page with id parameter" , $id; // just for trying to make sure its working or not
+        //return $id;
+
         $data=category::find($id);
+         $datalist = category::all();
         return view("admin.category.edit",
             [
-                'data'=>$data
+                'data'=>$data,  'datalist' => $datalist
             ]
         );
     }
 
+
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @param  \App\Models\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function update(category $category, $id, $request)
+    public function update(Request $request , category $category, $id )
     {
-        {
-
             $data=category::find($id);
             $data->parent_id = 0;
             $data->title = $request->title;
-            $data->keywordes = $request->keywordes;
-            $data->desctiption = $request->desctiption;
+            $data->keywords = $request->keywords;
+            $data->description = $request->description;
             $data->status = $request->status;
+            if ($request->file('image')->store('images')){
+                $data->image=$request->file('image')->store('images'));
+            }
+
             $data->save();
             return redirect('admin/category');
-        }
+
     }
 
     /**
