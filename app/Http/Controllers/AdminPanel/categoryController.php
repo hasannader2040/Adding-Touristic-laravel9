@@ -74,14 +74,13 @@ class categoryController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
 
         $data = new category();  // its  fot inserting it
 
         $data->parent_id = 0;
         $data->title = $request->title;
-        $data->keywordes = $request->keywordes;
-        $data->desctiption = $request->desctiption;
+        $data->keywords = $request->keywords;
+        $data->description = $request->description;
         $data->status = $request->status;
         if ($request->file('image')->store('images')) {
             $data->image = $request->file('image')->store('images');

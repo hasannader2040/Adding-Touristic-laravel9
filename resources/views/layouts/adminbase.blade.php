@@ -1,15 +1,16 @@
 
 <!DOCTYPE html>
 <html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="/assets/panel/"
-    data-template="vertical-menu-template-free">
+      data-template="vertical-menu-template-free">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
     <title> @yield("title")</title>
-<body>
-    <meta name="description" content="" />
+
+
+
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('panel/img/favicon/favicon.ico') }}" />
@@ -26,9 +27,9 @@
 
     <!-- Core CSS -->
     <link rel="stylesheet" href="{{ asset('assets')}}/panel/vendor/css/core.css"
-        class="template-customizer-core-css" />
+          class="template-customizer-core-css" />
     <link rel="stylesheet" href="{{ asset('assets')}}/panel/vendor/css/theme-default.css"
-        class="template-customizer-theme-css" />
+          class="template-customizer-theme-css" />
     <link rel="stylesheet" href="{{ asset('assets')}}/panel/css/demo.css" />
 
     <!-- Vendors CSS -->
@@ -44,50 +45,46 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script href="{{ asset('assets') }}/panel/vendor/js/config.js"></script>
+
+    @yield("head")
 </head>
+<body>
 
+@include('admin.header')
+@section('sidebar')
+    @include('admin.sidebar')
+@show
 
-
-@yield("head")
-
-
-    @include('admin.header')
-    @section('sidebar')
-        @include('admin.sidebar')
-    @show
-
-    <div class="content-wrapper">
-        <div class="container-xxl flex-grow-1 container-p-y">
-            @yield('content')
-        </div>
+<div class="content-wrapper">
+    <div class="container-xxl flex-grow-1 container-p-y">
+        @yield('content')
     </div>
+</div>
 
-    @include('admin.footer')
+@include('admin.footer')
 
-    @yield('foot')
+@yield('foot')
 
-<!-- I have missing code and index -->
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
-    <script src="/assets/panel/vendor/libs/jquery/jquery.js"></script>
-    <script src="/assets/panel/vendor/libs/popper/popper.js"></script>
-    <script src="/assets/panel/vendor/js/bootstrap.js"></script>
-    <script src="/assets/panel/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<!-- Core JS -->
+<!-- build:js assets/vendor/js/core.js -->
+<script href="{{ asset('assets') }}/panel/vendor/libs/jquery/jquery.js"></script>
+<script href="{{ asset('assets') }}/panel/vendor/libs/popper/popper.js"></script>
+<script href="{{ asset('assets') }}/panel/vendor/js/bootstrap.js"></script>
+<script href="{{ asset('assets') }}/panel/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-    <script src="/assets/panel/vendor/js/menu.js"></script>
-    <!-- end build -->
+<script href="{{ asset('assets') }}/panel/vendor/js/menu.js"></script>
+<!-- endbuild -->
 
-    <!-- Vendors JS -->
-    <script src="/assets/panel/vendor/libs/apex-charts/apexcharts.js"></script>
+<!-- Vendors JS -->
+<script href="{{ asset('assets') }}/panel/vendor/libs/apex-charts/apexcharts.js"></script>
 
-    <!-- Main JS -->
-    <script src="/assets/panel/js/main.js"></script>
+<!-- Main JS -->
+<script href="{{ asset('assets') }}/panel/vendor/js/main.js"></script>
 
-    <!-- Page JS -->
-    <script src="/assets/panel/js/dashboards-analytics.js"></script>
+<!-- Page JS -->
+<script href="{{ asset('assets') }}/panel/vendor/js/dashboards-analytics.js"></script>
 
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-</body>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 
-</html>
+

@@ -4,7 +4,8 @@
 
 @section('content')
 
-    <body>
+
+    <!-- / Blank page -->
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
@@ -119,12 +120,7 @@
 
                 <!-- / Navbar -->
 
-
-
                                       <!-- Blank page -->
-
-
-                <!-- / Blank page -->
 
         <div class="content-backdrop fade"></div>
     </div>
@@ -144,27 +140,6 @@
 
     </div>
 
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
-    <script href="{{ asset('assets') }}/panel/vendor/libs/jquery/jquery.js"></script>
-    <script href="{{ asset('assets') }}/panel/vendor/libs/popper/popper.js"></script>
-    <script href="{{ asset('assets') }}/panel/vendor/js/bootstrap.js"></script>
-    <script href="{{ asset('assets') }}/panel/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-
-    <script href="{{ asset('assets') }}/panel/vendor/js/menu.js"></script>
-    <!-- endbuild -->
-
-    <!-- Vendors JS -->
-    <script href="{{ asset('assets') }}/panel/vendor/libs/apex-charts/apexcharts.js"></script>
-
-    <!-- Main JS -->
-    <script href="{{ asset('assets') }}/panel/vendor/js/main.js"></script>
-
-    <!-- Page JS -->
-    <script href="{{ asset('assets') }}/panel/vendor/js/dashboards-analytics.js"></script>
-
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 
 @endsection
