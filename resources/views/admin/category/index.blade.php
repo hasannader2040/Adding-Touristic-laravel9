@@ -67,7 +67,10 @@
                                                     <td> {{ $item->title }}</td>
                                                     <td> {{ $item->keywords }}</td>
                                                     <td> {{ $item->description }}</td>
-                                                    <td>{{ $item->image }} </td>
+                                                    @if($item->image)
+{{--                                                    <td>{{ $item->image }} </td>--}}
+                                                        <img src="{{Storage::url($item->image)}}" style="height: 40px">
+                                                    @endif
                                                     <td> {{ $item->status }}</td>
 
                                                     <td><a href={{route('admin.category.edit',['id'=>$item->id])}} class="btn-info">edit</a></td>

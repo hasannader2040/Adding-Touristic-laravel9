@@ -6,9 +6,25 @@ use App\Http\Controllers\Controller;
 use App\Models\category;
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class categoryController extends Controller
 {
+    protected array $appends = [ // I am not sure about Array
+        'getParentsTree'
+    ];
+  public static function getParentsTree($catecory,$title)
+  {
+     if ($catecory->parant_id == 0)
+     {
+         return $title ;
+     }
+     $parent = catecory::find($catecory->parent_id);
+     $title = $parent->title . '>' . $title;
+     return categoryController::getParentsTree($parent,$title);
+}
+
+
     /**
      * Display a listing of the resource.
      *
@@ -16,8 +32,9 @@ class categoryController extends Controller
      */
     public function index()
     {
-      $data = Category::get();
 
+
+      $data = Category::all();
         //echo "category list";
         return view(
             'admin.category.index',
@@ -35,6 +52,16 @@ class categoryController extends Controller
      */
     public function create()
     {
+        $data = Category::all();
+        //echo "category list";
+        return view(
+            'admin.category.create',
+            [
+                'data' => $data
+
+            ]
+        );
+
         //  echo "category create";
         return view('admin.category.create');
     }
@@ -56,6 +83,9 @@ class categoryController extends Controller
         $data->keywordes = $request->keywordes;
         $data->desctiption = $request->desctiption;
         $data->status = $request->status;
+        if ($request->file('image')->store('images')) {
+            $data->image = $request->file('image')->store('images');
+        }
         $data->save();
         return redirect('admin/category');
     }
@@ -117,7 +147,7 @@ class categoryController extends Controller
             $data->description = $request->description;
             $data->status = $request->status;
             if ($request->file('image')->store('images')){
-                $data->image=$request->file('image')->store('images'));
+                $data->image=$request->file('image')->store('images');
             }
 
             $data->save();
@@ -131,8 +161,11 @@ class categoryController extends Controller
      * @param  \App\Models\Photo  $photo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Photo $photo)
+    public function destroy(category $category,$id)
     {
-        //
+
+        $data=category:: find($id);
+        Storage::delete('data->image');
+        return redirect('admin/category');
     }
 }
