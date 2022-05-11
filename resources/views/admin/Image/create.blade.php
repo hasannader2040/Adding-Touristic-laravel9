@@ -1,8 +1,3 @@
-@extends('layouts.adminbase')
-
-@section('title', 'add category')
-
-@section('content')
 
     <body>
     <!-- Layout wrapper -->
@@ -65,7 +60,7 @@
                         <button type="submit" class="btn btn-primary">Send</button>
                     </form>
 
-                    @endsection
-
-
+                </div>
+        </div>
+    </div>
                             <!-- / Blank page -->

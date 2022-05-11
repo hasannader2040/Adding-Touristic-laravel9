@@ -1,7 +1,5 @@
 @extends('layouts.adminbase')
 @section('title', 'Category list')
-
-
 @section('content')
 
 
@@ -9,13 +7,9 @@
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
-
-
-
             <!-- Layout container -->
             <div class="layout-page">
                 <!-- Navbar -->
-
                 <nav
                     class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
                     id="layout-navbar"

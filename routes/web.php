@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminPanel\AdminPlaceController;
+use App\Http\Controllers\AdminPanel\ImageController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -7,7 +9,6 @@ use Inertia\Inertia;
 //use App\Http\Controllers\AdminPanel\categoryController as AdminCategoryController;
 use App\Http\Controllers\AdminPanel\HomeController;
 use App\Http\Controllers\AdminPanel\categoryController;
-
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -21,9 +22,6 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
-
-
-
 //Route::get('/', function () {
 //    return view('index');
 //});
@@ -76,8 +74,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-
-
 /*
     Route : : get('/ show-number/ (id)') .function ($sid){
         return $id;
@@ -90,26 +86,46 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     }
 */
 
-//Route::get('/admin',[AdminHomeController::class,'index'])->name('index'); // also if you dont want to write any names its not problem
-
-
 // ****************     ADMIN PANEL ROUTES
 // for calling admin panel Routes
 
 Route::prefix('admin')->name( 'admin.')->group(function () {
-Route::get('/', [HomeController::class, 'index'])->name('index');
+    Route::get('/', [HomeController::class, 'index'])->name('index');
 
 // ADMIN PANEL CATEGORY ROUTES
- Route::prefix('/category')->name('category.')->controller(CategoryController::class)->group(function (){
-Route::get('/', 'index')->name('index'); // admin_category
-Route::get('/create', 'create')->name('create');
-Route::post('/store', 'store')->name('store');// it should be post
-Route::get('/edit/{id}','edit')->name('edit');
-Route::post('/update/{id}','update')->name('update');
-Route::get('/show/{id}','show')->name('show');
-Route::get('/destroy/{id}','destroy')->name('destroy');
-//Route::post('/admin/category/show/{id}', [categoryController::class, 'show'])->name('admin_create_show');
+    Route::prefix('/category')->name('category.')->controller(CategoryController::class)->group(function()
+    {
+        Route::get('/', 'index')->name('index'); // admin_category
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');// it should be post
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/show/{id}','show')->name('show');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+    });
+
+
+// ADMIN PANEL place ROUTES
+    Route::prefix('/place')->name('place.')->controller(AdminPlaceController::class)->group(function()
+    {
+        Route::get('/', 'index')->name('index'); // admin_category
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');// it should be post
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/show/{id}','show')->name('show');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+
+    });
+
+    // ADMIN PANEL Image Gallery ROUTES
+    Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(callback: function()
+    {
+        Route::get('/{Pid}', 'index')->name('index'); // admin_category
+        Route::get('/create/{Pid}', 'create')->name('create');
+        Route::post('/store/{Pid}', 'store')->name('store');// it should be post
+        Route::post('/update/{Pid}/{id}','update')->name('update');
+        Route::get('/destroy/{Pid}/{id}','destroy')->name('destroy');
+    });
 
 });
-});
-// there are some additional things I have to add them

@@ -31,30 +31,18 @@
     <link href={{ asset('assets') }}"style.css" rel="stylesheet">
 
     @yield("head")
-
 </head>
-
-
-
 <body>
     @include('home.header')
-
-
     @section('sidebar')
         @include('home.sidebar')
-
         @include('home.sidebar')
-
-    @show -->
+    @show
 
 @show
-
 @section('slider')
 @show
-
 @yield('content')
-
-
 @include('home.footer')
 @yield('foot')
 </body>

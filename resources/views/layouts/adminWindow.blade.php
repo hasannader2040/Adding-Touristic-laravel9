@@ -37,27 +37,17 @@
 
     <!-- Helpers -->
     <script href="{{ asset('assets') }}/panel/panel/vendor/js/helpers.js"></script>
-
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script href="{{ asset('assets') }}/panel/vendor/js/config.js"></script>
-
     @yield("head")
 </head>
 <body>
 <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 container-p-y">
-
     </div>
 </div>
-@include('admin.header')
-@section('sidebar')
-    @include('admin.sidebar')
-@show
-
 @yield('content')
-@include('admin.footer')
-
 @yield('foot')
 
 

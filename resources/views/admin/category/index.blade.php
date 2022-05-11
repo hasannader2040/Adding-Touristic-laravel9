@@ -1,21 +1,13 @@
 @extends('layouts.adminbase')
 @section('title', 'category list')
-
-
 @section('content')
 
-
-    {{--                this place should be for add category and for category list--}}
+    <!--  Blank page -->
     <div class="content-wrapper">
         <!-- Content -->
-
         <div class="container-xxl flex-grow-1 container-p-y">
             <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> add category</h4>
 
-
-            <button  class="btn btn-primary btn-lg" href="{{route('admin.category.create')}}" type="button">Add Category</button>
-            <button type="button" href="{{route('admin.category.create')}}" class="btn rounded-pill btn-primary">Primary</button>
-            <button type="button" href="{{route('admin.category.create')}}" >CLick</button>
             <!-- Basic Layout -->
             <div class="row">
                 <div class="col-xl">
@@ -25,10 +17,8 @@
                             <small class="text-muted float-end">it should be</small>
                         </div>
                         <div class="card-body">
-
-
-
-
+                            <button  class="btn btn-primary btn-lg" href="{{route('admin.category.create')}}" type="button">Add Category</button>
+{{--    i am not able to check on it --}}
                             <div class="card">
                                 <h5 class="card-header">category list </h5>
                                 <div class="card-body">
@@ -40,10 +30,11 @@
                                         <table class="table">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>Id</th>
+                                                <th>parent</th>
                                                 <th> title</th>
                                                 <th> keywords</th>
-                                                <th> description</th>
+{{--                                                <th> description</th>--}}
                                                 <th> image</th>
                                                 <th> status</th>
 
@@ -54,15 +45,16 @@
                                                 <tr>
                                                     <td> {{ $item->id }} </td>
                                                     <td> {{ $item->title }}</td>
+                                                    <td> {{\App\Http\Controllers\AdminPanel\categoryController::getParentsTree($item,$item->title)}}</td>
                                                     <td> {{ $item->keywords }}</td>
-                                                    <td> {{ $item->description }}</td>
+{{--                                                    <td> {{ $item->description }}</td>--}}
                                                     <td>
                                                         @if($item->image)
-                                                        <img src="{{Storage::url($item->image)}}" style="height: 40px"></td>
+                                                        <img src="{{Storage::url($item->image)}}"style="height: 40px"></td>
                                                     @endif
-                                                     {{--   <td> </td>--}}
+                                                     {{--   there is a problem here --}}
 
-                                                    <td> {{ $item->status }}</td>
+                                                    <td> {{ $item->status }} </td>
 
                                                     <td><a href={{route('admin.category.edit',['id'=>$item->id])}} class="btn-info">edit</a></td>
                                                     <td><a href={{route('admin.category.destroy',['id'=>$item->id])}} class="btn-danger"
