@@ -6,7 +6,8 @@
     {{--  this place should be for add place and for place list--}}
     <div class="content-wrapper">
         <!-- Content -->
-        <button  class="btn btn-primary btn-lg" href="{{route('admin.place.create')}}" type="button">Add place</button>
+        <a href="{{ 'admin.place.create' }}" class="btn btn-primary btn-lg">Add place </a>
+
 
 
         <div class="container-xxl flex-grow-1 container-p-y">
@@ -35,16 +36,16 @@
                                             <thead>
                                             <tr>
                                                 <th style="width: 5px">Id</th>
-                                                <th style="width: 5px">category</th>
-                                                <th style="width: 5px">category> title</th>
-                                                <th style="width: 5px" > keywords</th>
-                                                <th style="width: 5px"> description</th>
-                                                <th style="width: 5px"> detail</th>
-                                                <th style="width: 5px"> city</th>
-                                                <th style="width: 5px"> country</th>
-                                                <th style="width: 5px"> location</th>
-                                                <th style="width: 5px"> status</th>
-
+                                                <th>title</th>
+                                                <th> keywords</th>
+                                                <th> image</th>
+                                                <th> image gallery</th>
+                                                <th> description</th>
+                                                <th > detail</th>
+                                                <th> city</th>
+                                                <th> country</th>
+                                                <th> location</th>
+                                                <th> status</th>
                                             </thead>
 
                                             <tbody>
@@ -52,25 +53,27 @@
                                                 <tr>
                                                     <td> {{ $item->id }} </td>
                                                     <td> {{ $item->title }}</td>
+                                                    {{--                              the problem is here right now --}}
 {{--                                                    <td> {{\App\Http\Controllers\AdminPanel\categoryController::getParentsTree($item->category,$item->category->title)}}</td>--}}
-                                                    {{--                                                    <td> {{ $item->description }}</td>--}}
+
+
+                                                    <td> {{ $item->description }}</td>
                                                     <td>
                                                         @if($item->image)
                                                             <img src="{{Storage::url($item->image)}}"style="height: 40px"></td>
                                                     @endif
                                                     <td>
                                                         <a href={{route('admin.image.index',['Pid'=>$item->id])}} class="btn-info"
-                                                        onclick="retrun !Window.open (this.href,'','top=50 left=100 width=1100,height=700')">
-                                                        <img src="{{ asset('assets/panel') }}/assets/panel/img/gallery.png">
+                                                           onclick="retrun[!Window.open (this.href,'','top=50 left=100 width=1100,height=700')]">
+                                                            <img src="{{ asset('assets/panel') }}/img/gallery.png">
                                                         </a>
                                                     </td>
 {{--                                                    <td> <img src="{{ asset('assets/panel') }}/admin/img/gallery.jpg"> </td>--}}
-{{--                                                    C:\xampp\htdocs\eCommerce\eCommwece\public\assets\panel\img--}}
+
                                                     {{--   there is a problem here --}}
                                                     <td> {{ $item->detail }}</td>
                                                     <td> {{ $item->city }}</td>
                                                     <td> {{ $item->country }}</td>
-                                                    <td> {{ $item->price }}</td>
                                                     <td> {{ $item->status }} </td>
 
                                                     <td><a href={{route('admin.place.edit',['id'=>$item->id])}} class="btn-info">edit</a></td>

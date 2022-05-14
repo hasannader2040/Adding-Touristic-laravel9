@@ -7,10 +7,10 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
-class Controller extends controller
-{
-    public function showAdminName()
-    {
-        return 'Alhsan nader';
-    }
-}
+//class Controller extends controller
+//{
+//    public function index()
+//    {
+//        return 'Alhsan nader';
+//    }
+//}

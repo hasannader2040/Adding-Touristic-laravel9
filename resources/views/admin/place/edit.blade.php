@@ -4,10 +4,14 @@
 
 @section('title', 'edit place'.@$data->title)
 
+@section('head')
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+@endsection
+
 @section('content')
 
 
-    <body>
+
 
                 <!-- Blank page -->
                 <div class="col-sm-6">
@@ -109,6 +113,18 @@ d-body">
     <div class="layout-overlay layout-menu-toggle"></div>
 
     <!-- / Layout wrapper -->
+@section('foot')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+
+    <script>
+        $(function () {
+            // summernote
+            $('.textarea'.summernote()
+            )
+        })
+    </script>
+@endsection
+
 
     <div class="buy-now">
         <a href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/" target="_blank"
@@ -117,6 +133,4 @@ d-body">
     </div>
 
 
-
-    </body>
     @endsection

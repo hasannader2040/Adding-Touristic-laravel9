@@ -17,8 +17,9 @@
                             <small class="text-muted float-end">it should be</small>
                         </div>
                         <div class="card-body">
-                            <button  class="btn btn-primary btn-lg" href="{{route('admin.category.create')}}" type="button">Add Category</button>
-{{--    i am not able to check on it --}}
+                            <a href="{{ 'admin.category.create' }}" class="btn btn-primary btn-lg">Add place Image</a>
+
+                            {{--    i am not able to check on it --}}
                             <div class="card">
                                 <h5 class="card-header">category list </h5>
                                 <div class="card-body">

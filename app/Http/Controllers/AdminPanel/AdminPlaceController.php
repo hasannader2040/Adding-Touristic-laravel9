@@ -20,12 +20,13 @@ class AdminPlaceController extends Controller
     public function index()
     {
 
-      $data = Category::all();
+      $data = place::all();
         //echo "category list";
         return view(
             'admin.place.index',
             [
-                'data' => $data
+                'data' => $data,
+               //'title'=>$title
 
             ]
         );
@@ -38,7 +39,7 @@ class AdminPlaceController extends Controller
      */
     public function create()
     {
-        $data = place::all();
+        $data = category::all();
         //echo "category list";
         return view(
             'admin.place.create',
@@ -63,7 +64,7 @@ class AdminPlaceController extends Controller
 
         $data = new place();  // its  fot inserting it
         //$data->id ;
-        $data->category_id=0;
+        $data->category_id=$request->category_id;
         $data->user_id = 0; //$request->category_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
@@ -162,9 +163,16 @@ class AdminPlaceController extends Controller
     {
 
         $data=place:: find($id);
-        if (Storage::exists('data->image')) {
-            Storage::delete('data->image');
+//        if (Storage::exists('data->image')) {
+//            Storage::delete('data->image');
+//        }
+//        $data->delete();
+
+        if ( $data->place && Storage::disk('public')->exists('data->place')) // I have to understand it much better
+        {
+            Storage::delete($data->place);
         }
+        $data->delete();
         return redirect('admin/place');
     }
 }

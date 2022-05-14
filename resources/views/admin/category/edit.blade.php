@@ -1,12 +1,9 @@
 
-
 @extends('layouts.adminbase')
 
 @section('title', 'edit place'.@$data->title)
 
 @section('content')
-
-
 
     <!-- Blank page -->
     <div class="col-sm-6">

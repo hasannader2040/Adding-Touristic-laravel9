@@ -2,6 +2,10 @@
 
 @section('title', 'add place')
 
+    @section('head')
+        <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+    @endsection
+
 @section('content')
 
     <!-- Layout wrapper -->
@@ -46,8 +50,23 @@
 
                                 <div class="mb-3">
                                     <label class="form-label"  for="basic-default-company">detail</label>
-                                    <textarea type="text" name="detail" class="form-control" id="basic-default-company" >
+{{--                                    I will add a CKeditor 5 --}}
+
+
+                                    <textarea type="text" name="detail" class="form-control" id="detail" >
                                     </textarea>
+                                    <script>
+                                      //  let ClassicEditor;
+                                        ClassicEditor
+                                            .create( document.querySelector( '#detail' ) )
+                                            .then( editor => {
+                                                console.log( editor );
+                                            } )
+                                            .catch( error => {
+                                                console.error(error);
+                                            } );
+                                    </script>
+
                                 </div>
                                 <div class="mb-3">
 
@@ -95,6 +114,8 @@
                     </form>
                 </div>
         </div>
+    </div>
+
     </div>
                     @endsection
 

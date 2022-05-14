@@ -14,13 +14,13 @@ class categoryController extends Controller
     protected array $appends = [ // I am not sure about Array
         'getParentsTree'
     ];
-    public static function getParentsTree($catecory,$title)
+    public static function getParentsTree($category,$title)
     {
-        if ($catecory->parant_id == 0)
+        if ($category->parent_id == 0)
         {
             return $title ;
         }
-        $parent = catecory::find($catecory->parent_id);
+        $parent = category::find($category->parent_id);
         $title = $parent->title . '>' . $title;
         return categoryController::getParentsTree($parent,$title);
     }
@@ -35,7 +35,7 @@ class categoryController extends Controller
     {
 
 
-        $data = Category::all();
+        $data = category::all();
         //echo "category list";
         return view(
             'admin.category.index',
@@ -52,7 +52,7 @@ class categoryController extends Controller
      */
     public function create()
     {
-        $data = Category::all();
+        $data = category::all();
         //echo "category list";
         return view(
             'admin.category.create',
@@ -77,7 +77,6 @@ class categoryController extends Controller
     {
 
         $data = new category();  // its  fot inserting it
-
         $data->parent_id = $request->parent_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
@@ -162,10 +161,12 @@ class categoryController extends Controller
     public function destroy(category $category,$id)
     {
 
-        $data=place:: find($id);
-        if (Storage::exists('data->image')) {
-            Storage::delete('data->image');
+        $data=category:: find($id);
+        if ( $data->category && Storage::disk('public')->exists('data->category')) // I have to understand it much better
+        {
+            Storage::delete($data->category);
         }
-        return redirect('admin/place');
+        $data->delete();
+        return redirect('admin/category');
     }
 }

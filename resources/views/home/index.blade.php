@@ -1,9 +1,5 @@
 @extends('layouts.frontbase')
-
-@section('title', 'front-end template')
-
-
-@endsection
+@section('title','frontbase')
 
 @section('slider')
     @include('home.slider')
@@ -11,8 +7,9 @@
 
 @section('content')
 
-{{-- there are still some missing things and I have to finish them --}}
 
+
+{{-- there are still some missing things and I have to finish them --}}
   <!-- header-section-->
   <div class="header">
     <div class="container">
@@ -63,11 +60,11 @@
         </div>
     </div>
 </div>
-</div>
+
 <!-- /. header-section-->
 
 
-
+@endsection
 
 
 

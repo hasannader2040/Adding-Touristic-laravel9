@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\AdminPanel\AdminPlaceController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use Illuminate\Foundation\Application;
@@ -22,51 +21,59 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
-//Route::get('/', function () {
-//    return view('index');
-//});
-//
-//
-//// call view in route
-//
-//Route::get('the best one', function () {
-//    return view('welcome');
-//});
-//
-//
-//Route::get('better/{id}', function ($id) {
-//    return $id;
-//})->name('a');
-//// to make thing that you want to pass it
-//
-//Route::get('testing', function () {
-//
-//    return 'welcome to Turkiye';
-//});
-//// 2 call view in Route
-//Route::get('/to show your statrting / (id?)', function () {
-//    // (id?) ti means its option to pass or not as you need
-//    return 'welcome to Turkiye';
-//});
-//
-//// 3 call controller function
-//Route::get('/home', [HomeController::class, 'index'])->name('home');
-//// and you can reduce it and write import in above
-//
-//// 4 Route -> controller -> view
-//Route::get('/test', [HomeController::class, 'test '])->name('test');
-//
-////5 Route with parameters
-//Route::get('/parameters/{id}/{number}', [HomeController::class, 'parameters '])->name('parameters');
-//
-////6 Route with parameters
-//Route::post('/save', [HomeController::class, 'save '])->name('save');
-//
-//
-////Auth::routes();
-//
-//Route::get('/home', [HomeController::class, 'index'])->name('home');
-//
+
+Route::get('/', function () {
+
+    return view('index');
+});
+Route::get('/', [\App\Http\Controllers\HomeController::class,'index'])->name('index');
+
+
+// call view in route
+
+Route::get('the best one', function () {
+    return view('welcome');
+});
+
+
+Route::get('better/{id}', function ($id) {
+    return $id;
+})->name('a');
+// to make thing that you want to pass it
+
+Route::get('testing', function () {
+
+    return 'welcome to Turkiye';
+});
+// 2 call view in Route
+Route::get('/to show your statrting / (id?)', function () {
+    // (id?) ti means its option to pass or not as you need
+    return 'welcome to Turkiye';
+});
+
+// 3 call controller function
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+// and you can reduce it and write import in above
+
+// 4 Route -> controller -> view
+Route::get('/test', [HomeController::class, 'test '])->name('test');
+
+//5 Route with parameters
+Route::get('/parameters/{id}/{number}', [HomeController::class, 'parameters '])->name('parameters');
+
+//6 Route with parameters
+Route::post('/save', [HomeController::class, 'save '])->name('save');
+
+// for place of the front-end page
+
+//Route::get('/here/{id}',[\App\Http\Controllers\TestController::class,'here'])->name('here');
+Route::get('/place/{id}',[\App\Http\Controllers\HomeController::class,'place'])->name('place');
+//Auth::routes();
+
+
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 //Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
@@ -85,6 +92,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
         return $id;
     }
 */
+
+
+
 
 // ****************     ADMIN PANEL ROUTES
 // for calling admin panel Routes
@@ -119,10 +129,10 @@ Route::prefix('admin')->name( 'admin.')->group(function () {
     });
 
     // ADMIN PANEL Image Gallery ROUTES
-    Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(callback: function()
+    Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function()
     {
         Route::get('/{Pid}', 'index')->name('index'); // admin_category
-        Route::get('/create/{Pid}', 'create')->name('create');
+
         Route::post('/store/{Pid}', 'store')->name('store');// it should be post
         Route::post('/update/{Pid}/{id}','update')->name('update');
         Route::get('/destroy/{Pid}/{id}','destroy')->name('destroy');

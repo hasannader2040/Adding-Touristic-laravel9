@@ -9,7 +9,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <title>Travelair Agency HTML Website Template</title>
+    <title>Travelair Agency HTML Website Template  </title>
+{{--    @yield("title")--}}
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -112,25 +113,31 @@
             </div>
         </div>
         <!-- /. header-section-->
+
+
         <!-- slider -->
         <div class="slider">
             <div class="owl-carousel owl-one owl-theme">
                 <!-- item -->
-                <div class="item">
-                    <div class="slider-img">
-                        <img src="assets/images/slider_1.jpg" alt=""></div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                                <div class="slider-captions">
-                                    <h1 class="slider-title">Get travel website template</h1>
-                                    <a href="#" class="btn btn-primary">Get Template</a>
+                @foreach($sliderdata as $item)
+                    <div class="item">
+                        <div class="slider-img">
+                            <img src="{{Storage::url($item->image)}} alt=" width=""; height= ></div>
+                        {{--                    src="{{Storage::url($item->image)}} I have to write the width of it  --}}
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                    <div class="slider-captions">
+                                        <h1 class="slider-title">{{$item->title}}</h1>
+                                        <a href="#" class="btn btn-primary">Get Template</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
                 <!-- /.item -->
+
                 <!-- item -->
                 <div class="item">
                     <div class="slider-img"><img src="assets/images/slider_2.jpg" alt=""></div>
@@ -164,7 +171,9 @@
             </div>
         </div>
         <!-- /.slider -->
-        <!-- enguiry-form -->
+
+
+        <!-- enquiry-form -->
         <div class="bg-default enquiry-form ">
             <div class="container">
                 <div class="row">
@@ -217,15 +226,20 @@
                 </div>
             </div>
         </div>
-        <!-- /.enguiry-form -->
+        <!-- /.enquiry-form -->
+
+
         <!-- tour-service -->
         <div class="space-medium">
             <div class="container">
+                @foreach($placelist1 as $item)
                 <!-- tour-1 -->
                 <div class="row ">
                     <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb40">
                         <div class="tour-img">
-                            <a href="#" class="imghover"> <img src="assets/images/tour_img_1.jpg" alt="" class="img-fluid"></a>
+
+                            <a href="#" class="imghover">  style="" class="img-fluid"></a>
+                            <img src="{{Storage::url($item->image)}}
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-5 offset-md-1 col-md-5 col-sm-12 col-12 mb40">
@@ -239,6 +253,7 @@
                     </div>
                 </div>
                 <!-- /.tour-1 -->
+                    @endforeach
                 <!-- tour-2 -->
                 <div class="row">
                     <div class="col-xl-5 col-lg-5 offset-md-1 col-md-5 col-sm-12 col-12 mb40">
@@ -257,6 +272,7 @@
                     </div>
                 </div>
                 <!-- /.tour-2 -->
+
                 <!-- tour-3 -->
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb20">
@@ -747,7 +763,6 @@
         <script src="assets/js/date.js"></script>
         <script src="assets/js/return-to-top.js"></script>
     </div>
+    </div>
 </body>
-
-
 </html>

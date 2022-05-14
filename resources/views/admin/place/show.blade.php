@@ -55,7 +55,7 @@
                     </tr>
                     <tr>
                         <th style="width: 50px">detail</th>
-                        <th>{{$data->detail}}</th>
+                        <th>{!!$data->detail!!}</th>
                     </tr>
 
                     <tr>

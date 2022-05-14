@@ -1,7 +1,72 @@
+
+
+{{--<!-- slider -->--}}
+{{--<div class="slider">--}}
+{{--    <div class="owl-carousel owl-one owl-theme">--}}
+{{--        <!-- item -->--}}
+{{--        @foreach($sliderdata as $item)--}}
+{{--            <div class="item">--}}
+{{--                <div class="slider-img">--}}
+{{--                    <img src="{{Storage::url($item->image)}} alt=" width=""; height="" "></div>--}}
+{{--                --}}{{--                    src="{{Storage::url($item->image)}} I have to write the width of it  --}}
+{{--                <div class="container">--}}
+{{--                    <div class="row">--}}
+{{--                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">--}}
+{{--                            <div class="slider-captions">--}}
+{{--                                <h1 class="slider-title">{{$item->title}}</h1>--}}
+{{--                                <a href="#" class="btn btn-primary">Get Template</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        @endforeach--}}
+{{--        <!-- /.item -->--}}
+
+        <!-- item -->
+        <div class="item">
+            <div class="slider-img"><img src="assets/images/slider_2.jpg" alt=""></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="slider-captions">
+                            <h1 class="slider-title">Travel air agency Website template</h1>
+                            <a href="#" class="btn btn-primary">Download Template</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.item -->
+        <!-- item -->
+        <div class="item">
+            <div class="slider-img"><img src="assets/images/slider_3.jpg" alt=""></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="slider-captions">
+                            <h1 class="slider-title">Get tourism website template</h1>
+                            <a href="#" class="btn btn-primary">View Packages</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.item -->
+    </div>
+</div>
+<!-- /.slider -->
+
+
+
+
 <!-- navigations-->
 <div class="navigation">
     <div id="navigation">
+
+
         <ul>
+
             <li class="active"><a href="index.html">Home</a></li>
             <li class="has-sub"><a href="#">Tour Packages</a>
                 <ul>
@@ -10,6 +75,7 @@
                     <li><a href="tour-single-list.html">Tour List Single </a></li>
                 </ul>
             </li>
+
             <li><a href="about.html">About</a></li>
             <li class="has-sub"><a href="#">Blog</a>
                 <ul>
@@ -17,6 +83,7 @@
                     <li><a href="blog-single.html">Blog Single</a></li>
                 </ul>
             </li>
+
             <li class="has-sub"><a href="#">Pages</a>
                 <ul>
                     <li><a href="testimonials.html">Clients Reviews</a> </li>
@@ -29,6 +96,7 @@
                     <li><a href="call-to-action.html">Call To Actions</a></li>
                     <li><a href="styleguide.html">styleguide</a> </li>
                 </ul>
+
             </li>
             <li><a href="contact-us.html">Contact</a></li>
             <li><a href="template-feature.html">Template Feature</a></li>
@@ -36,3 +104,5 @@
     </div>
 </div>
 <!-- /.navigations-->
+
+

@@ -9,6 +9,11 @@ class category extends Model
 {
     use HasFactory;
     #one to many
+    /**
+     * @var false|mixed|string
+     */
+    public mixed $image;
+
     public function place()
     {
         return $this->hasMany(place::class);

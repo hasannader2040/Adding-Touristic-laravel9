@@ -14,7 +14,7 @@
 
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <title> @yield Travelair Agency </title>
+    <title>  Traveler Agency </title>
     <!-- Bootstrap -->
     <link href={{ asset('assets') }}/"bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -39,10 +39,13 @@
         @include('home.sidebar')
     @show
 
-@show
+
 @section('slider')
 @show
+
 @yield('content')
+
+
 @include('home.footer')
 @yield('foot')
 </body>

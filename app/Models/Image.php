@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
     use HasFactory;
+
+    /**
+     * @var false|mixed|string
+     */
+    public mixed $Image;
 }
