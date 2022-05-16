@@ -63,9 +63,9 @@
                                                             <img src="{{Storage::url($item->image)}}"style="height: 40px"></td>
                                                     @endif
                                                     <td>
-                                                        <a href={{route('admin.image.index',['Pid'=>$item->id])}} class="btn-info"
-                                                           onclick="retrun[!Window.open (this.href,'','top=50 left=100 width=1100,height=700')]">
-                                                            <img src="{{ asset('assets/panel') }}/img/gallery.png">
+                                                        <a href='{{route('admin.image.index',['Pid'=>$item->id])}}' class="btn-info"
+                                                           onclick="return !window.open(this.href, '','top=50 left')">
+                                                            <img src="{{ asset('assets/panel') }}/img/gallery.png" style="height: 50px">
                                                         </a>
                                                     </td>
 {{--                                                    <td> <img src="{{ asset('assets/panel') }}/admin/img/gallery.jpg"> </td>--}}

@@ -18,6 +18,7 @@
                         <div class="from-group">
                             <label> parent category</label>
                             <select class="form-control" select2 name="parent_id" style="height:40px">
+                                <option value="0" selected="selected">Main Category</option>
                             @foreach($data as $item)
                                     <option value="{{$item->id}}">
 {{--                                        @if($item->id == $data->parent_id) selected="selected" @endif>--}}

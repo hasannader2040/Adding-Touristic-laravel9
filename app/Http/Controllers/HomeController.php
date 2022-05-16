@@ -40,9 +40,7 @@ class HomeController extends Controller
      public function index()
      {
 //         return "echo place Id :  ";
-
-
-         $sliderdata = DB::table('places')->limit(4)->get();
+      $sliderdata=place::limit(4);
       $placelist1=place::limit(6);
 
    //dd($sliderdata);
@@ -50,8 +48,6 @@ class HomeController extends Controller
              [ 'sliderdata' => $sliderdata ,
                 'placelist1' => $placelist1
              ]);
-
-
      }
 
     public function place($id)
@@ -60,8 +56,11 @@ class HomeController extends Controller
 //        exit();
 
         $data=place::find($id);
+        $images= DB::table('images')->where('place_id',$id)->get();
+
         return view('home.place',
-            [ 'data' => $data
+            [ 'data' => $data  ,
+                'images' => $images
             ]);
     }
 

@@ -54,14 +54,11 @@ class ImageController extends Controller
         $data = new Image();  // its  fot inserting it
         $data->place_id = $Pid;
         $data->title = $request->title;
-//        $data->keywords = $request->keywords;
-//        $data->description = $request->description;
-//        $data->status = $request->status;
-        if($request->file('image')->store('images')) {
-            $data->Image = $request->file('image')->store('images');
+        if($request->file('image')) {
+            $data->image = $request->file('image')->store('images');
         }
         $data->save();
-        return redirect()->route('admin.Image.index',['Pid'=>$Pid]);
+        return redirect()->route('admin.image.index',['Pid'=>$Pid]);
     }
 
     /**
@@ -107,7 +104,7 @@ class ImageController extends Controller
     public function destroy($id,$Pid)
     { // make sure about importing
         $data=Image:: find($id);
-        if ( $data->image && Storage::disk('public')->exists('data->image')) // I have to understand it much better
+        if ( $data->image && Storage::disk('public')->exists($data->image)) // I have to understand it much better
         {
         Storage::delete($data->image);
     }

@@ -113,7 +113,7 @@ class categoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $req,$id,)
+    public function edit(category $category ,$id,)
     {
         // echo "edit this page with id parameter" , $id; // just for trying to make sure its working or not
         //return $id;

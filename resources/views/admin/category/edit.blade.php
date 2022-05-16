@@ -14,7 +14,7 @@
     </div>
 
     <div class="car d-body">
-        <form action='{{route('admin.place.update',['id'=>$data->id])}}' method="post" enctype="multipart/form-data">
+        <form action='{{route('admin.category.update',['id'=>$data->id])}}' method="post" enctype="multipart/form-data">
             {{-- for the imeges  enctype="multipart/form-data" --}}
             @csrf
 

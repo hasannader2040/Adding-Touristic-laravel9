@@ -11,17 +11,23 @@
 
             {{--for uploading a file--}}
 
+            <form action="{{route('admin.image.store' , ['Pid'=>$place->id])}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group row">
+                    <label for="title" class="col-sm-12 col-md-12 col-form-label"><b>Text</b></label>
+                    <div class="col-sm-12 col-md-12">
+                        <input class="form-control" type="text" name="title" >
+                    </div>
+                </div>
+            <div class="form-group">
+                <label>Custom file input</label>
+                <div class="col-sm-12 col-md-12 col-form-label">
+                    <input type="file" class="custom-file-input" name="image" id="image" >
+                    <label class="custom-file-label"><b>Choose file</b></label>
+                    <button class="col-sm-12 col-md-12 col-form-label" type="submit" class="btn btn-primary">Save Image</button>
 
-            <div class="input-group-append">
-                <input type="file" class="form-control" id="inputGroupFile01" name="image">
-                <label class="custum-file-lable" for="inputGroupFile01">choose file</label>
+                </div>
             </div>
-
-            <div class="input-group-append">
-                <input class="input-group-text" type="submit" value="upload" >
-            </div>
-        </div>
-
             <!-- Basic Layout -->
             <div class="row">
                 <div class="col-xl">
@@ -29,27 +35,9 @@
                         <div class="card-header d-flex justify-content-between align-items-center">
 
                         </div>
-                        <div class="card-body">
-                            <a href="{{ 'admin.Image.create' }}" class="btn btn-primary btn-lg">Add place Image</a>
 
+            </form>
 {{--    i am not able to check on it --}}
-
-                                            <h2> {{$place->title}}</h2>
-                                            <form action="{{route('admin.image.store',['Pid'=>$place->id])}}" method="post" enctype="multipart/form-data">
-                                                @csrf
-                                                <div class="from-group">
-                                                    <label> parent category</label>
-                                                    <select class="form-control" select2 name="parent_id" style="height:40px">
-                                                        @if($images)
-                                                            @foreach($images as $item)
-                                                                <option value="{{$item->id}}">
-                                                                    {{--                                        @if($item->id == $data->parent_id) selected="selected" @endif>--}}
-                                                                    {{\App\Http\Controllers\AdminPanel\categoryController::getParentsTree($item,$item->title)}} </option>
-                                                            @endforeach
-                                                            @endif
-
-                                                    </select>
-
 
                                         <table class="table">
                                             <thead>
@@ -67,19 +55,16 @@
 {{--                                                    the probelm is here--}}
                                                     <td> {{ $item->id }} </td>
                                                     <td> {{ $item->title }}</td>
-                                                    <td> {{\App\Http\Controllers\AdminPanel\ImageController::getParentsTree($item,$item->title)}}</td>
-{{--                                                    <td> {{ $item->keywords }}</td>--}}
-{{--                                                    <td> {{ $item->description }}</td>--}}
                                                     <td>
-                                                        @if($item->image)
+                                                    @if($item->image)
                                                         <img src="{{Storage::url($item->image)}}"style="height: 40px"></td>
                                                     @endif
                                                      {{--   there is a problem here --}}
 
 {{--                                                    <td> {{ $item->status }} </td>--}}
 
-                                                    <td><a href={{route('admin.Image.update',['Pid'=>$place->id,'id'=>$item->id])}} class="btn-info">update</a></td>
-                                                    <td><a href={{route('admin.Image.destroy',['Pid'=>$place->id,'id'=>$item->id])}} class="btn-danger"
+                                                    <td><a href={{route('admin.image.update',['Pid'=>$place->id,'id'=>$item->id])}} class="btn-info">update</a></td>
+                                                    <td><a href={{route('admin.image.destroy',['Pid'=>$place->id,'id'=>$item->id])}} class="btn-danger"
                                                            onclick="return confirm('Are you sure you want to delete this item?')">delete</a></td>
                                                     {{--                                                    <button type="button" class="btn btn-primary">Primary</button>--}}
 
@@ -91,5 +76,7 @@
                                             @endforeach
                                             </tbody>
                                         </table>
+
+
                                         <!-- / Blank page -->
 @endsection

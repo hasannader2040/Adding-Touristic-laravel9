@@ -50,7 +50,7 @@
                                                     <td> {{ $item->keywords }}</td>
 {{--                                                    <td> {{ $item->description }}</td>--}}
                                                     <td>
-                                                        @if($item->image)
+                                                        @if($item->images)
                                                         <img src="{{Storage::url($item->image)}}"style="height: 40px"></td>
                                                     @endif
                                                      {{--   there is a problem here --}}

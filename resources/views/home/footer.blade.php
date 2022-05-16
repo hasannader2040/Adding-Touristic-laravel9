@@ -4,7 +4,7 @@
         <div class="row ">
             <!-- footer-logo -->
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
-                <div class="ft-img"><img src="assets/images/ft_logo.png" alt=""></div>
+                <div class="ft-img"><img src="{{ asset('assets')}}/images/ft_logo.png" alt=""></div>
             </div>
             <!-- /.footer-logo -->
             <!-- footer-links -->
@@ -72,3 +72,35 @@
 <!-- /.footer -->
 
 <!-- it has a problem  -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form>
+                    <div class="search-form">
+                        <input type="text" class="form-control" placeholder="Find here">
+                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">close</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.Modal -->
+<a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="assets/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/menumaker.js"></script>
+<script src="assets/js/jquery.sticky.js"></script>
+<script src="assets/js/sticky-header.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/multiple-carousel.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
+<script src="assets/js/date.js"></script>
+<script src="assets/js/return-to-top.js"></script>
+
