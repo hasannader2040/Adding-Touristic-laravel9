@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\category;
 use App\Models\place;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Types\Parent_;
 
 class HomeController extends Controller
 {
@@ -36,6 +38,12 @@ class HomeController extends Controller
 //     {
 //         echo "index function";
 //     }
+
+    public static function maincategorylist()
+    {
+        return category::where('Parent_id', '=' , 0)->with('children')->get();
+    }
+
 
      public function index()
      {
