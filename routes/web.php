@@ -8,7 +8,7 @@ use Inertia\Inertia;
 //use App\Http\Controllers\AdminPanel\categoryController as AdminCategoryController;
 use App\Http\Controllers\AdminPanel\HomeController;
 use App\Http\Controllers\AdminPanel\categoryController;
-
+use \App\Http\Controllers\AdminPanel\HomeControlle;
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
@@ -99,7 +99,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 // ****************     ADMIN PANEL ROUTES
 // for calling admin panel Routes
 
-Route::prefix('admin')->name( 'admin.')->group(function () {
+Route::prefix('admin')->name( 'admin.')->group(callback: function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');
 
 // ADMIN PANEL CATEGORY ROUTES
@@ -113,7 +113,11 @@ Route::prefix('admin')->name( 'admin.')->group(function () {
         Route::get('/show/{id}','show')->name('show');
         Route::get('/destroy/{id}','destroy')->name('destroy');
     });
-
+    // ADMIN PANEL settings ROUTES
+    // HomeController has two definition for home and admin panel
+    {
+        Route::get('settings', [HomeControlle::class, 'settings'])->name('settings');
+    }
 
 // ADMIN PANEL place ROUTES
     Route::prefix('/place')->name('place.')->controller(AdminPlaceController::class)->group(function()
@@ -137,5 +141,7 @@ Route::prefix('admin')->name( 'admin.')->group(function () {
         Route::post('/update/{Pid}/{id}','update')->name('update');
         Route::get('/destroy/{Pid}/{id}','destroy')->name('destroy');
     });
+
+
 
 });

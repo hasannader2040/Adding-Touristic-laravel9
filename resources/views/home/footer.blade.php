@@ -96,15 +96,15 @@
 <!-- /.Modal -->
 <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="assets/js/jquery.min.js"></script>
+<script src="{{ asset('assets') }}/js/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/menumaker.js"></script>
-<script src="assets/js/jquery.sticky.js"></script>
-<script src="assets/js/sticky-header.js"></script>
-<script src="assets/js/owl.carousel.min.js"></script>
-<script src="assets/js/multiple-carousel.js"></script>
-<script src="assets/js/jquery-ui.js"></script>
-<script src="assets/js/date.js"></script>
-<script src="assets/js/return-to-top.js"></script>
+<script src="{{ asset('assets') }}/js/bootstrap.min.js"></script>
+<script src="{{ asset('assets') }}/js/menumaker.js"></script>
+<script src="{{ asset('assets') }}/js/jquery.sticky.js"></script>
+<script src="{{ asset('assets') }}/js/sticky-header.js"></script>
+<script src="{{ asset('assets') }}/js/owl.carousel.min.js"></script>
+<script src="{{ asset('assets') }}/js/multiple-carousel.js"></script>
+<script src="{{ asset('assets') }}/js/jquery-ui.js"></script>
+<script src="{{ asset('assets') }}/js/date.js"></script>
+<script src="{{ asset('assets') }}/js/return-to-top.js"></script>
 

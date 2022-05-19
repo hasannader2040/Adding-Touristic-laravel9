@@ -12,18 +12,18 @@
     <title>Travelair Agency HTML Website Template  </title>
 {{--    @yield("title")--}}
     <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
     <!-- owl-carousel -->
-    <link href="assets/css/owl.carousel.css" rel="stylesheet">
-    <link href="assets/css/owl.theme.default.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/css/owl.carousel.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/css/owl.theme.default.css" rel="stylesheet">
     <!-- jquery ui  -->
-    <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets') }}/css/jquery-ui.css">
     <!-- FontAwesome CSS -->
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/css/font-awesome.min.css" rel="stylesheet">
     <!-- Style CSS -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/css/style.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -66,7 +66,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-3 col-lg-2 col-md-3 col-sm-3 col-12">
-                            <div class="logo"> <a href="index.html"><img src="assets/images/logo.png" alt=""> </a> </div>
+                            <div class="logo"> <a href="index.html"><img src="{{ asset('assets') }}/images/logo.png" alt=""> </a> </div>
                         </div>
                         <div class="col-xl-9 col-lg-10 col-md-9 col-sm-12 col-12">
                             <!-- navigations-->
@@ -140,7 +140,7 @@
 
                 <!-- item -->
                 <div class="item">
-                    <div class="slider-img"><img src="assets/images/slider_2.jpg" alt=""></div>
+                    <div class="slider-img"><img src="{{ asset('assets') }}/images/slider_2.jpg" alt=""></div>
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
@@ -155,7 +155,7 @@
                 <!-- /.item -->
                 <!-- item -->
                 <div class="item">
-                    <div class="slider-img"><img src="assets/images/slider_3.jpg" alt=""></div>
+                    <div class="slider-img"><img src="{{ asset('assets') }}/images/slider_3.jpg" alt=""></div>
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
@@ -267,7 +267,7 @@
                     </div>
                     <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb40">
                         <div class="tour-img">
-                            <a href="#" class="imghover"> <img src="assets/images/tour_img_2.jpg" alt="" class="img-fluid"></a>
+                            <a href="#" class="imghover"> <img src="{{ asset('assets') }}/images/tour_img_2.jpg" alt="" class="img-fluid"></a>
                         </div>
                     </div>
                 </div>
@@ -277,7 +277,7 @@
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb20">
                         <div class="tour-img">
-                            <a href="#" class="imghover"> <img src="assets/images/tour_img_3.jpg" alt="" class="img-fluid"></a>
+                            <a href="#" class="imghover"> <img src="{{ asset('assets') }}/images/tour_img_3.jpg" alt="" class="img-fluid"></a>
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-5 offset-md-1 col-md-5 col-sm-12 col-12 mb20">
@@ -311,7 +311,7 @@
                         <!-- destination-section -->
                         <div class="destination-block">
                             <div class="desti-img">
-                                <img src="assets/images/destination_1.jpg" alt="">
+                                <img src="{{ asset('assets') }}/images/destination_1.jpg" alt="">
                                 <a href="#" class="desti-title">Singapore</a>
                                 <div class="overlay">
                                 </div>
@@ -332,7 +332,7 @@
                         <!-- destination-section -->
                         <div class="destination-block">
                             <div class="desti-img">
-                                <img src="assets/images/destination_2.jpg" alt="">
+                                <img src="{{ asset('assets') }}/images/destination_2.jpg" alt="">
                                 <a href="#" class="desti-title">Thailand</a>
                                 <div class="overlay">
                                 </div>
@@ -353,7 +353,7 @@
                         <!-- destination-section -->
                         <div class="destination-block">
                             <div class="desti-img">
-                                <img src="assets/images/destination_3.jpg" alt="">
+                                <img src="{{ asset('assets') }}/images/destination_3.jpg" alt="">
                                 <a href="#" class="desti-title">Vietnam</a>
                                 <div class="overlay">
                                 </div>
@@ -374,7 +374,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 nopr nopl">
                         <div class="destination-block">
                             <div class="desti-img">
-                                <img src="assets/images/destination_4.jpg" alt="">
+                                <img src="{{ asset('assets') }}/images/destination_4.jpg" alt="">
                                 <a href="#" class="desti-title">Melbourne</a>
                                 <div class="overlay">
                                 </div>
@@ -419,7 +419,7 @@
                         <div class="well-block">
                             <!-- feature-left -->
                             <div class="feature-left">
-                                <div class="feature-icon"><img src="assets/images/calendar.png" alt=""></div>
+                                <div class="feature-icon"><img src="{{ asset('assets') }}/images/calendar.png" alt=""></div>
                                 <div class="feature-content">
                                     <h4>Everything’s on Schedule</h4>
                                     <p>Cras porttitor tortor erateget accumsan is feltumsit.</p>
@@ -428,7 +428,7 @@
                             <!-- /.feature-left -->
                             <!-- feature-left -->
                             <div class="feature-left">
-                                <div class="feature-icon"><img src="assets/images/adventure.png" alt=""></div>
+                                <div class="feature-icon"><img src="{{ asset('assets') }}/images/adventure.png" alt=""></div>
                                 <div class="feature-content">
                                     <h4>Destination Variety</h4>
                                     <p>Pellentesque imperdiet esmpus finibusse euismunc.</p>
@@ -437,7 +437,7 @@
                             <!-- /.feature-left -->
                             <!-- feature-left -->
                             <div class="feature-left">
-                                <div class="feature-icon"><img src="assets/images/hotel.png" alt=""></div>
+                                <div class="feature-icon"><img src="{{ asset('assets') }}/images/hotel.png" alt=""></div>
                                 <div class="feature-content">
                                     <h4>Comfortable Housing</h4>
                                     <p>Vestiulum sodales tempudin one erlctus iedate. </p>
@@ -497,7 +497,7 @@
                     <!-- service-block -->
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 nopr">
                         <div class="service-block border-bottom border-right">
-                            <div class="service-img"><img src="assets/images/hotel_1.png" alt=""></div>
+                            <div class="service-img"><img src="{{ asset('assets') }}/images/hotel_1.png" alt=""></div>
                             <div class="service-content">
                                 <h3 class="service-title">Hotel Reservation</h3></div>
                         </div>
@@ -506,7 +506,7 @@
                     <!-- service-block -->
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 nopl nopr">
                         <div class="service-block border-bottom border-right">
-                            <div class="service-img"><img src="assets/images/disability.png" alt=""></div>
+                            <div class="service-img"><img src="{{ asset('assets') }}/images/disability.png" alt=""></div>
                             <div class="service-content">
                                 <h3 class="service-title">Staff Transportation Services </h3></div>
                         </div>
@@ -515,7 +515,7 @@
                     <!-- service-block -->
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 nopl">
                         <div class="service-block border-bottom">
-                            <div class="service-img"><img src="assets/images/airplane.png" alt=""></div>
+                            <div class="service-img"><img src="{{ asset('assets') }}/images/airplane.png" alt=""></div>
                             <div class="service-content">
                                 <h3 class="service-title">Air Ticketing Services</h3></div>
                         </div>
@@ -524,7 +524,7 @@
                     <!-- service-block -->
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 nopr">
                         <div class="service-block border-right">
-                            <div class="service-img"><img src="assets/images/passport.png" alt=""></div>
+                            <div class="service-img"><img src="{{ asset('assets') }}/images/passport.png" alt=""></div>
                             <div class="service-content">
                                 <h3 class="service-title">Passport and Visa Assistance </h3></div>
                         </div>
@@ -533,7 +533,7 @@
                     <!-- service-block -->
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 nopl nopr">
                         <div class="service-block  border-right">
-                            <div class="service-img"><img src="assets/images/car_wash.png" alt=""></div>
+                            <div class="service-img"><img src="{{ asset('assets') }}/images/car_wash.png" alt=""></div>
                             <div class="service-content">
                                 <h3 class="service-title">Car Rental Services </h3></div>
                         </div>
@@ -542,7 +542,7 @@
                     <!-- service-block -->
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 nopl">
                         <div class="service-block service-right-border service-bottom-border">
-                            <div class="service-img"><img src="assets/images/car.png" alt=""></div>
+                            <div class="service-img"><img src="{{ asset('assets') }}/images/car.png" alt=""></div>
                             <div class="service-content">
                                 <h3 class="service-title">Car on Call</h3></div>
                         </div>
@@ -560,7 +560,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 mb60">
                         <div class="testimonial-head">
                             <div class="quote-icon">
-                                <img src="assets/images/left_quote.png" alt="">
+                                <img src="{{ asset('assets') }}/images/left_quote.png" alt="">
                             </div>
                             <h2 class="mb40">What Our Customers Say About Our Tours</h2>
                             <a href="#" class="btn-link">Read All Reviews <i class="fa fa-angle-right"></i></a>
@@ -579,7 +579,7 @@
                                             <div class="testi-arrow"></div>
                                         </div>
                                         <div class="testi-img">
-                                            <img src="assets/images/testi_img_1.jpg" alt="" class="rounded-circle">
+                                            <img src="{{ asset('assets') }}/images/testi_img_1.jpg" alt="" class="rounded-circle">
                                         </div>
                                     </div>
                                 </div>
@@ -593,7 +593,7 @@
                                             <div class="testi-arrow"></div>
                                         </div>
                                         <div class="testi-img">
-                                            <img src="assets/images/testi_img_2.jpg" alt="" class="rounded-circle">
+                                            <img src="{{ asset('assets') }}/images/testi_img_2.jpg" alt="" class="rounded-circle">
                                         </div>
                                     </div>
                                 </div>
@@ -607,7 +607,7 @@
                                             <div class="testi-arrow"></div>
                                         </div>
                                         <div class="testi-img">
-                                            <img src="assets/images/testi_img_3.jpg" alt="" class="rounded-circle">
+                                            <img src="{{ asset('assets') }}/images/testi_img_3.jpg" alt="" class="rounded-circle">
                                         </div>
                                     </div>
                                 </div>
@@ -619,6 +619,7 @@
             </div>
         </div>
         <!-- testimonial-section -->
+
         <!-- /.client-section -->
         <div class="space-small">
             <div class="container">
@@ -626,42 +627,42 @@
                     <!-- client-logo -->
                     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6">
                         <div class="client-logo">
-                            <a href="#"><img src="assets/images/dummy_logo_1.png" alt=""></a>
+                            <a href="#"><img src="{{ asset('assets') }}/images/dummy_logo_1.png" alt=""></a>
                         </div>
                     </div>
                     <!-- /.client-logo -->
                     <!-- client-logo -->
                     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6">
                         <div class="client-logo">
-                            <a href="#"> <img src="assets/images/dummy_logo_2.png" alt=""></a>
+                            <a href="#"> <img src="{{ asset('assets') }}/images/dummy_logo_2.png" alt=""></a>
                         </div>
                     </div>
                     <!-- /.client-logo -->
                     <!-- client-logo -->
                     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6">
                         <div class="client-logo">
-                            <a href="#">  <img src="assets/images/dummy_logo_3.png" alt=""></a>
+                            <a href="#">  <img src="{{ asset('assets') }}/images/dummy_logo_3.png" alt=""></a>
                         </div>
                     </div>
                     <!-- /.client-logo -->
                     <!-- client-logo -->
                     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6">
                         <div class="client-logo">
-                            <a href="#"><img src="assets/images/dummy_logo_4.png" alt=""></a>
+                            <a href="#"><img src="{{ asset('assets') }}/images/dummy_logo_4.png" alt=""></a>
                         </div>
                     </div>
                     <!-- /.client-logo -->
                     <!-- client-logo -->
                     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6">
                         <div class="client-logo">
-                            <a href="#"> <img src="assets/images/dummy_logo_2.png" alt=""></a>
+                            <a href="#"> <img src="{{ asset('assets') }}/images/dummy_logo_2.png" alt=""></a>
                         </div>
                     </div>
                     <!-- /.client-logo -->
                     <!-- client-logo -->
                     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6">
                         <div class="client-logo">
-                            <a href="#">  <img src="assets/images/dummy_logo_1.png" alt=""></a>
+                            <a href="#">  <img src="{{ asset('assets') }}/images/dummy_logo_1.png" alt=""></a>
                         </div>
                     </div>
                     <!-- /.client-logo -->
@@ -669,102 +670,5 @@
             </div>
         </div>
         <!-- /.client-section -->
-        <!-- footer -->
-        <div class="footer">
-            <div class="container">
-                <div class="row ">
-                    <!-- footer-logo -->
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
-                        <div class="ft-img"><img src="assets/images/ft_logo.png" alt=""></div>
-                    </div>
-                    <!-- /.footer-logo -->
-                    <!-- footer-links -->
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 ">
-                        <div class="footer-widget ">
-                            <h3 class="footer-title ">Quick Links</h3>
-                            <ul class="angle list-none">
-                                <li><a href="# ">Home</a></li>
-                                <li><a href="# ">Tour</a></li>
-                                <li><a href="# ">Blog</a></li>
-                                <li><a href="# ">Customer Reviews</a></li>
-                                <li><a href="# ">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- /.footer-links -->
-                    <!-- footer-tours -->
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 ">
-                        <div class="footer-widget ">
-                            <h3 class="footer-title ">Tour Packages</h3>
-                            <ul class="angle list-none">
-                                <li><a href="# ">International Tour</a>
-                                    <li><a href="# ">Domestic Tour</a></li>
-                                    <li><a href="# ">Adventure Tour</a></li>
-                                    <li><a href="# ">Business Tour</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- /.footer-Tours -->
-                    <!-- footer-post -->
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 ">
-                        <div class="footer-widget">
-                            <h3 class="footer-title">Contact Info</h3>
-                            <div class="ft-contact-info"> <span class="ft-contact-icon"><i class="fa fa-map-marker"></i></span> <span class="ft-contact-text">3927 Birch StreetEl Paso, TX 79930 </span></div>
-                            <div class="ft-contact-info"> <span class="ft-contact-icon"><i class="fa fa-phone "></i></span> <span class="ft-contact-text">+180-123-4567</span></div>
-                            <div class="ft-contact-info"> <span class="ft-contact-icon"><i class="fa fa-envelope "></i></span> <span class="ft-contact-text">info@travel.com</span></div>
-                            <div class="social-icon "> <a href="# " class="btn-social-icon "><i class="fa fa-facebook "></i></a> <a href="# " class="btn-social-icon "><i class="fa fa-twitter "></i></a> <a href="# " class="btn-social-icon "><i class="fa fa-linkedin "></i></a> <a href="# " class="btn-social-icon "><i class="fa fa-google-plus "></i></a> </div>
-                        </div>
-                    </div>
-                    <!-- /.footer-post -->
-                </div>
-                <!-- tiny-footer -->
-            </div>
-            <div class="tiny-footer ">
-                <div class="container ">
-                    <div class="row ">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
-                            <p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
-                        </div>
-                    </div>
-                    <!-- /. tiny-footer -->
-                </div>
-            </div>
         </div>
-        <!-- /.footer -->
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <form>
-                            <div class="search-form">
-                                <input type="text" class="form-control" placeholder="Find here">
-                                <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">close</span>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.Modal -->
-        <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="assets/js/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/menumaker.js"></script>
-        <script src="assets/js/jquery.sticky.js"></script>
-        <script src="assets/js/sticky-header.js"></script>
-        <script src="assets/js/owl.carousel.min.js"></script>
-        <script src="assets/js/multiple-carousel.js"></script>
-        <script src="assets/js/jquery-ui.js"></script>
-        <script src="assets/js/date.js"></script>
-        <script src="assets/js/return-to-top.js"></script>
     </div>
-    </div>
-</body>
-
-
-</html>

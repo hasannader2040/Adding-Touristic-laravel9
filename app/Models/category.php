@@ -9,9 +9,9 @@ class category extends Model
 {
     use HasFactory;
     #one to many
-    /**
-     * @var false|mixed|string
-     */
+//    /**
+//     * @var false|mixed|string
+//     */
     public mixed $image;
 
     public function place()
@@ -19,4 +19,16 @@ class category extends Model
         return $this->hasMany(place::class);
     }
 
-}
+    #one to many Inverse
+    public function parent()
+    {
+        return $this->belongsTo(category::class, 'parent_id');
+    }
+
+    #one to many
+    public function children()
+    {
+        return $this->hasMany(category::class, 'parent_id');
+    }
+ }
+
