@@ -46,7 +46,7 @@
 </head>
 
 <body>
-@include("admin.header")
+{{--@include("admin.header")--}}
 
 
 @section('sidebar')

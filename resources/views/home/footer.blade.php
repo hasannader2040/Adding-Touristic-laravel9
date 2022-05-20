@@ -98,7 +98,7 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="{{ asset('assets') }}/js/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="{{ asset('assets') }}/js/bootstrap.min.js"></script>
+<script src="{{ asset('assets')}}/js/bootstrap.min.js"></script>
 <script src="{{ asset('assets') }}/js/menumaker.js"></script>
 <script src="{{ asset('assets') }}/js/jquery.sticky.js"></script>
 <script src="{{ asset('assets') }}/js/sticky-header.js"></script>

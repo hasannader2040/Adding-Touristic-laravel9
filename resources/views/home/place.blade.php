@@ -171,12 +171,6 @@
                             <div class="row">
                                 {!!$data->detail!!}
 
-
-{{--                            @foreach($data as $item)--}}
-{{--                            {{$item->detail}}--}}
-{{--                            @endforeach--}}
-
-
 {{--                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">--}}
 {{--                                    <ul class="arrow list-none">--}}
 {{--                                        <li>Fusce in mais arcutiam consmassa vulputate</li>--}}

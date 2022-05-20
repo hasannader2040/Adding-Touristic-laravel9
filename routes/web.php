@@ -8,7 +8,14 @@ use Inertia\Inertia;
 //use App\Http\Controllers\AdminPanel\categoryController as AdminCategoryController;
 use App\Http\Controllers\AdminPanel\HomeController;
 use App\Http\Controllers\AdminPanel\categoryController;
-use \App\Http\Controllers\AdminPanel\HomeControlle;
+//use \App\Http\Controllers\AdminPanel\HomeControlle;
+use \App\Http\Controllers\Controller\index;
+//use \App\Http\Controllers\HomeController;
+use App\Setting;
+
+
+// I just added this
+
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
@@ -26,6 +33,8 @@ Route::get('/', function () {
 
     return view('index');
 });
+
+// the one which it getting us to home of controller of front-end
 Route::get('/', [\App\Http\Controllers\HomeController::class,'index'])->name('index');
 
 
@@ -45,14 +54,18 @@ Route::get('testing', function () {
 
     return 'welcome to Turkiye';
 });
+
+
+
 // 2 call view in Route
-Route::get('/to show your statrting / (id?)', function () {
+Route::get('/to show your starting / (id?)', function () {
     // (id?) ti means its option to pass or not as you need
     return 'welcome to Turkiye';
 });
 
 // 3 call controller function
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+//its getting it to the home of admin panel
+//Route::get('/home', [HomeController::class, 'index'])->name('home');
 // and you can reduce it and write import in above
 
 // 4 Route -> controller -> view
@@ -72,7 +85,7 @@ Route::get('/place/{id}',[\App\Http\Controllers\HomeController::class,'place'])-
 
 
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+//Route::get('/home', [HomeController::class,'index'])->name('home');
 
 //Route::get('/home', [HomeController::class, 'index'])->name('home');
 
@@ -94,6 +107,15 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 */
 
 
+     // ****************     Home page ROUTES
+// there is a problem in this
+Route::get('/home', [\App\Http\Controllers\HomeController::class,'index'])->name('index');
+Route::get('/home/about', [\App\Http\Controllers\HomeController::class,'about'])->name('about');
+Route::get('/home/contact', [\App\Http\Controllers\HomeController::class,'contact'])->name('contact');
+Route::get('/home/Reference', [\App\Http\Controllers\HomeController::class,'Reference'])->name('Reference');
+
+
+
 
 
 // ****************     ADMIN PANEL ROUTES
@@ -101,6 +123,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::prefix('admin')->name( 'admin.')->group(callback: function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');
+
 
 // ADMIN PANEL CATEGORY ROUTES
     Route::prefix('/category')->name('category.')->controller(CategoryController::class)->group(function()
@@ -116,7 +139,8 @@ Route::prefix('admin')->name( 'admin.')->group(callback: function () {
     // ADMIN PANEL settings ROUTES
     // HomeController has two definition for home and admin panel
     {
-        Route::get('settings', [HomeControlle::class, 'settings'])->name('settings');
+            Route::get('setting', [HomeController::class, 'setting'])->name('setting');
+        Route::post('setting', [HomeController::class, 'settingUpdate'])->name('setting.update');
     }
 
 // ADMIN PANEL place ROUTES

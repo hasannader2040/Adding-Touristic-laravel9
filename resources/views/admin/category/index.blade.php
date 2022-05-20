@@ -2,7 +2,15 @@
 @section('title', 'category list')
 @section('content')
 
+
+
     <!--  Blank page -->
+
+    <!-- Layout container -->
+    <div class="layout-page">
+        <!-- Navbar -->
+
+
     <div class="content-wrapper">
         <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">
@@ -72,7 +80,7 @@
                                             </tbody>
                                         </table>
 
-
+                                    </div>
                                         <!-- / Blank page -->
 
 

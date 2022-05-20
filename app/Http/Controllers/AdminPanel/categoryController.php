@@ -77,7 +77,7 @@ class categoryController extends Controller
     {
 
         $data = new category();  // its  fot inserting it
-        $data->parent_id = $request->parent_id;
+        $data->parent_id = $request->parent_id; // its important
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;

@@ -35,7 +35,7 @@
 
 
         <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-3048px, 0px, 0px); transition: all 0.25s ease 0s; width: 7112px;"><div class="owl-item cloned" style="width: 1016px;"><div class="item">
-                        <div class="slider-img"><img src="images/slider_2.jpg" alt=""></div>
+                        <div class="slider-img"><img src="{{ asset('assets') }}/images/slider_2.jpg" alt=""></div>
                         <div class="container">
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </div></div><div class="owl-item cloned" style="width: 1016px;"><div class="item">
-                        <div class="slider-img"><img src="images/slider_3.jpg" alt=""></div>
+                        <div class="slider-img"><img src="{{ asset('assets') }}/images/slider_3.jpg" alt=""></div>
                         <div class="container">
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
@@ -132,7 +132,7 @@
         <div class="row ">
             <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb40">
                 <div class="tour-img">
-                    <a href="#" class="imghover"> <img src="images/tour_img_1.jpg" alt="" class="img-fluid"></a>
+                    <a href="#" class="imghover"> <img src="{{ asset('assets') }}/images/tour_img_1.jpg" alt="" class="img-fluid"></a>
                 </div>
             </div>
             <div class="col-xl-5 col-lg-5 offset-md-1 col-md-5 col-sm-12 col-12 mb40">
@@ -159,7 +159,7 @@
             </div>
             <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb40">
                 <div class="tour-img">
-                    <a href="#" class="imghover"> <img src="images/tour_img_2.jpg" alt="" class="img-fluid"></a>
+                    <a href="#" class="imghover"> <img src="{{ asset('assets') }}/images/tour_img_2.jpg" alt="" class="img-fluid"></a>
                 </div>
             </div>
         </div>
@@ -168,7 +168,7 @@
         <div class="row">
             <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb20">
                 <div class="tour-img">
-                    <a href="#" class="imghover"> <img src="images/tour_img_3.jpg" alt="" class="img-fluid"></a>
+                    <a href="#" class="imghover"> <img src="{{ asset('assets') }}/images/tour_img_3.jpg" alt="" class="img-fluid"></a>
                 </div>
             </div>
             <div class="col-xl-5 col-lg-5 offset-md-1 col-md-5 col-sm-12 col-12 mb20">
@@ -187,7 +187,7 @@
     <!-- destination-section -->
     <div class="destination-block">
         <div class="desti-img">
-            <img src="images/destination_1.jpg" alt="">
+            <img src="{{asset('assets/images') }}/destination_1.jpg" alt="">
             <a href="#" class="desti-title">Singapore</a>
             <div class="overlay">
             </div>
@@ -208,7 +208,7 @@
     <!-- destination-section -->
     <div class="destination-block">
         <div class="desti-img">
-            <img src="images/destination_2.jpg" alt="">
+            <img src="{{asset('assets/images') }}/destination_2.jpg" alt="">
             <a href="#" class="desti-title">Thailand</a>
             <div class="overlay">
             </div>
@@ -229,7 +229,7 @@
     <!-- destination-section -->
     <div class="destination-block">
         <div class="desti-img">
-            <img src="images/destination_3.jpg" alt="">
+            <img src="{{asset('assets/images') }}/destination_3.jpg" alt="">
             <a href="#" class="desti-title">Vietnam</a>
             <div class="overlay">
             </div>
@@ -250,7 +250,7 @@
 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 nopr nopl">
     <div class="destination-block">
         <div class="desti-img">
-            <img src="images/destination_4.jpg" alt="">
+            <img src="{{asset('assets/images') }}/destination_4.jpg" alt="">
             <a href="#" class="desti-title">Melbourne</a>
             <div class="overlay">
             </div>
@@ -291,7 +291,7 @@
                 <div class="well-block">
                     <!-- feature-left -->
                     <div class="feature-left">
-                        <div class="feature-icon"><img src="images/calendar.png" alt=""></div>
+                        <div class="feature-icon"><img src="{{asset('assets/images') }}/calendar.png" alt=""></div>
                         <div class="feature-content">
                             <h4>Everything’s on Schedule</h4>
                             <p>Cras porttitor tortor erateget accumsan is feltumsit.</p>
@@ -300,7 +300,7 @@
                     <!-- /.feature-left -->
                     <!-- feature-left -->
                     <div class="feature-left">
-                        <div class="feature-icon"><img src="images/adventure.png" alt=""></div>
+                        <div class="feature-icon"><img src="{{asset('assets/images') }}/adventure.png" alt=""></div>
                         <div class="feature-content">
                             <h4>Destination Variety</h4>
                             <p>Pellentesque imperdiet esmpus finibusse euismunc.</p>
@@ -309,7 +309,7 @@
                     <!-- /.feature-left -->
                     <!-- feature-left -->
                     <div class="feature-left">
-                        <div class="feature-icon"><img src="images/hotel.png" alt=""></div>
+                        <div class="feature-icon"><img src="{{asset('assets/images') }}/hotel.png" alt=""></div>
                         <div class="feature-content">
                             <h4>Comfortable Housing</h4>
                             <p>Vestiulum sodales tempudin one erlctus iedate. </p>
@@ -369,7 +369,7 @@
             <!-- service-block -->
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 nopr">
                 <div class="service-block border-bottom border-right">
-                    <div class="service-img"><img src="images/hotel_1.png" alt=""></div>
+                    <div class="service-img"><img src="{{asset('assets/images') }}/hotel_1.png" alt=""></div>
                     <div class="service-content">
                         <h3 class="service-title">Hotel Reservation</h3></div>
                 </div>
@@ -378,7 +378,7 @@
             <!-- service-block -->
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 nopl nopr">
                 <div class="service-block border-bottom border-right">
-                    <div class="service-img"><img src="images/disability.png" alt=""></div>
+                    <div class="service-img"><img src="{{asset('assets/images') }}/disability.png" alt=""></div>
                     <div class="service-content">
                         <h3 class="service-title">Staff Transportation Services </h3></div>
                 </div>
@@ -387,7 +387,7 @@
             <!-- service-block -->
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 nopl">
                 <div class="service-block border-bottom">
-                    <div class="service-img"><img src="images/airplane.png" alt=""></div>
+                    <div class="service-img"><img src="{{asset('assets/images') }}/airplane.png" alt=""></div>
                     <div class="service-content">
                         <h3 class="service-title">Air Ticketing Services</h3></div>
                 </div>
@@ -396,7 +396,7 @@
             <!-- service-block -->
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 nopr">
                 <div class="service-block border-right">
-                    <div class="service-img"><img src="images/passport.png" alt=""></div>
+                    <div class="service-img"><img src="{{asset('assets/images') }}/passport.png" alt=""></div>
                     <div class="service-content">
                         <h3 class="service-title">Passport and Visa Assistance </h3></div>
                 </div>
@@ -405,7 +405,7 @@
             <!-- service-block -->
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 nopl nopr">
                 <div class="service-block  border-right">
-                    <div class="service-img"><img src="images/car_wash.png" alt=""></div>
+                    <div class="service-img"><img src="{{asset('assets/images') }}/car_wash.png" alt=""></div>
                     <div class="service-content">
                         <h3 class="service-title">Car Rental Services </h3></div>
                 </div>
@@ -414,7 +414,7 @@
             <!-- service-block -->
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 nopl">
                 <div class="service-block service-right-border service-bottom-border">
-                    <div class="service-img"><img src="images/car.png" alt=""></div>
+                    <div class="service-img"><img src="{{asset('assets/images') }}/car.png" alt=""></div>
                     <div class="service-content">
                         <h3 class="service-title">Car on Call</h3></div>
                 </div>
@@ -433,7 +433,7 @@
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 mb60">
                 <div class="testimonial-head">
                     <div class="quote-icon">
-                        <img src="images/left_quote.png" alt="">
+                        <img src="{{asset('assets/images') }}/left_quote.png" alt="">
                     </div>
                     <h2 class="mb40">What Our Customers Say About Our Tours</h2>
                     <a href="#" class="btn-link">Read All Reviews <i class="fa fa-angle-right"></i></a>
@@ -451,8 +451,8 @@
                                     <span class="testi-meta"><strong>- Sarah Arnold</strong> (Our Tourist)</span>
                                     <div class="testi-arrow"></div>
                                 </div>
-                                <div class="testi-img">
-                                    <img src="images/testi_img_1.jpg" alt="" class="rounded-circle">
+                                <div class="{{asset('assets/images')}}/testi-img">
+                                    <img src="{{asset('assets/images') }}/testi_img_1.jpg" alt="" class="rounded-circle">
                                 </div>
                             </div>
                         </div>
@@ -466,7 +466,7 @@
                                     <div class="testi-arrow"></div>
                                 </div>
                                 <div class="testi-img">
-                                    <img src="images/testi_img_2.jpg" alt="" class="rounded-circle">
+                                    <img src="{{asset('assets/images') }}/testi_img_2.jpg" alt="" class="rounded-circle">
                                 </div>
                             </div>
                         </div>
@@ -480,7 +480,7 @@
                                     <div class="testi-arrow"></div>
                                 </div>
                                 <div class="testi-img">
-                                    <img src="images/testi_img_3.jpg" alt="" class="rounded-circle">
+                                    <img src="{{asset('assets/images') }}/testi_img_3.jpg" alt="" class="rounded-circle">
                                 </div>
                             </div>
                         </div>

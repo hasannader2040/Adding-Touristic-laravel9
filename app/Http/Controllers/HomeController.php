@@ -6,8 +6,12 @@ use App\Models\category;
 use App\Models\place;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+//use App\Http\Controllers\HomeController;  // for the home of front-end
 use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Types\Parent_;
+use App\Setting;
+
+
 
 class HomeController extends Controller
 {
@@ -48,15 +52,52 @@ class HomeController extends Controller
      public function index()
      {
 //         return "echo place Id :  ";
-      $sliderdata=place::limit(4);
-      $placelist1=place::limit(6);
+         $page='home';
+         $sliderdata=place::limit(4)->get();
+         $placelist1=place::limit(6)->get();
+         $setting=setting::first();
 
    //dd($sliderdata);
          return view('home.index',
-             [ 'sliderdata' => $sliderdata ,
-                'placelist1' => $placelist1
+             [   'page'=>$page,
+                 'sliderdata' => $sliderdata ,
+                'placelist1' => $placelist1 ,
+                 'setting' => $setting
              ]);
      }
+
+    public function about()
+    {
+//   echo ' about ' ;
+//   exit();
+        $setting=setting::first();
+        return view('home.about',
+            [
+                'setting' => $setting
+            ]);
+    }
+
+    public function Reference()
+    {
+//        echo ' Reference ' ;
+//        exit();
+        $setting=setting::first();
+        return view('home.Reference',
+            [
+                'setting' => $setting
+            ]);
+    }
+
+    public function Contact()
+    {
+//        echo ' Contact ' ;
+//        exit();
+        $setting=setting::first();
+        return view('home.Contact',
+            [
+                'setting' => $setting
+            ]);
+    }
 
     public function place($id)
     {
