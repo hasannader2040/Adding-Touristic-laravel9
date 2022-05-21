@@ -116,7 +116,10 @@ Route::get('/contact', [\App\Http\Controllers\HomeController::class,'contact'])-
 Route::get('/reference', [\App\Http\Controllers\HomeController::class,'reference'])->name('reference');
 Route::get('/storeMessage', [\App\Http\Controllers\HomeController::class,'storeMessage'])->name('storeMessage');
 Route::get('/faq', [\App\Http\Controllers\HomeController::class,'faq'])->name('faq');
-
+Route::post('/storeComment', [\App\Http\Controllers\HomeController::class,'storeComment'])->name('storeComment');
+route::view('/loginUser','home.login');
+route::view('/registerUser','home.register');
+route::view('/logoutUser',[\App\Http\Controllers\HomeController::class,'home.logout'])->name('logout');
 
 
 

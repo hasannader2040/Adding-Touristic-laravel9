@@ -49,9 +49,9 @@
 {{--     /   <h1> Settings </h1>--}}
         <button class="w3-bar-item w3-button" onclick="openCity('London')">general</button>
         <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Smtp Email</button>
-        <button class="w3-bar-item w3-button" onclick="openCity('social Media')">social Media</button>
-        <button class="w3-bar-item w3-button" onclick="openCity('about us')">about us</button>
-        <button class="w3-bar-item w3-button" onclick="openCity('contact page')">contact page</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('social_Media')">social Media</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('aboutUs')">about us</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('contact_page')">contact page</button>
         <button class="w3-bar-item w3-button" onclick="openCity('References')">References</button>
 
     </div>
@@ -99,14 +99,11 @@
         </form>
     </div>
 
-    </form>
-
-
     <div id="Paris" class="city" style="display:none">
 
 {{--        and here is NOTHER CONTENT--}}
 
-{{--        <form action="{{route('admin.setting.update')}}" method="post">--}}
+        <form action="{{route('admin.setting.update')}}" method="post">
 
             <div class="form-group">
                 <label for="exampleInputPassword1">SMTPserver</label>
@@ -139,47 +136,58 @@
             </div>
 
             <button type="submit" class="btn btn-primary">update setting </button>
+        </form>
     </div>
 
-    <div id="social Media" class="city" style="display:none">
+    <div id="social_Media" class="city" style="display:none">
 
-
-
-  </div>
+    </div>
 
 
     <div id="aboutUs" class="city" style="display:none">
 
-        <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+{{--        <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>--}}
 
+{{--        <div id="editor">This is some sample content.</div>--}}
+{{--        <script>--}}
+{{--            ClassicEditor--}}
+{{--                .create( document.querySelector( '#editor' ) )--}}
+{{--                .then( editor => {--}}
+{{--                    console.log( editor );--}}
+{{--                } )--}}
+{{--                .catch( error => {--}}
+{{--                    console.error( error );--}}
+{{--                } );--}}
+{{--        </script>--}}
+
+        <form action="{{route('admin.setting.update')}}" method="post">
+            @csrf
+            <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+            <div id="editor">This is some sample content.</div>
+            <script>
+                ClassicEditor
+                    .create( document.querySelector( '#editor' )
+                   );
+            </script>
+        <button type="submit" class="btn btn-primary">update setting </button>
+        </form>
+
+        {{--        another thing for connatiing--}}
         <script>
-            var edit = function() {
-                $('.click2edit').summernote({focus: true});
-            };
-
-            var save = function() {
-                var markup = $('.click2edit').summernote('code');
-                $('.click2edit').summernote('destroy');
-            };
-        //    or the code of the doctor
+            function openCity(cityName) {
+                var i;
+                var x = document.getElementsByClassName("city");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                document.getElementById(cityName).style.display = "block";
+            }
 
         </script>
-
-{{--    <script>--}}
-{{--        function openCity(aboutUs) --}}
-{{--        {--}}
-{{--            var i;--}}
-{{--            var x = document.getElementsByClassName("city");--}}
-{{--            for (i = 0; i < x.length; i++) {--}}
-{{--                x[i].style.display = "none";--}}
-{{--            }--}}
-{{--            document.getElementById(cityName).style.display = "block";--}}
-{{--        }--}}
-{{--    </script>--}}
     </div>
 
 
-    <div id="contact page" class="city" style="display:none">
+    <div id="contact_page" class="city" style="display:none">
 
 
 

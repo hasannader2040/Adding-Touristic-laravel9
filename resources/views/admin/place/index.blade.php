@@ -4,6 +4,8 @@
 
 
     {{--  this place should be for add place and for place list--}}
+
+    <div class="layout-page">
     <div class="content-wrapper">
         <!-- Content -->
         <a href="{{ 'admin.place.create' }}" class="btn btn-primary btn-lg">Add place </a>
@@ -37,14 +39,14 @@
                                             <tr>
                                                 <th style="width: 5px">Id</th>
                                                 <th>title</th>
-                                                <th> keywords</th>
-                                                <th> image</th>
-                                                <th> image gallery</th>
                                                 <th> description</th>
-                                                <th > city </th>
-                                                <th> detail</th>
+                                                <th> image</th>
+{{--                                                <th> keywords</th>--}}
+                                                <th> image gallery</th>
+                                                <th > detail </th>
+                                                <th> city </th>
                                                 <th> country</th>
-                                                <th> location</th>
+{{--                                                <th> location</th>--}}
                                                 <th> status</th>
                                             </thead>
 

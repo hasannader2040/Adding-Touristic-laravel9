@@ -234,7 +234,7 @@
                             </div>
                         </div>
 
-                    <div class="col-xl-4 col-lg-4 col-md-5 col-sm-12 col-12">
+                    <div  style="width: 100%;">
 
                         <!-- form -->
                         <div class="widget-form">

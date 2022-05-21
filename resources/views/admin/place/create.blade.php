@@ -9,6 +9,7 @@
 @section('content')
 
     <!-- Layout wrapper -->
+    <div class="layout-page">
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
 
@@ -118,6 +119,7 @@
     </div>
 
     </div>
+
                     @endsection
 
 

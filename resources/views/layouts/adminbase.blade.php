@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="{{ asset('assets')}}/panel/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <link rel="stylesheet" href="{{ asset('assets')}}/panel/vendor/libs/apex-charts/apex-charts.css" />
-
+    <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
     <!-- Page CSS -->
 
     <!-- Helpers -->
