@@ -90,7 +90,11 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="tour-caption">
                             <h1 class="text-white tour-title">Singapore</h1>
-                            <p class="tour-caption-text text-white"><strong class="tour-rate">$1499</strong>( 3 nights | 4 days )</p>
+                            <p class="tour-caption-text text-white">
+                                <strong class="tour-rate">
+                                    <span style="text-decoration: overline;">$1499</span>
+                                    <span>${{1499 - (1499 * 5 / 100 )}}</span>
+                                </strong>( 3 nights | 4 days )</p>
                             <a href="#" class="btn btn-primary mb10">Book Your Tour</a>
                             <a href="#" class="btn btn-white mb10">view map</a>
                         </div>
@@ -160,7 +164,8 @@
                         <div class="included-section mb60">
                             <h3 class="mb30">details</h3>
                             <div class="row">
-{{--                                {!!$data->detail!!}--}}
+                                {!!$data->detail!!}
+{{--                                {{$data->detail}}--}}
 
 
 {{--                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">--}}
@@ -236,7 +241,7 @@
                             <h3 class="text-white mb30"> write your feedback </h3>
 
                             <form
-{{--                                action="{{route('place,['id'=>$data->id]')}}" method="get"--}}
+                     action="{{route('place', ['id' => $data->id])}}" method="get"
                                   enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">

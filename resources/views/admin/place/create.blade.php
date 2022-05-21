@@ -52,12 +52,14 @@
                                     <label class="form-label"  for="basic-default-company">detail</label>
 {{--                                    I will add a CKeditor 5 --}}
 
-                                    <textarea type="text" name="detail" class="form-control" id="detail" >
-                                    </textarea>
+{{--                                    <textarea type="text" name="detail" class="form-control" id="detail" >--}}
+{{--                                    </textarea>--}}
+                                    <div name="detail" id="editor">This is some sample content.</div>
+
                                     <script>
                                       //  let ClassicEditor;
                                         ClassicEditor
-                                            .create( document.querySelector( '#detail' ) )
+                                            .create( document.querySelector( '#editor' ) )
                                             .then( editor => {
                                                 console.log( editor );
                                             } )

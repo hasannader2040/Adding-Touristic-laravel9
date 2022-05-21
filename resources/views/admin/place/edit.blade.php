@@ -6,7 +6,7 @@
 
 @section('head')
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
-@endsection
+
 
 @section('content')
 
@@ -23,17 +23,19 @@
 
                 <div class="car
 d-body">
-                 <form action='{{route('admin.category.update',['id'=>$data->id])}}' method="post" enctype="multipart/form-data">
+                 <form action='{{route('admin.place.update',['id'=>$data->id])}}' method="post" enctype="multipart/form-data">
 {{-- for the imeges  enctype="multipart/form-data" --}}
                         @csrf
 
                      <div class="from-group">
                          <label> parent category</label>
-                         <select class="form-control"select2 name="category_id" style="height:40px">
-                             @foreach($data as $item)
-                                 <option value="{{$item->id}}"
-                                         @if($item->id == $data->category_id) selected="selected" @endif>
-                                     {{\App\Http\Controllers\AdminPanel\categoryController::getParentsTree($item,$item->title)}}
+                         <select class="form-control select2" name="category_id" style="height:40px">
+                             @foreach($categories as $category)
+                                 <option value="{{$category->id}}"
+{{--                     there is a prblem here--}}
+                                         @if($category->id == $data->category_id) selected="selected" @endif>
+{{--                                     {{\App\Http\Controllers\AdminPanel\categoryController::getParentsTree($item,$item->title)}}--}}
+                                     {{$category->title}}
                                  </option>
                              @endforeach
                          </select>
@@ -107,20 +109,22 @@ d-body">
                         </div>
                     </form>
                 </div>
-    </body>
+
                 <div class="content-backdrop fade"></div>
 
     <div class="layout-overlay layout-menu-toggle"></div>
 
     <!-- / Layout wrapper -->
 @section('foot')
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 
     <script>
-        $(function () {
+        jQuery(function () {
             // summernote
-            $('.textarea'.summernote()
-            )
+            jQuery('.textarea').summernote()
         })
     </script>
 @endsection

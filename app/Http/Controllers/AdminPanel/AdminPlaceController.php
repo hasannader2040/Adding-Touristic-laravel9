@@ -45,7 +45,6 @@ class AdminPlaceController extends Controller
             'admin.place.create',
             [
                 'data' => $data
-
             ]
         );
 
@@ -91,10 +90,12 @@ class AdminPlaceController extends Controller
     {
         //echo "show area : " ,$id ;
         $data=place::find($id);
+        $category = category::find($data->category_id);
         //return $id;
         return view("admin.place.show",
         [
-            'data'=>$data
+            'data'=>$data,
+            'category' => $category
         ]
         );
     }
@@ -107,17 +108,19 @@ class AdminPlaceController extends Controller
      */
     public function edit(Request $req,$id,)
 
-
     {
       // echo "edit this page with id parameter" , $id; // just for trying to make sure its working or not
         //return $id;
 
         $data=place::find($id);
-         $datalist = place::all();
+         $categories = category::all();
+        $category = category::find($data->category_id);
+
         return view("admin.place.edit",
             [
                 'data'=>$data,
-                'datalist' => $datalist
+                'categories' => $categories,
+                'category' => $category
             ]
         );
     }

@@ -19,7 +19,7 @@
             @csrf
 
             <div class="from-group">
-                <label> parent place</label>
+                <label> parent category</label>
                 <select class="form-control"select2 name="parent_id" style="height:40px">
                     <option value="0" selected="selected"> main place</option>
                     @foreach($datalist as $item)

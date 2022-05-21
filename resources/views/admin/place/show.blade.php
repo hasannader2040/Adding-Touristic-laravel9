@@ -8,11 +8,7 @@
     <!-- Layout wrapper -->
     <div class="card-header d-flex align-items-center justify-content-between">
         <div class="layout-wrapper">
-
-
-
             <!-- Blank page -->
-
             <div class="form-control">
                 <table class="table table-bordered">
                     <a class="btn btn-danger" href="{{route('admin.place.edit',['id'=>$data->id ])}}" role="button" >Edit place</a>
@@ -24,13 +20,15 @@
                     </tr>
 
                     <tr>
-                        <th style="width: 50px">category</th>
+                        <th style="width: 50px">place</th>
                         <th>
-                            {{\App\Http\Controllers\AdminPanel\categoryController::getParentsTree($data->category,$data->category->title)}}
+{{--                            {{$data}}--}}
+{{--                            {{exit()}}--}}
+                            {{\App\Http\Controllers\AdminPanel\categoryController::getParentsTree($category, $category->title)}}
                         </th>
 
-                        {{--  <th>{{$data->category_id}}</th>--}}
-{{--                     I can use both of them because I have a relationship between category and place--}}
+                        {{--  <th>{{$data->place_id}}</th>--}}
+{{--                     I can use both of them because I have a relationship between place and place--}}
                     </tr>
 
                     <tr>
@@ -50,8 +48,10 @@
                     <tr>
                         <th style="width: 50px">image</th>
                         <td>
-                            @if($item->image)
-                                <img src="{{Storage::url($item->image)}}"style="height: 40px"></td>
+                            @if($data->image)
+                                <img src="{{Storage::url($data->image)}}"style="height: 40px">
+                            @endif
+                        </td>
                     </tr>
                     <tr>
                         <th style="width: 50px">detail</th>
@@ -93,12 +93,5 @@
 
 
                         <!-- Blank page -->
-
-
-
-
-
-                        <!-- Core JS -->
-
                     </tr>
 @endsection
