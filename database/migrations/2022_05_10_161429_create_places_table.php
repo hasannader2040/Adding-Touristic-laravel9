@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
             $table->string('image')->nullable();
-            $table->string('detail')->nullable();
+            $table->text('detail')->nullable(); // because it has an editor and it's so long
             $table->string('city')->nullable();
             $table->string('country')->nullable();
             $table->string('location')->nullable();

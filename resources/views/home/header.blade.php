@@ -50,9 +50,9 @@
                                     @foreach($Pmaintcategoried as $item)
 
 {{--                                    start working at  about us and References--}}
-                                        <li class="active"><a href="{{'Home'}}">Home</a></li>
-                                        <li ><a href="{{'about'}}">about us</a></li>
-                                        <li ><a href="{{'Reference'}}">Reference</a></li>
+                                        <li class="active"><a href="{{route('home')}}">Home</a></li>
+                                        <li ><a href="{{route('about')}}">about us</a></li>
+                                        <li ><a href="{{route('reference')}}">Reference</a></li>
 
                                         <li class="has-sub"><a href="#">Tour Packages</a>
                                             <ul>

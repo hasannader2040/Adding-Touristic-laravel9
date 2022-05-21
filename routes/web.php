@@ -11,6 +11,7 @@ use App\Http\Controllers\AdminPanel\categoryController;
 //use \App\Http\Controllers\AdminPanel\HomeControlle;
 use \App\Http\Controllers\Controller\index;
 //use \App\Http\Controllers\HomeController;
+//use \App\Http\Controllers\AdminPanel; // for faq
 use App\Setting;
 
 
@@ -109,10 +110,12 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
      // ****************     Home page ROUTES
 // there is a problem in this
-Route::get('/home', [\App\Http\Controllers\HomeController::class,'index'])->name('index');
-Route::get('/home/about', [\App\Http\Controllers\HomeController::class,'about'])->name('about');
-Route::get('/home/contact', [\App\Http\Controllers\HomeController::class,'contact'])->name('contact');
-Route::get('/home/Reference', [\App\Http\Controllers\HomeController::class,'Reference'])->name('Reference');
+Route::get('/', [\App\Http\Controllers\HomeController::class,'index'])->name('home');
+Route::get('/about', [\App\Http\Controllers\HomeController::class,'about'])->name('about');
+Route::get('/contact', [\App\Http\Controllers\HomeController::class,'contact'])->name('contact');
+Route::get('/reference', [\App\Http\Controllers\HomeController::class,'reference'])->name('reference');
+Route::get('/storeMessage', [\App\Http\Controllers\HomeController::class,'storeMessage'])->name('storeMessage');
+Route::get('/faq', [\App\Http\Controllers\HomeController::class,'faq'])->name('faq');
 
 
 
@@ -136,10 +139,12 @@ Route::prefix('admin')->name( 'admin.')->group(callback: function () {
         Route::get('/show/{id}','show')->name('show');
         Route::get('/destroy/{id}','destroy')->name('destroy');
     });
+
+
     // ADMIN PANEL settings ROUTES
     // HomeController has two definition for home and admin panel
     {
-            Route::get('setting', [HomeController::class, 'setting'])->name('setting');
+        Route::get('setting', [HomeController::class, 'setting'])->name('setting');
         Route::post('setting', [HomeController::class, 'settingUpdate'])->name('setting.update');
     }
 
@@ -167,5 +172,17 @@ Route::prefix('admin')->name( 'admin.')->group(callback: function () {
     });
 
 
+    // ADMIN PANEL faq ROUTES
+    Route::prefix('/faq')->name('faq')->controller(\App\Http\Controllers\AdminPanel\FaqController::class)->group(function()
+    {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');// it should be post
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/show/{id}','show')->name('show');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+
+    });
 
 });

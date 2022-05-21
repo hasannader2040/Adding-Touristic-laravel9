@@ -9,8 +9,8 @@ use App\Http\Controllers\Controller;
 //use App\Http\Controllers\HomeController;  // for the home of front-end
 use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Types\Parent_;
-use App\Setting;
 
+use App\Models\Setting;
 
 
 class HomeController extends Controller
@@ -51,7 +51,8 @@ class HomeController extends Controller
 
      public function index()
      {
-//         return "echo place Id :  ";
+//       echo 'home';
+//       exit();
          $page='home';
          $sliderdata=place::limit(4)->get();
          $placelist1=place::limit(6)->get();

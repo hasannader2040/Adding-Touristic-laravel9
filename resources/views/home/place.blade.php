@@ -36,7 +36,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-3 col-lg-2 col-md-3 col-sm-3 col-12">
-                            <div class="logo"> <a href="index.html"><img src="images/logo.png" alt=""> </a> </div>
+                            <div class="logo"> <a href="index.html"><img src="{{ asset('assets/images')}}/logo.png" alt=""> </a> </div>
                         </div>
                         <div class="col-xl-9 col-lg-10 col-md-9 col-sm-12 col-12">
                             <!-- navigations-->
@@ -119,31 +119,22 @@
 {{--                            <div class="slide-thumb-gallery">--}}
 
 {{--                                <div class="owl-carousel" data-slider-id="1">--}}
-{{--                                    <div><img src="images/slide_big_1.jpg" alt="" class="img-fluid"></div>--}}
-{{--                                    <div><img src="images/slide_big_2.jpg" alt="" class="img-fluid"></div>--}}
-{{--                                    <div><img src="images/slide_big_3.jpg" alt="" class="img-fluid"></div>--}}
-{{--                                    <div><img src="images/slide_big_4.jpg" alt="" class="img-fluid"></div>--}}
+{{--                                    <div><img src="{{ asset('assets/images')}}/slide_big_1.jpg" alt="" class="img-fluid"></div>--}}
+{{--                                    <div><img src="{{ asset('assets/images')}}/slide_big_2.jpg" alt="" class="img-fluid"></div>--}}
+{{--                                    <div><img src="{{ asset('assets/images')}}/slide_big_3.jpg" alt="" class="img-fluid"></div>--}}
+{{--                                    <div><img src="{{ asset('assets/images')}}/slide_big_4.jpg" alt="" class="img-fluid"></div>--}}
 {{--                                </div>--}}
 {{--                                <div class="owl-thumbs" data-slider-id="1">--}}
-{{--                                    <button class="owl-thumb-item"><img src="images/slide_small_1.jpg" alt="" class="img-fluid"></button>--}}
-{{--                                    <button class="owl-thumb-item"><img src="images/slide_small_2.jpg" alt="" class="img-fluid"></button>--}}
-{{--                                    <button class="owl-thumb-item"><img src="images/slide_small_3.jpg" alt="" class="img-fluid"></button>--}}
-{{--                                    <button class="owl-thumb-item"><img src="images/slide_small_4.jpg" alt="" class="img-fluid"></button>--}}
+{{--                                    <button class="owl-thumb-item"><img src="{{ asset('assets/images')}}/slide_small_1.jpg" alt="" class="img-fluid"></button>--}}
+{{--                                    <button class="owl-thumb-item"><img src="{{ asset('assets/images')}}/slide_small_2.jpg" alt="" class="img-fluid"></button>--}}
+{{--                                    <button class="owl-thumb-item"><img src="{{ asset('assets/images')}}/slide_small_3.jpg" alt="" class="img-fluid"></button>--}}
+{{--                                    <button class="owl-thumb-item"><img src="{{ asset('assets/images')}}/slide_small_4.jpg" alt="" class="img-fluid"></button>--}}
 {{--                                </div>--}}
 {{--                            </div>--}}
 {{--                        </div>--}}
 
                         <div class="journey-section mb60">
-                            <h3 class="mb30">Journey</h3>
-                            <div class="well-bg-block">
-                                <h4 class="journey-day-title">Day 1 : Arrive International Airport</h4>
-                                <ul class="angle list-none">
-                                    <li>Aliquam vitae dolor aliquet feugiat risus cibus convallis sem</li>
-                                    <li>Mauris facilisis magna purusvel efficiurex convallis sed</li>
-                                    <li>Suspendisse congue mimagna cinia lputate erat</li>
-                                    <li>Quisque vitae bibendum rosliquam lacus etelit lobortist </li>
-                                    <li>Vivamus sed ligula leo. Cras cour vitae lore</li>
-                                </ul>
+
                             </div>
 {{--                            <div class="well-bg-block">--}}
 {{--                                <h4 class="journey-day-title">Day 2 : Sentosa Iceland</h4>--}}
@@ -169,7 +160,8 @@
                         <div class="included-section mb60">
                             <h3 class="mb30">details</h3>
                             <div class="row">
-                                {!!$data->detail!!}
+{{--                                {!!$data->detail!!}--}}
+
 
 {{--                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">--}}
 {{--                                    <ul class="arrow list-none">--}}
@@ -194,7 +186,7 @@
                         <div class="reviews-section mb60">
                             <h3 class="mb40">Customer Reviews</h3>
                             <div class="review-block">
-                                <div class="review-img"><img src="images/user_img_1.jpg" alt="" class="rounded-circle"></div>
+                                <div class="review-img"><img src="{{ asset('assets/images')}}/user_img_1.jpg" alt="" class="rounded-circle"></div>
                                 <div class="review-content">
                                     <h5 class="title-bold d-inline">Jennifer Wirtz</h5>
                                     <div class="star-rating">
@@ -208,7 +200,7 @@
                                 </div>
                             </div>
                             <div class="review-block">
-                                <div class="review-img"><img src="images/user_img_2.jpg" alt="" class="rounded-circle"></div>
+                                <div class="review-img"><img src="{{ asset('assets/images')}}/user_img_2.jpg" alt="" class="rounded-circle"></div>
                                 <div class="review-content">
                                     <h5 class="title-bold d-inline">Maria Hershberger</h5>
                                     <div class="star-rating">
@@ -222,7 +214,7 @@
                                 </div>
                             </div>
                             <div class="review-block">
-                                <div class="review-img"><img src="images/user_img_3.jpg" alt="" class="rounded-circle"></div>
+                                <div class="review-img"><img src="{{ asset('assets/images')}}/user_img_3.jpg" alt="" class="rounded-circle"></div>
                                 <div class="review-content">
                                     <h5 class="title-bold d-inline">Della Betty</h5>
                                     <div class="star-rating">
@@ -236,74 +228,51 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="video-section">
-                            <h3 class="mb30">Video</h3>
-                            <div class="video-block">
-                                <div class="video-img">
-                                    <img src="images/video_img.jpg" alt="">
-                                    <a href="#" class="video-btn">
-                                        <img src="images/play_btn.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="col-xl-4 col-lg-4 col-md-5 col-sm-12 col-12">
-                        <div class="widget-primary support-list">
-                            <div class="widget-primary-title">
-                                <h3>Why Book With Us?</h3>
-                            </div>
-                            <ul class="arrow list-none">
-                                <li>24X7 service and support</li>
-                                <li>Totally complaint in all aspects</li>
-                                <li>Dedicated, trustworthy team</li>
-                                <li>Professional happy services</li>
-                            </ul>
-                        </div>
-                        <!-- enguiry-form -->
+
                         <!-- form -->
                         <div class="widget-form">
-                            <h3 class="text-white mb30"> Book Your Tour</h3>
-                            <form>
+                            <h3 class="text-white mb30"> write your feedback </h3>
+
+                            <form
+{{--                                action="{{route('place,['id'=>$data->id]')}}" method="get"--}}
+                                  enctype="multipart/form-data">
+                                @csrf
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                         <div class="form-group">
                                             <label class="control-label sr-only" for="select"></label>
-                                            <div class="select">
-                                                <select id="select" name="select" class="form-control">
-                                                    <option value="">Where you want to go</option>
-                                                    <option value="">Singapore</option>
-                                                    <option value="">Thailand</option>
-                                                    <option value="">Vietnam</option>
-                                                </select>
+
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                         <div class="form-group">
                                             <div class="form-group">
-                                                <label class="control-label sr-only" for="datepicker"></label>
-                                                <div class="input-group">
-                                                    <input id="datepicker" name="datepicker" type="text" placeholder="Date" class="form-control" required>
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
+
+                                                <label class="text-white mb30">keywords</label>
+                                                <input type="text" class="form-control" id="keywords" placeholder="">
                                             </div>
+
+                                            <div class="form-group">
+                                                <label class="text-white mb30">description</label>
+                                                <input type="text" class="form-control" id="description" placeholder="">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="text-white mb30">company</label>
+                                                <input type="text" class="form-control" id="company" placeholder="">
+                                            </div>
+
                                         </div>
                                     </div>
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                        <div class="form-group">
-                                            <label class="control-label sr-only" for="select"></label>
-                                            <div class="select">
-                                                <select id="select" name="select" class="form-control">
-                                                    <option value="">Number of Peoples</option>
-                                                    <option value="">6</option>
-                                                    <option value="">10</option>
-                                                    <option value="">25</option>
-                                                </select>
-                                            </div>
-                                        </div>
+
+
                                     </div>
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                        <button type="submit" name="singlebutton" class="btn btn-primary">Enquiry Now</button>
+                                        <button type="submit" name="singlebutton" class="btn btn-primary">submit your feedback</button>
                                     </div>
                                 </div>
                             </form>
@@ -332,7 +301,7 @@
                         <!-- destination-section -->
                         <div class="destination-block">
                             <div class="desti-img">
-                                <img src="images/destination_1.jpg" alt="">
+                                <img src="{{ asset('assets/images')}}/destination_1.jpg" alt="">
                                 <a href="#" class="desti-title">Singapore</a>
                                 <div class="overlay">
                                 </div>
@@ -353,7 +322,7 @@
                         <!-- destination-section -->
                         <div class="destination-block">
                             <div class="desti-img">
-                                <img src="images/destination_2.jpg" alt="">
+                                <img src="{{ asset('assets/images')}}/destination_2.jpg" alt="">
                                 <a href="#" class="desti-title">Thailand</a>
                                 <div class="overlay">
                                 </div>
@@ -374,7 +343,7 @@
                         <!-- destination-section -->
                         <div class="destination-block">
                             <div class="desti-img">
-                                <img src="images/destination_3.jpg" alt="">
+                                <img src="{{ asset('assets/images')}}/destination_3.jpg" alt="">
                                 <a href="#" class="desti-title">Vietnam</a>
                                 <div class="overlay">
                                 </div>
@@ -415,6 +384,7 @@
                 </div>
             </div>
         </div>
+
         <!-- /.newsletter -->
 {{--        <!-- footer -->--}}
 {{--        <div class="footer">--}}
@@ -422,7 +392,7 @@
 {{--                <div class="row ">--}}
 {{--                    <!-- footer-logo -->--}}
 {{--                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">--}}
-{{--                        <div class="ft-img"><img src="images/ft_logo.png" alt=""></div>--}}
+{{--                        <div class="ft-img"><img src="{{ asset('assets/images')}}/ft_logo.png" alt=""></div>--}}
 {{--                    </div>--}}
 {{--                    <!-- /.footer-logo -->--}}
 {{--                    <!-- footer-links -->--}}
@@ -477,6 +447,8 @@
                 </div>
             </div>
         </div>
+
+
         <!-- /.footer -->
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -504,19 +476,19 @@
         <!-- /.Modal -->
         <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="js/jquery.min.js"></script>
+        <script src="{{ asset('assets/js')}}/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/menumaker.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/sticky-header.js"></script>
+        <script src="{{ asset('assets/js')}}/bootstrap.min.js"></script>
+        <script src="{{ asset('assets/js')}}/menumaker.js"></script>
+        <script src="{{ asset('assets/js')}}/jquery.sticky.js"></script>
+        <script src="{{ asset('assets/js')}}/sticky-header.js"></script>
         <!-- owl-thumb JavaScript -->
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/owl.carousel2.thumbs.min.js"></script>
-        <script src="js/thumb.js"></script>
-        <script src="js/jquery-ui.js"></script>
-        <script src="js/date.js"></script>
-        <script src="js/return-to-top.js"></script>
+        <script src="{{ asset('assets/js')}}/owl.carousel.min.js"></script>
+        <script src="{{ asset('assets/js')}}/owl.carousel2.thumbs.min.js"></script>
+        <script src="{{ asset('assets/js')}}/thumb.js"></script>
+        <script src="{{ asset('assets/js')}}/jquery-ui.js"></script>
+        <script src="{{ asset('assets/js')}}/date.js"></script>
+        <script src="{{ asset('assets/js')}}/return-to-top.js"></script>
 
 
         <script>

@@ -41,8 +41,8 @@
                                                 <th> image</th>
                                                 <th> image gallery</th>
                                                 <th> description</th>
-                                                <th > detail</th>
-                                                <th> city</th>
+                                                <th > city </th>
+                                                <th> detail</th>
                                                 <th> country</th>
                                                 <th> location</th>
                                                 <th> status</th>

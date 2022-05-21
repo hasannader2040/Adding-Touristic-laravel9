@@ -58,10 +58,8 @@ class categoryController extends Controller
             'admin.category.create',
             [
                 'data' => $data
-
             ]
         );
-
         //  echo "category create";
         return view('admin.category.create');
     }

@@ -71,19 +71,21 @@
     <div class="menu-inner-shadow"></div>
 
     <ul class="menu-inner py-1">
+{{--        I shoud change the names of these things --}}
+
         <!-- Dashboard -->
         <li class="menu-item active">
-            <a href="index.html" class="menu-link">
+            <a href="/admin" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Dashboard</div>
+                <div data-i18n="Analytics">Admin panel</div>
             </a>
         </li>
 
         <!-- Layouts -->
         <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <a href="/admin/category" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Layouts</div>
+                <div data-i18n="Layouts">category</div>
             </a>
 
             <ul class="menu-sub">

@@ -52,7 +52,6 @@
                                     <label class="form-label"  for="basic-default-company">detail</label>
 {{--                                    I will add a CKeditor 5 --}}
 
-
                                     <textarea type="text" name="detail" class="form-control" id="detail" >
                                     </textarea>
                                     <script>

@@ -13,8 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('commends', function (Blueprint $table) {
-            $table->id();
+        Schema::create('commends', function (Blueprint $table)
+        {
+            $table->id()->autoIncrement();
+            $table->integer('user_id');
+            $table->integer('place_id');
+            $table->string('subject',100);
+            $table->string('review')->nullable();
+            $table->string('Ip')->nullable();
+            $table->integer('rate')->default('0');
+            $table->string('status',5)->default('new');
             $table->timestamps();
         });
     }
