@@ -59,34 +59,33 @@ d-body">
 
                             <div class="mb-3">
                                 <label class="form-label"  for="basic-default-company">detail</label>
-                                <textarea type="text" name="detail" class="form-control" id="basic-default-company" >
+                                <textarea type="text" name="detail" class="form-control" id="editor" >
+                                    {{$data->detail}}
                                     </textarea>
                             </div>
                             <div class="mb-3">
 
                                 <div class="mb-3">
                                     <label class="form-label"  for="basic-default-company">city</label>
-                                    <input type="text" name="city" class="form-control" id="basic-default-company" value="0">
+                                    <input type="text" name="city" class="form-control" id="basic-default-company" value="{{$data->city}}">
                                 </div>
                                 <div class="mb-3">
 
 
                                     <div class="mb-3">
                                         <label class="form-label"  for="basic-default-company">country</label>
-                                        <input type="text" name="country" class="form-control" id="basic-default-company" value="0">
+                                        <input type="text" name="country" class="form-control" id="basic-default-company" value="{{$data->country}}">
                                     </div>
                                     <div class="mb-3">
 
 
-                                        <div class="mb-3">
-                                            <label class="form-label"  for="basic-default-company">price</label>
-                                            <input type="number" name="price" class="form-control" id="basic-default-company" value="0">
-                                        </div>
+
                                         <div class="mb-3">
 
 
                             <div class="form-group">
                                 <label><b>Custom file input</b></label>
+                                <img src="{{ url("storage/" . $data->image) }}" alt="{{$data->title}}" height="50">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="image" id="image">
                                     <label class="custom-file-label"><b>Choose file</b></label>
@@ -124,7 +123,15 @@ d-body">
     <script>
         jQuery(function () {
             // summernote
-            jQuery('.textarea').summernote()
+            // jQuery('.textarea').ckeditor()
+            ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .then( editor => {
+                    console.log( editor );
+                } )
+                .catch( error => {
+                    console.error(error);
+                } );
         })
     </script>
 @endsection

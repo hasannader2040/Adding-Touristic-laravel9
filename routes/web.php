@@ -119,7 +119,9 @@ Route::get('/faq', [\App\Http\Controllers\HomeController::class,'faq'])->name('f
 Route::post('/storeComment', [\App\Http\Controllers\HomeController::class,'storeComment'])->name('storeComment');
 route::view('/loginUser','home.login');
 route::view('/registerUser','home.register');
-route::view('/logoutUser',[\App\Http\Controllers\HomeController::class,'home.logout'])->name('logout');
+route::get('/logoutUser',[\App\Http\Controllers\HomeController::class,'logout'])->name('logout');
+route::view('/adminlogin','admin.login');
+route::get('/adminlogincheck',[\App\Http\Controllers\HomeController::class,'adminlogincheck'])->name('adminlogincheck');
 
 
 

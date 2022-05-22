@@ -53,9 +53,9 @@
                                     <label class="form-label"  for="basic-default-company">detail</label>
 {{--                                    I will add a CKeditor 5 --}}
 
-{{--                                    <textarea type="text" name="detail" class="form-control" id="detail" >--}}
-{{--                                    </textarea>--}}
-                                    <div name="detail" id="editor">This is some sample content.</div>
+                                    <textarea type="text" name="detail" class="form-control" id="editor" >
+                                    </textarea>
+{{--                                    <div name="detail" id="editor">This is some sample content.</div>--}}
 
                                     <script>
                                       //  let ClassicEditor;
@@ -74,20 +74,20 @@
 
                                     <div class="mb-3">
                                         <label class="form-label"  for="basic-default-company">city</label>
-                                        <input type="text" name="city" class="form-control" id="basic-default-company" value="0">
+                                        <input type="text" name="city" class="form-control" id="basic-default-company" >
                                     </div>
                                     <div class="mb-3">
 
 
                                     <div class="mb-3">
                                         <label class="form-label"  for="basic-default-company">country</label>
-                                        <input type="text" name="country" class="form-control" id="basic-default-company" value="0">
+                                        <input type="text" name="country" class="form-control" id="basic-default-company" >
                                     </div>
                                     <div class="mb-3">
 
                                         <div class="mb-3">
                                             <label class="form-label"  for="basic-default-company">locatıon</label>
-                                            <input type="text" name="country" class="form-control" id="basic-default-company" value="0">
+                                            <input type="text" name="location" class="form-control" id="basic-default-company" >
                                         </div>
                                         <div class="mb-3">
 

@@ -60,7 +60,6 @@ class AdminPlaceController extends Controller
      */
     public function store(Request $request)
     {
-
         $data = new place();  // its  fot inserting it
         //$data->id ;
         $data->category_id=$request->category_id;
@@ -73,6 +72,7 @@ class AdminPlaceController extends Controller
         $data->country = $request->country;
         $data->location = $request->location;
         $data->status = $request->status;
+
         if ($request->file('image')->store('images')) {
             $data->image = $request->file('image')->store('images');
         }
@@ -145,8 +145,7 @@ class AdminPlaceController extends Controller
         $data->detail = $request->detail;
         $data->city = $request->city;
         $data->country = $request->country;
-        $data->locatıon = $request->locatıon;
-        $data->price = $request->price;
+        $data->location = $request->location;
         $data->status = $request->status;
         if ($request->file('image')->store('images')){
             $data->image=$request->file('image')->store('images');

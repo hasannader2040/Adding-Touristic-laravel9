@@ -9,7 +9,8 @@ use App\Http\Controllers\Controller;
 //use App\Http\Controllers\HomeController;  // for the home of front-end
 use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Types\Parent_;
-
+//use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Setting;
 
 
@@ -124,6 +125,26 @@ class HomeController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+
+    public function adminlogincheck(Request $request)
+    {
+
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('adminlogin');
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
     }
 
 //     public function parameter($id, $number)

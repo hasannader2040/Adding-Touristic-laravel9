@@ -32,14 +32,10 @@
     <link rel="stylesheet" href="{{ asset('assets')}}/panel/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <link rel="stylesheet" href="{{ asset('assets')}}/panel/vendor/libs/apex-charts/apex-charts.css" />
-    <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
-    <!-- Page CSS -->
+{{--    <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>--}}
 
-    <!-- Helpers -->
     <script href="{{ asset('assets') }}/panel/panel/vendor/js/helpers.js"></script>
 
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script href="{{ asset('assets') }}/panel/vendor/js/config.js"></script>
 
     @yield("head")
