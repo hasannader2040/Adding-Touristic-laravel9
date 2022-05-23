@@ -23,14 +23,13 @@ class User extends Authenticatable
 
     public function reviews(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(commend::class);
+        return $this->hasMany(Role::class);
 
     }
 
-    public function roles()
+    public function roles(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsTo(Role::class);
-// maybe it needs to import something
+        return $this->belongsToMany(Role::class,'role_users');
     }
 
 

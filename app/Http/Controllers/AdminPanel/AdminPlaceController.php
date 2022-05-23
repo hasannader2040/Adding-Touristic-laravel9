@@ -163,12 +163,12 @@ class AdminPlaceController extends Controller
      */
     public function destroy(place $place,$id)
     {
-
-        $data=place:: find($id);
 //        if (Storage::exists('data->image')) {
 //            Storage::delete('data->image');
 //        }
 //        $data->delete();
+
+        $data=place:: find($id);
 
         if ( $data->place && Storage::disk('public')->exists('data->place')) // I have to understand it much better
         {

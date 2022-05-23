@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 class categoryController extends Controller
 {
-    protected array $appends = [ // I am not sure about Array
+    protected $appends = [ // I am not sure about Array
         'getParentsTree'
     ];
     public static function getParentsTree($category,$title)
@@ -80,7 +80,7 @@ class categoryController extends Controller
         $data->keywords = $request->keywords;
         $data->description = $request->description;
         $data->status = $request->status;
-        if ($request->file('image')->store('images')) {
+        if ($request->file('image')) {
             $data->image = $request->file('image')->store('images');
         }
         $data->save();

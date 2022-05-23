@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\AdminPanel\AdminPlaceController;
+use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -13,7 +14,7 @@ use \App\Http\Controllers\Controller\index;
 //use \App\Http\Controllers\HomeController;
 //use \App\Http\Controllers\AdminPanel; // for faq
 use App\Setting;
-
+use App\Http\Controllers\AdminPanel\User;
 
 // I just added this
 
@@ -109,7 +110,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
      // ****************     Home page ROUTES
-// there is a problem in this
 Route::get('/', [\App\Http\Controllers\HomeController::class,'index'])->name('home');
 Route::get('/about', [\App\Http\Controllers\HomeController::class,'about'])->name('about');
 Route::get('/contact', [\App\Http\Controllers\HomeController::class,'contact'])->name('contact');
@@ -117,10 +117,10 @@ Route::get('/reference', [\App\Http\Controllers\HomeController::class,'reference
 Route::get('/storeMessage', [\App\Http\Controllers\HomeController::class,'storeMessage'])->name('storeMessage');
 Route::get('/faq', [\App\Http\Controllers\HomeController::class,'faq'])->name('faq');
 Route::post('/storeComment', [\App\Http\Controllers\HomeController::class,'storeComment'])->name('storeComment');
-route::view('/loginUser','home.login');
-route::view('/registerUser','home.register');
+route::view('/loginUser','home.login')->name('loginUser');
+route::view('/registerUser','home.register')->name('registerUser');
 route::get('/logoutUser',[\App\Http\Controllers\HomeController::class,'logout'])->name('logout');
-route::view('/adminlogin','admin.login');
+route::view('/adminlogin','admin.login')->name('adminlogin');
 route::get('/adminlogincheck',[\App\Http\Controllers\HomeController::class,'adminlogincheck'])->name('adminlogincheck');
 
 
@@ -129,7 +129,7 @@ route::get('/adminlogincheck',[\App\Http\Controllers\HomeController::class,'admi
 // ****************     ADMIN PANEL ROUTES
 // for calling admin panel Routes
 
-Route::prefix('admin')->name( 'admin.')->group(callback: function () {
+Route::middleware('admin')->prefix('admin')->name( 'admin.')->group(callback: function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');
 
 
@@ -201,13 +201,17 @@ Route::prefix('admin')->name( 'admin.')->group(callback: function () {
     });
 
     // ************************ ADMIN PANEL user ROUTES
-    Route::prefix('/comment')->name('comment')->controller(\App\Http\Controllers\AdminPanel\AdminUserController::class)->group(function()
+    Route::prefix('/user')->name('user')->controller(AdminUserController::class)->group(function()
     {
         Route::get('/', 'index')->name('index');
+
         Route::get('/show/{id}', 'show')->name('show');
-        Route::post('/update/{id}', 'store')->name('store');// it should be post
+        Route::post('/update/{id}', 'update')->name('update');// it should be post
         Route::get('/edit/{id}','edit')->name('edit');
         Route::get('/destroy/{id}','destroy')->name('destroy');
+        Route::post('/addrole/{id}', 'addrole')->name('addrole');// it should be post
+        Route::get('/destroyrole/{uid}/{rid}','destroyrole')->name('destroyrole');
+
     });
 
 });

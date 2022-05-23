@@ -8,7 +8,7 @@
     <div class="layout-page">
     <div class="content-wrapper">
         <!-- Content -->
-        <a href="{{ 'admin.place.create' }}" class="btn btn-primary btn-lg">Add place </a>
+        <a href="{{ 'create' }}" class="btn btn-primary btn-lg">Add place </a>
 
 
 
@@ -38,58 +38,42 @@
                                             <thead>
                                             <tr>
                                                 <th style="width: 5px">Id</th>
-                                                <th>title</th>
-                                                <th> description</th>
-                                                <th> image</th>
-{{--                                                <th> keywords</th>--}}
-                                                <th> image gallery</th>
-                                                <th > detail </th>
-                                                <th> city </th>
-                                                <th> country</th>
-{{--                                                <th> location</th>--}}
-                                                <th> status</th>
+                                                <th>Name</th>
+                                                <th>email</th>
+                                                <th>Role</th>
+                                                <th>status</th>
+                                                <th style="width: 5px"> show</th>
+                                                <th style="width: 5px"> delete</th>
                                             </thead>
 
                                             <tbody>
                                             @foreach($data as $item)
                                                 <tr>
                                                     <td> {{ $item->id }} </td>
-                                                    <td> {{ $item->title }}</td>
-                                                    {{--                              the problem is here right now --}}
-{{--                                                    <td> {{\App\Http\Controllers\AdminPanel\categoryController::getParentsTree($item->category,$item->category->title)}}</td>--}}
-
-
-                                                    <td> {{ $item->description }}</td>
+                                                    <td> {{ $item->name }}</td>
+                                                    <td> {{ $item->email }}</td>
                                                     <td>
-                                                        @if($item->image)
-                                                            <img src="{{Storage::url($item->image)}}"style="height: 40px"></td>
-                                                    @endif
-                                                    <td>
-                                                        <a href='{{route('admin.image.index',['Pid'=>$item->id])}}' class="btn-info"
-                                                           onclick="return !window.open(this.href, '','top=50 left')">
-                                                            <img src="{{ asset('assets/panel') }}/img/gallery.png" style="height: 50px">
-                                                        </a>
+                                                    @foreach( $data->roles as $roule)
+                                                        {{$roule->name}}
+                                                        @endforeach
                                                     </td>
+                                                    @endforeach
+{{--            only when you log in you  can let them work--}}
+
+                                                        <a href='{{route('admin.user.show',['id'=>$item->id])}}' class="btn-info"
+                                                           onclick="return !window.open(this.href, '','top=50 left')">
+                                                        </a>
 {{--                                                    <td> <img src="{{ asset('assets/panel') }}/admin/img/gallery.jpg"> </td>--}}
 
-                                                    {{--   there is a problem here --}}
-                                                    <td> {{ $item->detail }}</td>
-                                                    <td> {{ $item->city }}</td>
-                                                    <td> {{ $item->country }}</td>
-                                                    <td> {{ $item->status }} </td>
-
-                                                    <td><a href={{route('admin.place.edit',['id'=>$item->id])}} class="btn-info">edit</a></td>
-                                                    <td><a href={{route('admin.place.destroy',['id'=>$item->id])}} class="btn-danger"
+                                                    <td><a href={{route('admin.user.edit',['id'=>$item->id])}} class="btn-info">edit</a></td>
+                                                    <td><a href={{route('admin.user.destroy',['id'=>$item->id])}} class="btn-danger"
                                                            onclick="return confirm('Are you sure you want to delete this item?')">delete</a></td>
-                                                    <td><a href={{route('admin.place.show',['id'=>$item->id])}} class="btnbtn-success">show</a></td>
-                                                    {{--                                                    <button type="button" class="btn btn-primary">Primary</button>--}}
+                                                    <td><a href={{route('admin.user.show',['id'=>$item->id])}} class="btnbtn-success">show</a></td>
+                                                    {{-- <button type="button" class="btn btn-primary">Primary</button>--}}
 
                                                     {{-- it needs to understand it much better --}}
                                                     {{-- //<button type="button">Success</button> --}}
                                                 </tr>
-
-                                                </tr>
-                                            @endforeach
                                             </tbody>
                                         </table>
                                         <!-- / Blank page -->

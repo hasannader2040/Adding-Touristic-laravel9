@@ -9,12 +9,7 @@ class RoleUser extends Model
 {
     use HasFactory;
 
-
-
-    public function users()
-    {
-        return $this->belongsToMany(\http\Client\Curl\User::class);
-    }
+    public $timestamps = false;
 
 }
 

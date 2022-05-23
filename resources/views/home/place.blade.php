@@ -43,7 +43,7 @@
                             <div class="navigation">
                                 <div id="navigation">
                                     <ul>
-                                        <li class="active"><a href="index.html">Home</a></li>
+                                        <li class="active"><a href="{{route('home')}}">Home</a></li>
                                         <li class="has-sub"><a href="#">Tour Packages</a>
                                             <ul>
                                                 <li><a href="tour-list.html">Tour List</a></li>
@@ -61,6 +61,8 @@
                                         <li class="has-sub"><a href="#">Pages</a>
                                             <ul>
                                                 <li><a href="testimonials.html">Clients Reviews</a> </li>
+{{--                                                insted of comment --}}
+
                                                 <li><a href="tour-booking.html">Tour Booking</a> </li>
                                                 <li><a href="tab.html">Tabs</a> </li>
                                                 <li><a href="alerts.html">Alerts</a> </li>
@@ -89,12 +91,12 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="tour-caption">
-                            <h1 class="text-white tour-title">Singapore</h1>
+                            <h1 class="text-white tour-title">{{$data->title}}</h1>
                             <p class="tour-caption-text text-white">
                                 <strong class="tour-rate">
-                                    <span style="text-decoration: overline;">$1499</span>
-                                    <span>${{1499 - (1499 * 5 / 100 )}}</span>
-                                </strong>( 3 nights | 4 days )</p>
+<del>{{$data->price}}</del>
+                                    <ins>${{1499 - (1499 * 5 / 100 )}}</ins>
+                                </strong>{{$data->description}}</p>
                             <a href="#" class="btn btn-primary mb10">Book Your Tour</a>
                             <a href="#" class="btn btn-white mb10">view map</a>
                         </div>
@@ -481,7 +483,12 @@
         <!-- /.Modal -->
         <a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="{{ asset('assets/js')}}/jquery.min.js"></script>
+<script>
+    import DeleteTeamForm from "@/Pages/Teams/Partials/DeleteTeamForm";
+    export default {
+        components: {DeleteTeamForm}
+    }
+</script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="{{ asset('assets/js')}}/bootstrap.min.js"></script>
         <script src="{{ asset('assets/js')}}/menumaker.js"></script>

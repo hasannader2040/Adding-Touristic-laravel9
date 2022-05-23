@@ -129,143 +129,130 @@
 
     <div class="container">
         <!-- tour-1 -->
-        <div class="row ">
-            <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb40">
-                <div class="tour-img">
-                    <a href="#" class="imghover"> <img src="{{ asset('assets') }}/images/tour_img_1.jpg" alt="" class="img-fluid"></a>
-                </div>
-            </div>
-            <div class="col-xl-5 col-lg-5 offset-md-1 col-md-5 col-sm-12 col-12 mb40">
-                <div class="tour-block">
-                    <div class="tour-content">
-                        <h2 class="mb30"><a href="#" class="title">International Tour</a></h2>
-                        <p class="mb30">Vestibulum nec mauris interdum facilisis nequeet convallis odioses praesentet lacinia orciulla dolorerat ullamcorper sitamet meuesered egestas venenatis enimusce sed ipsum seddolor.</p>
-                        <a href="#" class="btn-link">Go For International Tour<i class="fa fa-angle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+{{--        <div class="row ">--}}
+{{--            <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb40">--}}
+{{--                @foreach( $placelist1 as $rs )--}}
+{{--                <div class="tour-img">--}}
+{{--                    <a href="#" class="imghover"> <img src="{{Storage::URL($rs->image)}}" alt="" class="img-fluid" style="width: 200px;height: 250px"></a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-xl-5 col-lg-5 offset-md-1 col-md-5 col-sm-12 col-12 mb40">--}}
+{{--                <div class="tour-block">--}}
+{{--                    <div class="tour-content">--}}
+{{--                        <h2 class="mb30"><a href="#" class="title">{{$rs->title}}</a></h2>--}}
+{{--                        <p class="mb30">{{$rs->price}}</p>--}}
+{{--                        <a href={{route('place',['id'=>$rs->id])}}" class="btn-link">Go For {{$rs->title}}<i class="fa fa-angle-right"></i></a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        @endforeach--}}
+
         <!-- /.tour-1 -->
-        <!-- tour-2 -->
-        <div class="row">
-            <div class="col-xl-5 col-lg-5 offset-md-1 col-md-5 col-sm-12 col-12 mb40">
-                <div class="tour-block">
-                    <div class="tour-content">
-                        <h2 class="mb30"><a href="#" class="title">Adventure Tour</a></h2>
-                        <p class="mb30">Donec porttitor lorem utdiam iaculis euismod congue eroset lectus consectetur fermen uspendissolutpat risus utarcu dapibusat conquat quam sodenean pretium a metus euauctor.</p>
-                        <a href="#" class="btn-link">Go For Adventure Tour<i class="fa fa-angle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb40">
-                <div class="tour-img">
-                    <a href="#" class="imghover"> <img src="{{ asset('assets') }}/images/tour_img_2.jpg" alt="" class="img-fluid"></a>
-                </div>
-            </div>
+    </div>
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+        <div class="section-title">
+            <h2>Top Destinations</h2>
         </div>
-        <!-- /.tour-2 -->
-        <!-- tour-3 -->
-        <div class="row">
-            <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb20">
-                <div class="tour-img">
-                    <a href="#" class="imghover"> <img src="{{ asset('assets') }}/images/tour_img_3.jpg" alt="" class="img-fluid"></a>
-                </div>
-            </div>
-            <div class="col-xl-5 col-lg-5 offset-md-1 col-md-5 col-sm-12 col-12 mb20">
-                <div class="tour-block">
-                    <div class="tour-content">
-                        <h2 class="mb30"><a href="#" class="title">Domestic Tour</a></h2>
-                        <p class="mb30">Proin in urna hendrerit tortor dignissim auctor vitae etnibstibulum venenatis lectus urnaut sodales nibh sagittis eestibulum ante ipsum primisin faucibusorci luctus etultrices posuere cubilia.</p>
-                        <a href="#" class="btn-link">Go For Domestic Tour<i class="fa fa-angle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.tour-3 -->
     </div>
 
-    <!-- destination-section -->
-    <div class="destination-block">
-        <div class="desti-img">
-            <img src="{{asset('assets/images') }}/destination_1.jpg" alt="">
-            <a href="#" class="desti-title">Singapore</a>
-            <div class="overlay">
-            </div>
-            <div class="text">
-                <h3 class="mb20 text-white">Singapore</h3>
-                <ul class="angle list-none">
-                    <li>4 Nights / 3 days</li>
-                    <li>3 Star hotel</li>
-                    <li>Breakfast and Dinner</li>
-                </ul>
-                <p class="price">$1599</p>
-                <a href="#" class="btn-link">Go for Singapore <i class="fa fa-angle-right"></i></a></div>
-        </div>
-    </div>
-    <!-- /.destination-section -->
-</div>
-<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 nopl nopr">
-    <!-- destination-section -->
-    <div class="destination-block">
-        <div class="desti-img">
-            <img src="{{asset('assets/images') }}/destination_2.jpg" alt="">
-            <a href="#" class="desti-title">Thailand</a>
-            <div class="overlay">
-            </div>
-            <div class="text">
-                <h3 class="mb20 text-white">Thailand</h3>
-                <ul class="angle list-none">
-                    <li>5 Nights / 4 days</li>
-                    <li>3 Star hotel</li>
-                    <li>Breakfast and Dinner</li>
-                </ul>
-                <p class="price">$2599</p>
-                <a href="#" class="btn-link">Go for Thailand <i class="fa fa-angle-right"></i></a></div>
-        </div>
-    </div>
-    <!-- /.destination-section -->
-</div>
-<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 nopr nopl">
-    <!-- destination-section -->
-    <div class="destination-block">
-        <div class="desti-img">
-            <img src="{{asset('assets/images') }}/destination_3.jpg" alt="">
-            <a href="#" class="desti-title">Vietnam</a>
-            <div class="overlay">
-            </div>
-            <div class="text">
-                <h3 class="mb20 text-white">Vietnam</h3>
-                <ul class="angle list-none">
-                    <li>6 Nights / 5 days</li>
-                    <li>3 Star hotel</li>
-                    <li>Breakfast and Dinner</li>
-                </ul>
-                <p class="price">$4599</p>
-                <a href="#" class="btn-link">Go for Vietnam <i class="fa fa-angle-right"></i></a></div>
-        </div>
-    </div>
-    <!-- /.destination-section -->
-</div>
-<!-- destination-section -->
-<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 nopr nopl">
-    <div class="destination-block">
-        <div class="desti-img">
-            <img src="{{asset('assets/images') }}/destination_4.jpg" alt="">
-            <a href="#" class="desti-title">Melbourne</a>
-            <div class="overlay">
-            </div>
-            <div class="text">
-                <h3 class="mb20 text-white">Melbourne</h3>
+    <div class="row">
+        @foreach( $placelist1 as $rs )
 
-                <ul class="angle list-none">
-                    <li>4 Nights / 3 days</li>
-                    <li>3 Star hotel</li>
-                    <li>Breakfast and Dinner</li>
-                </ul>
-                <p class="price">$2599</p>
-                <a href="#" class="btn-link">Go for Melbourne <i class="fa fa-angle-right"></i></a></div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 nopl nopr">
+            <!-- destination-section -->
+
+            <div class="destination-block">
+
+                <div class="desti-img">
+                    <img src="{{Storage::URL($rs->image)}}" style="width: 400px;height: 250px">
+                    <a href="{{route('place',['id'=>$rs->id])}}"  class="desti-title">{{$rs->title}}</a>
+                    <div class="overlay">
+                    </div>
+                    <div class="text">
+                        <h3 class="mb20 text-white">{{$rs->title}}</h3>
+                        <ul class="angle list-none">
+                            <li>4 Nights / 3 days</li>
+                            <li>3 Star hotel</li>
+                            <li>Breakfast and Dinner</li>
+                        </ul>
+                        <a href={{route('place',['id'=>$rs->id])}}" class="btn-link">Go for {{$rs->title}} <i class="fa fa-angle-right"></i></a></div>
+                </div>
+
+            </div>
+
+            <!-- /.destination-section -->
         </div>
+        @endforeach
+
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 nopl nopr">
+            <!-- destination-section -->
+            <div class="destination-block">
+                <div class="desti-img">
+                    <img src="{{asset('assets/images') }}/images/destination_2.jpg" alt="">
+                    <a href="#" class="desti-title">Thailand</a>
+                    <div class="overlay">
+                    </div>
+                    <div class="text">
+                        <h3 class="mb20 text-white">Thailand</h3>
+                        <ul class="angle list-none">
+                            <li>5 Nights / 4 days</li>
+                            <li>3 Star hotel</li>
+                            <li>Breakfast and Dinner</li>
+                        </ul>
+                        <p class="price">$2599</p>
+                        <a href="#" class="btn-link">Go for Thailand <i class="fa fa-angle-right"></i></a></div>
+                </div>
+            </div>
+            <!-- /.destination-section -->
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 nopr nopl">
+            <!-- destination-section -->
+            <div class="destination-block">
+                <div class="desti-img">
+                    <img src="{{asset('assets/images') }}/images/destination_3.jpg" alt="">
+                    <a href="#" class="desti-title">Vietnam</a>
+                    <div class="overlay">
+                    </div>
+                    <div class="text">
+                        <h3 class="mb20 text-white">Vietnam</h3>
+                        <ul class="angle list-none">
+                            <li>6 Nights / 5 days</li>
+                            <li>3 Star hotel</li>
+                            <li>Breakfast and Dinner</li>
+                        </ul>
+                        <p class="price">$4599</p>
+                        <a href="#" class="btn-link">Go for Vietnam <i class="fa fa-angle-right"></i></a></div>
+                </div>
+            </div>
+            <!-- /.destination-section -->
+        </div>
+        <!-- destination-section -->
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 nopr nopl">
+            <div class="destination-block">
+                <div class="desti-img">
+                    <img src="images/destination_4.jpg" alt="">
+                    <a href="#" class="desti-title">Melbourne</a>
+                    <div class="overlay">
+                    </div>
+                    <div class="text">
+                        <h3 class="mb20 text-white">Melbourne</h3>
+
+                        <ul class="angle list-none">
+                            <li>4 Nights / 3 days</li>
+                            <li>3 Star hotel</li>
+                            <li>Breakfast and Dinner</li>
+                        </ul>
+                        <p class="price">$2599</p>
+                        <a href="#" class="btn-link">Go for Melbourne <i class="fa fa-angle-right"></i></a></div>
+                </div>
+            </div>
+        </div>
+        <!-- /.destination-section -->
     </div>
+
+
 </div>
 
 <!-- about-section -->

@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
+use App\Models\place;
+use App\Models\Role;
+use App\Models\RoleUser;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminUserController extends Controller
 {
@@ -15,7 +19,7 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        $data= User();
+        $data= User::all();
         return view('admin.user.index' , [
             'data'=>$data
             ]
@@ -51,7 +55,15 @@ class AdminUserController extends Controller
      */
     public function show($id)
     {
-        //
+        $data=User::with('roles')->find($id);
+        //$data= User::find($id);
+        $roles= Roule::all();
+        return view('admin.user.show',[
+                'data'=>$data,
+                'rules'=>$roles
+
+            ]
+        );
     }
 
     /**
@@ -72,19 +84,33 @@ class AdminUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function addrole(Request $request, $id)
     {
-        //
+        $data = new RoleUser();
+        $data->user_id=$id;
+        $data->roule_id=$request->roule_id;
+        $data->save();
+        return redirect(route('admin.user.show',['id'=>$id]));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $uid
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroyrole($uid,$rid)
+//    {
+//        $data=RoleUser:: where($uid,$rid);
+//
+//        $data->delete();
+//        return redirect('admin.use.show',['id'=>$uid]);
+//    }
     {
-        //
+        $user=\http\Client\Curl\User:: find($rid); #many to many relation delete related data
+
+        $user->delete();
+        return redirect('admin.use.show',['id'=>$uid]);
     }
+
 }
