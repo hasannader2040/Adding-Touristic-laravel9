@@ -20,6 +20,20 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+
+    public function reviews(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(commend::class);
+
+    }
+
+    public function roles()
+    {
+        return $this->belongsTo(Role::class);
+// maybe it needs to import something
+    }
+
+
     /**
      * The attributes that are mass assignable.
      *

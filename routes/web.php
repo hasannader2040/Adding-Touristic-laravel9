@@ -177,7 +177,7 @@ Route::prefix('admin')->name( 'admin.')->group(callback: function () {
     });
 
 
-    // ADMIN PANEL faq ROUTES
+    // ************************ ADMIN PANEL faq ROUTES
     Route::prefix('/faq')->name('faq')->controller(\App\Http\Controllers\AdminPanel\FaqController::class)->group(function()
     {
         Route::get('/', 'index')->name('index');
@@ -188,6 +188,26 @@ Route::prefix('admin')->name( 'admin.')->group(callback: function () {
         Route::get('/show/{id}','show')->name('show');
         Route::get('/destroy/{id}','destroy')->name('destroy');
 
+    });
+
+    // ************************ ADMIN PANEL comment ROUTES
+    Route::prefix('/comment')->name('comment')->controller(\App\Http\Controllers\AdminPanel\AdminMessageController::class)->group(function()
+    {
+        Route::get('/', 'index')->name('index');
+        Route::get('/show/{id}', 'show')->name('show');
+        Route::post('/update/{id}', 'store')->name('store');// it should be post
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+
+    });
+
+    // ************************ ADMIN PANEL user ROUTES
+    Route::prefix('/comment')->name('comment')->controller(\App\Http\Controllers\AdminPanel\AdminUserController::class)->group(function()
+    {
+        Route::get('/', 'index')->name('index');
+        Route::get('/show/{id}', 'show')->name('show');
+        Route::post('/update/{id}', 'store')->name('store');// it should be post
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
     });
 
 });
