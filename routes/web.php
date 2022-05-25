@@ -113,6 +113,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('/', [\App\Http\Controllers\HomeController::class,'index'])->name('home');
 Route::get('/about', [\App\Http\Controllers\HomeController::class,'about'])->name('about');
 Route::get('/contact', [\App\Http\Controllers\HomeController::class,'contact'])->name('contact');
+Route::get('/categoryplace/{id}/{slug}', [\App\Http\Controllers\HomeController::class,'categoryplace'])->name('categoryplace');
 Route::get('/reference', [\App\Http\Controllers\HomeController::class,'reference'])->name('reference');
 Route::get('/storeMessage', [\App\Http\Controllers\HomeController::class,'storeMessage'])->name('storeMessage');
 Route::get('/faq', [\App\Http\Controllers\HomeController::class,'faq'])->name('faq');
@@ -120,7 +121,7 @@ Route::post('/storeComment', [\App\Http\Controllers\HomeController::class,'store
 route::view('/loginUser','home.login')->name('loginUser');
 route::view('/registerUser','home.register')->name('registerUser');
 route::get('/logoutUser',[\App\Http\Controllers\HomeController::class,'logout'])->name('logout');
-route::view('/adminlogin','admin.login')->name('adminlogin');
+route::view('/adminlogin','admin.login')->name('admin.login');
 route::get('/adminlogincheck',[\App\Http\Controllers\HomeController::class,'adminlogincheck'])->name('adminlogincheck');
 
 

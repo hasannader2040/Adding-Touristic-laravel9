@@ -93,6 +93,7 @@ d-body">
                             </div>
                         </div>
                         <div>
+
                             <label for="status"  class="col-sm-12 col-md-12"><b>Status</b></label>
                             <select id="status" name="status" class="form-control" placeholder="status" required>
                                 <option selected>{{$data->status}}</option>

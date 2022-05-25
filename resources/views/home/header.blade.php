@@ -47,28 +47,32 @@
                             @endphp
                             <div id="navigation">
                                 <ul>
-                                    @foreach($Pmaintcategoried as $item)
 
 {{--                                    start working at  about us and References--}}
                                         <li class="active"><a href="{{route('home')}}">Home</a></li>
                                         <li ><a href="{{route('about')}}">about us</a></li>
                                         <li ><a href="{{route('reference')}}">Reference</a></li>
 
-                                        <li class="has-sub"><a href="#">Tour Packages</a>
-                                            <ul>
-                                                <li><a href="tour-list.html">Tour List</a></li>
-                                                <li><a href="tour-single.html">Tour Single</a></li>
-                                                <li><a href="tour-single-list.html">Tour List Single </a></li>
-                                            </ul>
+                                        <li class="has-sub"><a href="#">Categories</a>
+
+{{--                                            <a href="#" class="dropdown-menu" data-toggle="dropdown">{{$item->title}} </a>--}}
                                         </li>
                                         <li><a href="about.html">About</a></li>
                                         <li class="has-sub"><a href="#">Blog</a>
+{{--                                            @foreach($Pmaintcategoried as $item)--}}
+
                                             <ul>
+{{--                                                @if(count($item->children))--}}
+
                                                 <li><a href="blog-default.html">Blog Default</a></li>
                                                 <li><a href="blog-single.html">Blog Single</a></li>
+{{--                                                    @include('home.categorytree',['children' => $item->children])--}}
+{{--                                                @endif--}}
                                             </ul>
                                         </li>
-                                        <li class="has-sub"><a href="#">Pages</a>
+{{--                                    @endforeach--}}
+
+                                    <li class="has-sub"><a href="#">Pages</a>
                                             <ul>
                                                 <li><a href="testimonials.html">Clients Reviews</a> </li>
                                                 <li><a href="tour-booking.html">Tour Booking</a> </li>
@@ -87,7 +91,6 @@
                                 </ul>
                             </div>
                         </div>
-                        @endforeach
 
                         <!-- /.navigations-->
 

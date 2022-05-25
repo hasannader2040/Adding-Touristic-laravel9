@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\category;
+use App\Models\massege;
 use App\Models\place;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 //use App\Http\Controllers\HomeController;  // for the home of front-end
 use Illuminate\Support\Facades\DB;
+use Mosquitto\Message;
 use phpDocumentor\Reflection\Types\Parent_;
 //use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
@@ -90,15 +92,30 @@ class HomeController extends Controller
             ]);
     }
 
-    public function Contact()
+    public function contact()
     {
 //        echo ' Contact ' ;
 //        exit();
         $setting=setting::first();
-        return view('home.Contact',
+        return view('home.contact',
             [
                 'setting' => $setting
             ]);
+    }
+
+    public function storemasseges(Request $request)
+
+    {
+        $data= new massege();
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->phone = $request->input('phone');
+        $data->subject = $request->input('subject');
+        $data->message = $request->input('message');
+        $data->ip=request()->ip();
+        $data->save();
+        return redirect()->route('contact')->with('info','Your message has been Sent , Thank you.');
+
     }
 
     public function place($id)

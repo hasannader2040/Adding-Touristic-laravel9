@@ -21,7 +21,7 @@ class FaqController extends Controller
         {
 //            echo "faq";
 //            exit();
-            $data=faq::all();
+            $data=Faq::all();
             return view(
                 'admin.faq.index',
                 [
@@ -40,7 +40,7 @@ class FaqController extends Controller
     {
 //        echo "faq( list";
 //        exit();
-        $data = faq::all();
+        $data = Faq::all();
         return view(
             'admin.faq.create',
             [
@@ -60,7 +60,7 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new faq();  // its  fot inserting it
+        $data = new Faq();  // its  fot inserting it
         $data->question = $request->question;
         $data->answer = $request->answer;
         $data->status = $request->status;
@@ -88,6 +88,10 @@ class FaqController extends Controller
     public function edit($id)
     {
         //
+        $data = Faq::find($id);
+        return view(  'admin.faq.edit',
+            [ 'data' => $data
+            ]);
     }
 
     /**
@@ -99,7 +103,13 @@ class FaqController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $data= Faq::find($id);
+        $data->question = $request->question;
+        $data->answer = $request->answer;
+        $data->status = $request->status;
+        $data->save();
+        return redirect(to:'admin/faq');
     }
 
     /**
@@ -111,5 +121,9 @@ class FaqController extends Controller
     public function destroy($id)
     {
         //
+        $data= Faq::find($id);
+
+        $data->delete();
+        return redirect(to:'admin/faq');
     }
 }

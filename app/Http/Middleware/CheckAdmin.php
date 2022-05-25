@@ -17,11 +17,22 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        $userRoles = Auth::user()->roles->pluck('name');
+//        echo 'the best';
+//        exit();
         //dd($userRoles);  // its for checking the code
+
+
+        $userRoles = Auth::user()->roles->pluck('name');
         if(!$userRoles)
         return redirect(route('admin_login'))->with('error','you dont have a permission');
 
         return $next($request);
     }
 }
+
+//If(Auth::check) {
+//    And place your line no. 22 code here
+//}
+
+
+

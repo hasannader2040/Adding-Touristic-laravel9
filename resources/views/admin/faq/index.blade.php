@@ -25,7 +25,7 @@
                             <small class="text-muted float-end">it should be</small>
                         </div>
                         <div class="card-body">
-                            <a href="{{ 'admin.faq.create' }}" class="btn btn-primary btn-lg">Add Question</a>
+                            <a href="{{route('admin.faq.create')}}" class="btn btn-primary btn-lg">Add Question</a>
 
                             {{--    i am not able to check on it --}}
                             <div class="card">
