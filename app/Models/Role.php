@@ -10,9 +10,9 @@ class Role extends Model
     use HasFactory;
 
 // I have to make sure about this
-    public function users()
+    public function user()
     {
-        return $this->belongsToMany(\http\Client\Curl\User::class, 'role_user');
+        return $this->belongsToMany(User::class, 'role_users');
     }
 
 }

@@ -9,20 +9,23 @@ use Illuminate\Http\Request;
 use \App\Http\Controllers\AdminPanel;
 use App\Models\Faq;
 //use App\Http\Controllers\AdminPanel;
+use App\Http\Controllers\HomeController;
 class FaqController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return
      */
     public function index()
     {
         {
+//
+            $data=Faq::all();
 //            echo "faq";
 //            exit();
-            $data=Faq::all();
             return view(
+
                 'admin.faq.index',
                 [
                     'data'=>$data

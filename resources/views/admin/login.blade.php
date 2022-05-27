@@ -44,8 +44,8 @@
 {{--                            </div>--}}
                         </div>
 
-                        @include('home.messages');
-                        <form action="{{route('adminlogincheck')}}" method="get" class="signin-form">
+                        @include('home.message');
+                        <form action="{{route('adminlogincheck')}}" method="post" class="signin-form">
                             @csrf
 {{--                            @method('put')--}}
 {{--                            @method('hidden')--}}

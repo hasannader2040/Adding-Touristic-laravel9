@@ -8,7 +8,8 @@ use App\Models\Role;
 use App\Models\RoleUser;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+//use Illuminate\Support\Facades\Storage;
+//use ;
 
 class AdminUserController extends Controller
 {
@@ -19,6 +20,7 @@ class AdminUserController extends Controller
      */
     public function index()
     {
+
         $data= User::all();
         return view('admin.user.index' , [
             'data'=>$data

@@ -109,7 +109,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 */
 
 
-     // ****************     Home page ROUTES
+// ****************     Home page ROUTES
 Route::get('/', [\App\Http\Controllers\HomeController::class,'index'])->name('home');
 Route::get('/about', [\App\Http\Controllers\HomeController::class,'about'])->name('about');
 Route::get('/contact', [\App\Http\Controllers\HomeController::class,'contact'])->name('contact');
@@ -122,7 +122,7 @@ route::view('/loginUser','home.login')->name('loginUser');
 route::view('/registerUser','home.register')->name('registerUser');
 route::get('/logoutUser',[\App\Http\Controllers\HomeController::class,'logout'])->name('logout');
 route::view('/adminlogin','admin.login')->name('admin.login');
-route::get('/adminlogincheck',[\App\Http\Controllers\HomeController::class,'adminlogincheck'])->name('adminlogincheck');
+route::post('/adminlogincheck',[\App\Http\Controllers\HomeController::class,'adminlogincheck'])->name('adminlogincheck');
 
 
 
@@ -179,7 +179,7 @@ Route::middleware('admin')->prefix('admin')->name( 'admin.')->group(callback: fu
 
 
     // ************************ ADMIN PANEL faq ROUTES
-    Route::prefix('/faq')->name('faq')->controller(\App\Http\Controllers\AdminPanel\FaqController::class)->group(function()
+    Route::prefix('/faq')->name('faq.')->controller(\App\Http\Controllers\AdminPanel\FaqController::class)->group(function()
     {
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
@@ -192,7 +192,7 @@ Route::middleware('admin')->prefix('admin')->name( 'admin.')->group(callback: fu
     });
 
     // ************************ ADMIN PANEL comment ROUTES
-    Route::prefix('/comment')->name('comment')->controller(\App\Http\Controllers\AdminPanel\AdminMessageController::class)->group(function()
+    Route::prefix('/comment')->name('comment.')->controller(\App\Http\Controllers\AdminPanel\AdminMessageController::class)->group(function()
     {
         Route::get('/', 'index')->name('index');
         Route::get('/show/{id}', 'show')->name('show');
@@ -202,7 +202,7 @@ Route::middleware('admin')->prefix('admin')->name( 'admin.')->group(callback: fu
     });
 
     // ************************ ADMIN PANEL user ROUTES
-    Route::prefix('/user')->name('user')->controller(AdminUserController::class)->group(function()
+    Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->group(function()
     {
         Route::get('/', 'index')->name('index');
 

@@ -14,6 +14,7 @@ use phpDocumentor\Reflection\Types\Parent_;
 //use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Setting;
+use PhpParser\Comment;
 
 
 class HomeController extends Controller
@@ -103,7 +104,9 @@ class HomeController extends Controller
             ]);
     }
 
-    public function storemasseges(Request $request)
+
+
+    public function storemessage(Request $request)
 
     {
         $data= new massege();
@@ -115,8 +118,26 @@ class HomeController extends Controller
         $data->ip=request()->ip();
         $data->save();
         return redirect()->route('contact')->with('info','Your message has been Sent , Thank you.');
+    }
+
+
+    public function storecomment(Request $request)
+
+    {
+        $data= new Comment();
+        $data->user_id = Auth::id();
+        $data->service_id = $request->input('service_id');
+        $data->subject = $request->input('subject');
+        $data->review = $request->input('review');
+        $data->rate = $request->input('rate');
+        $data->ip=request()->ip();
+        $data->save();
+        return redirect()->route('service',['id'=>$request->input('service_id')])->with('success','Your Comment has been Sent , Thank you.');
 
     }
+
+
+
 
     public function place($id)
     {
@@ -152,11 +173,11 @@ class HomeController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-
+//dd($request);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('adminlogin');
+            return redirect()->intended('/admin');
         }
 
         return back()->withErrors([

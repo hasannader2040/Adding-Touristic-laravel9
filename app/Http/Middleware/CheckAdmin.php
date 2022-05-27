@@ -19,12 +19,14 @@ class CheckAdmin
     {
 //        echo 'the best';
 //        exit();
-        //dd($userRoles);  // its for checking the code
+
 
 
         $userRoles = Auth::user()->roles->pluck('name');
-        if(!$userRoles)
-        return redirect(route('admin_login'))->with('error','you dont have a permission');
+//        dd($userRoles);  // its for checking the code
+        if(!$userRoles->contains('admin')){
+         return redirect(route('admin.login'))->with('error','you dont have a permission');
+        }
 
         return $next($request);
     }

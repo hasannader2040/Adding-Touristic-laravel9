@@ -28,6 +28,7 @@
                         <th style="width: 50px">Roles</th>
                         <th>
                             @foreach( $data->roles as $roule)
+{{--                                its right without any problems --}}
                                 {{$roule->name}}
                                 <a href={{route('admin.user.destroyrole',['uid'=>$data->id ,'rid'=>$roule->id ])}} class="btn-danger"
                                    onclick="return confirm('Are you sure about deleting this?')">[x]</a>

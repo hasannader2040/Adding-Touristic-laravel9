@@ -21,13 +21,13 @@ class User extends Authenticatable
     use TwoFactorAuthenticatable;
 
 
-    public function reviews(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function reviews()
     {
-        return $this->hasMany(Role::class);
+        return $this->hasMany(Comment::class);
 
     }
 
-    public function roles(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function roles()
     {
         return $this->belongsToMany(Role::class,'role_users');
     }
