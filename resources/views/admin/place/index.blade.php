@@ -41,12 +41,10 @@
                                                 <th>title</th>
                                                 <th> description</th>
                                                 <th> image</th>
-{{--                                                <th> keywords</th>--}}
                                                 <th> image gallery</th>
                                                 <th > detail </th>
                                                 <th> city </th>
                                                 <th> country</th>
-{{--                                                <th> location</th>--}}
                                                 <th> status</th>
                                             </thead>
 
@@ -57,8 +55,6 @@
                                                     <td> {{ $item->title }}</td>
                                                     {{--                              the problem is here right now --}}
 {{--                                                    <td> {{\App\Http\Controllers\AdminPanel\categoryController::getParentsTree($item->category,$item->category->title)}}</td>--}}
-
-
                                                     <td> {{ $item->description }}</td>
                                                     <td>
                                                         @if($item->image)

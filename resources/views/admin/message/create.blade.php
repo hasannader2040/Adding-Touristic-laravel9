@@ -1,127 +1,75 @@
 @extends('layouts.adminbase')
-
-@section('title', 'add place')
-
-    @section('head')
-        <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
-    @endsection
-
+@section('title', 'contact form messageList')
 @section('content')
 
-    <!-- Layout wrapper -->
+
+    {{--  this place should be for add place and for place list--}}
+
     <div class="layout-page">
-    <div class="layout-wrapper layout-content-navbar">
-        <div class="layout-container">
+        <div class="content-wrapper">
+            <!-- Content -->
+{{--            <a href="/admin/place/create" class="btn btn-primary btn-lg">message list </a>--}}
 
+            {{--{{ route('admin.place.create') }}--}}
 
+            <div class="container-xxl flex-grow-1 container-p-y">
+                <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> message list </h4>
 
-    <!-- Blank page -->
-                <div class="card-body">
-                    <form action="{{route('admin.place.store')}}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="from-group">
-                            <label> parent category</label>
-                            <select class="form-control select2"  name="category_id" style="height:40px" >
-
-                            @foreach($data as $item)
-                                    <option value="{{$item->id}}">
-                                    {{\App\Http\Controllers\AdminPanel\categoryController::getParentsTree($item,$item->title)}} </option>
-                            @endforeach
-                            </select>
-
-                        </div>
-
-
-                        <div class="mb-3">
-                            <h1>add place</h1>
-                            <label class="form-label" for="basic-default-fullname">title</label>
-                            <input type="text" class="form-control" name="title" id="basic-default-fullname" value="0" placeholder="John Doe">
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label"  for="basic-default-company">description</label>
-                            <input type="text" name="description" class="form-control" id="basic-default-company" value="0">
-                        </div>
-                        <div class="mb-3">
-
-                            <div class="input-group">
-                                <input type="file" name="image" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                                <button name="image" class="btn btn-outline-primary" type="button" id="inputGroupFileAddon04">Button</button>
+                <!-- Basic Layout -->
+                <div class="row">
+                    <div class="col-xl">
+                        <div class="card mb-4">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">message list</h5>
+                                <small class="text-muted float-end">it should be as you want</small>
                             </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label"  for="basic-default-company">detail</label>
-{{--                                    I will add a CKeditor 5 --}}
-
-                                    <textarea type="text" name="detail" class="form-control" id="editor" >
-                                    </textarea>
-{{--                                    <div name="detail" id="editor">This is some sample content.</div>--}}
-
-                                    <script>
-                                      //  let ClassicEditor;
-                                        ClassicEditor
-                                            .create( document.querySelector( '#editor' ) )
-                                            .then( editor => {
-                                                console.log( editor );
-                                            } )
-                                            .catch( error => {
-                                                console.error(error);
-                                            } );
-                                    </script>
-
-                                </div>
-                                <div class="mb-3">
-
-                                    <div class="mb-3">
-                                        <label class="form-label"  for="basic-default-company">city</label>
-                                        <input type="text" name="city" class="form-control" id="basic-default-company" >
-                                    </div>
-                                    <div class="mb-3">
+                            <div class="card-body">
+                                <div class="card">
+                                    <h5 class="card-header">message list </h5>
+                                    <div class="card-body">
+                                        <div class="card">
+                                            <h2 class="card-header">message list</h2>
+                                            {{-- to write about home place  <h3 a class="card-title" href="/admin/place">--}}
 
 
-                                    <div class="mb-3">
-                                        <label class="form-label"  for="basic-default-company">country</label>
-                                        <input type="text" name="country" class="form-control" id="basic-default-company" >
-                                    </div>
-                                    <div class="mb-3">
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th style="width: 5px">Id</th>
+                                                    <th>Name</th>
+                                                    <th>place</th>
+                                                    <th> subject</th>
+                                                    <th style="width: 40px"> delete</th>
+                                                    <th style="width: 40px"> status</th>
+                                                {{--                                            there are delete and show--}}
+                                                </thead>
 
-                                        <div class="mb-3">
-                                            <label class="form-label"  for="basic-default-company">locatıon</label>
-                                            <input type="text" name="location" class="form-control" id="basic-default-company" >
-                                        </div>
-                                        <div class="mb-3">
-
-{{--                            <label class="form-label" for="basic-default-email">keywords</label>--}}
-{{--                            <div class="input-group input-group-merge">--}}
-{{--                                <input type="text" name="keywords" class="form-control" placeholder="john.doe" aria-label="john.doe" aria-describedby="basic-default-email2">--}}
-{{--                                <span class="input-group-text" id="basic-default-email2">@example.com</span>--}}
-{{--                            </div>--}}
-
-
-                            <div class="form-text">You can use letters, numbers &amp; periods</div>
-                        </div>
-
-                        {{--  to make select --}}
-                        <div class="mb-3">
-                            <label for="exampleFormControlSelect2" class="form-label">Example multiple select</label>
-
-                            <select name="status" class="form-select form-controll" id="exampleFormControlSelect2" aria-label="Multiple select example" >
-                                <option selected="">status</option>
-                                <option value="1">true</option>
-                                <option value="2">false</option>
-                            </select>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Send</button>
-                    </form>
-                </div>
-        </div>
-    </div>
-
-    </div>
-
-                    @endsection
+                                                <tbody>
+                                                @foreach($data as $item)
+                                                    <tr>
+                                                        <td> {{ $item->id }} </td>
+                                                        <td>
+{{--                                                            <a href="{{route('admin.place.show')}}">--}}
+{{--                                                                {{ $item->product->title }} </a>--}}
+                                                        </td>
+                                                        <td> {{ $item->name }} </td>
+                                                        <td> {{ $item->email }} </td>
+                                                        <td> {{ $item->phone }}</td>
+                                                        <td> {{ $item->subject }}</td>
+                                                        <td> {{ $item->message }}</td>
+                                                        <td> {{ $item->status }}</td>
 
 
-                            <!-- / Blank page -->
+                                                        <td><a href={{route('admin.message.show',['id'=>$item->id])}} class="btn-info"
+                                                               onclick="return !window.open(this.href, '','top=50 left')" >show</a></td>
+                                                        <td><a href={{route('admin.message.destroy',['id'=>$item->id])}} class="btn-danger"
+                                                               onclick="return confirm('Are you sure you want to delete this item?')">delete</a></td>
 
+                                                    </tr>
+
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                            <!-- / Blank page -->
+@endsection

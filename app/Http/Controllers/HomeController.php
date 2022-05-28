@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\category;
 //use App\Models\commend;
 use App\Models\massege;
+use App\Models\message;
 use App\Models\place;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 //use App\Http\Controllers\HomeController;  // for the home of front-end
 use Illuminate\Support\Facades\DB;
-use Mosquitto\Message;
+//use Mosquitto\Message;
 use phpDocumentor\Reflection\Types\Parent_;
 //use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
@@ -112,7 +113,11 @@ class HomeController extends Controller
     public function storemessage(Request $request)
 
     {
-        $data= new massege();
+//        echo "store messages";
+//        exit();
+//        dd($request);
+
+        $data= new message();
         $data->name = $request->input('name');
         $data->email = $request->input('email');
         $data->phone = $request->input('phone');

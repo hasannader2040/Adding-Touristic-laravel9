@@ -2,6 +2,7 @@
 use App\Http\Controllers\AdminPanel\AdminPlaceController;
 use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\ImageController;
+use App\Http\Controllers\AdminPanel\MessagesController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -115,7 +116,7 @@ Route::get('/about', [\App\Http\Controllers\HomeController::class,'about'])->nam
 Route::get('/contact', [\App\Http\Controllers\HomeController::class,'contact'])->name('contact');
 Route::get('/categoryplace/{id}/{slug}', [\App\Http\Controllers\HomeController::class,'categoryplace'])->name('categoryplace');
 Route::get('/reference', [\App\Http\Controllers\HomeController::class,'reference'])->name('reference');
-Route::get('/storeMessage', [\App\Http\Controllers\HomeController::class,'storeMessage'])->name('storeMessage');
+Route::post('/storeMessage', [\App\Http\Controllers\HomeController::class,'storeMessage'])->name('storeMessage');
 Route::get('/faq', [\App\Http\Controllers\HomeController::class,'faq'])->name('faq');
 Route::post('/storeComment', [\App\Http\Controllers\HomeController::class,'storeComment'])->name('storeComment');
 route::view('/loginUser','home.login')->name('loginUser');
@@ -196,7 +197,18 @@ Route::middleware('admin')->prefix('admin')->name( 'admin.')->group(callback: fu
     {
         Route::get('/', 'index')->name('index');
         Route::get('/show/{id}', 'show')->name('show');
-        Route::post('/update/{id}', 'store')->name('store');// it should be post
+        Route::post('/update/{id}', 'update')->name('update');// it should be post
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+
+    });
+
+
+    // ************************ ADMIN PANEL comment ROUTES
+    Route::prefix('/message')->name('message.')->controller(MessagesController::class)->group(function()
+    {
+        Route::get('/', 'index')->name('index');
+        Route::get('/show', 'show')->name('show');
+        Route::post('/update', 'update')->name('update');// it should be post
         Route::get('/destroy/{id}','destroy')->name('destroy');
 
     });

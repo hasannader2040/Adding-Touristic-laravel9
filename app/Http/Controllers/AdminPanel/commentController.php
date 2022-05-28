@@ -19,8 +19,8 @@ class commentController extends Controller
 //       echo 'the best' ;
 //       exit();
         $data= Comment::all();
-        dd($data);
-        return view('admin.comment.create' , [
+//        dd($data);  // dont forget to add the names in the form
+        return view('admin.comment.index' , [
                 'data'=>$data
             ]
         );
@@ -58,7 +58,7 @@ class commentController extends Controller
         $data=User::with('roles')->find($id);
         //$data= User::find($id);
         $roles= Comment::all();
-        return view('admin.comment.show.show',[
+        return view('admin.comment.show',[
                 'data'=>$data
 
             ]

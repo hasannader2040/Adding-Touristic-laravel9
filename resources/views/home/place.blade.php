@@ -89,8 +89,6 @@
                                 <input type="radio" id="star1" name="rate" value="1" />
                                 <label for="star1" title="text">1 star</label>
                             </div>
-
-
                             <div class="rating">
         <span class="rating_stars">
             <i class="rating_stars--black" style="width: 100%"></i>

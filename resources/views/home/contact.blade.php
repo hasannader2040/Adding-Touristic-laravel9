@@ -17,41 +17,43 @@
             <div class="contact-block">
                 <!-- contact-form -->
                 @include('home.message')
+{{--                <h1> {{session::get('info')} </h1>--}}
 
-                <form>
+                <form action="{{route("storeMessage")}}" method="post">
+                    @csrf
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="form-group">
                                 <label class="control-label" for="name">Name</label>
-                                <input id="name" type="text" placeholder="Your Name" class="form-control" required="">
+                                <input id="name" type="text" name="name" placeholder="Name & surname" class="form-control" required="">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="form-group">
                                 <label class="control-label" for="email"> Email</label>
-                                <input id="email" type="text" placeholder="Your Email Address" class="form-control" required="">
+                                <input id="email" type="text"  name="email"  placeholder="Your Email Address" class="form-control" required="">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="form-group">
                                 <label class="control-label" for="phone"> Phone</label>
-                                <input id="phone" type="text" placeholder="Your Contact Number" class="form-control" required="">
+                                <input id="phone" type="text"  name="phone" placeholder="Your Contact Number" class="form-control" required="">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="form-group">
                                 <label class="control-label" for="subject">Subject </label>
-                                <input id="subject" type="text" placeholder="Your Subject" class="form-control" required="">
+                                <input id="subject" type="text"  name="subject"  placeholder="Your Subject" class="form-control" required="">
                             </div>
                         </div>
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="form-group">
                                 <label class="control-label" for="textarea">Messages</label>
-                                <textarea class="form-control" id="textarea" name="textarea" rows="4" placeholder="Your Messages"></textarea>
+                                <textarea class="form-control" id="textarea" name="message" rows="4" placeholder="Your Messages"></textarea>
                             </div>
                         </div>
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
-                            <button type="submit" name="singlebutton" class="btn btn-primary">Submit</button>
+                            <button type="submit" value="send message" name="singleton" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </form>

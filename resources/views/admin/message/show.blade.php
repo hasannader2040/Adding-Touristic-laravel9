@@ -1,6 +1,6 @@
-@extends('layouts.adminbase')
+@extends('layouts.adminWindow')
 
-@section('title', 'show place'.$data->title)
+@section('title', 'show messages : '.$data->title)
 
 @section('content')
 
@@ -11,7 +11,6 @@
             <!-- Blank page -->
             <div class="form-control">
                 <table class="table table-bordered">
-                    <a class="btn btn-danger" href="{{route('admin.place.edit',['id'=>$data->id ])}}" role="button" >Edit place</a>
                     <a class="btn btn-danger" href="{{route('admin.place.destroy',['id'=>$data->id ])}}" role="button" >Delete place</a>
                     <thead>
                     <tr>
@@ -20,59 +19,36 @@
                     </tr>
 
                     <tr>
-                        <th style="width: 50px">place</th>
-                        <th>
-{{--                            {{$data}}--}}
-{{--                            {{exit()}}--}}
-                            {{\App\Http\Controllers\AdminPanel\categoryController::getParentsTree($category, $category->title)}}
-                        </th>
-
-                        {{--  <th>{{$data->place_id}}</th>--}}
-{{--                     I can use both of them because I have a relationship between place and place--}}
+                        <th style="width: 50px">Name & surname</th>
+                        <th>{{$data->name}}</th>
                     </tr>
 
+
                     <tr>
-                        <th style="width: 50px">Title</th>
-                        <th>{{$data->title}}</th>
+                        <th style="width: 50px">phone</th>
+                        <th>{{$data->phone}}</th>
                     </tr>
+
+
                     <tr>
-                        <th style="width: 50px">keywords</th>
-                        <th>{{$data->keywords}}</th>
-                    </tr>
-                    {{--          you can modifay from here--}}
-                    <tr>
-                        <th style="width: 50px">description</th>
-                        <th>{{$data->description}}</th>
+                        <th style="width: 50px">email</th>
+                        <th>{{$data->email}}</th>
                     </tr>
 
                     <tr>
-                        <th style="width: 50px">image</th>
-                        <td>
-                            @if($data->image)
-                                <img src="{{Storage::url($data->image)}}"style="height: 40px">
-                            @endif
-                        </td>
-                    </tr>
-                    <tr>
-                        <th style="width: 50px">detail</th>
-                        <th>{!!$data->detail!!}</th>
+                        <th style="width: 50px">subject</th>
+                        <th>{{$data->subject}}</th>
                     </tr>
 
                     <tr>
-                        <th style="width: 50px">city</th>
-                        <th>{{$data->city}}</th>
+                        <th style="width: 50px">messages</th>
+                        <th>{{$data->message}}</th>
                     </tr>
 
                     <tr>
-                        <th style="width: 50px">country</th>
-                        <th>{{$data->country}}</th>
+                        <th style="width: 50px">IP number</th>
+                        <th>{{$data->Ip}}</th>
                     </tr>
-
-                    <tr>
-                        <th style="width: 50px">location</th>
-                        <th>{{$data->location}}</th>
-                    </tr>
-
 
                     <tr>
                         <th style="width: 50px">Status</th>
@@ -87,7 +63,39 @@
                         <th>{{$data->updated_at}}</th>
                     </tr>
 
+                                 <th style="width: 50px">admin Note</th>
+                        <th>
+
+                            <textarea  clos="20" id='note' name="note">{{$data->note}} </textarea>
+
+                            <form role="form" action="{{route('admin.message.update',['id=>$data->id'])}}" method="post">
+                                @csrf
+                                <textarea cols="100" id='note' name="note">{{$data->note}} </textarea>
+                                <div class="card-footer">
+                                <button type="submit" class="btn-primary"> Update note </button>
+                                </div>
+                            </form>
+
+                        </th>
+
+                    <tr>
+                        <th> Admin notes for comment</th>
+                        <td>
+                            <form role="form" action="{{route('admin.comment.update',['id'=>$data->id])}}" method="post">
+                            @csrf
+{{--                                <textarea cols="100" id="note" name=" note">{{$data->note}} </textarea>--}}
+                                <select name="status">
+                                    <option selected> {{$data->status}}</option>
+                                    <option> True</option>
+                                    <option> False</option>
+                                </select>
+                                <button type="submit" class="btn btn-primary"> update comment </button>
+                            </form>
+                        </td>
+                    </tr>
                     </thead>
+
+
                     <tbody>
                     <tr>
 
