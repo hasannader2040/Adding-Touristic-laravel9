@@ -2,10 +2,24 @@
 
 namespace App\Models;
 
+use Couchbase\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+//use App\Models\Comment;
 
 class Comment extends Model
 {
     use HasFactory;
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
+    public function place()
+    {
+        return $this->belongsTo(place::class);
+    }
 }

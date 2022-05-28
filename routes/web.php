@@ -15,7 +15,7 @@ use \App\Http\Controllers\Controller\index;
 //use \App\Http\Controllers\AdminPanel; // for faq
 use App\Setting;
 use App\Http\Controllers\AdminPanel\User;
-
+use App\Http\Controllers\AdminPanel\CommentContoller;
 // I just added this
 
 Route::get('/', function () {
@@ -192,7 +192,7 @@ Route::middleware('admin')->prefix('admin')->name( 'admin.')->group(callback: fu
     });
 
     // ************************ ADMIN PANEL comment ROUTES
-    Route::prefix('/comment')->name('comment.')->controller(\App\Http\Controllers\AdminPanel\AdminMessageController::class)->group(function()
+    Route::prefix('/comment')->name('comment.')->controller(\App\Http\Controllers\AdminPanel\commentController::class)->group(function()
     {
         Route::get('/', 'index')->name('index');
         Route::get('/show/{id}', 'show')->name('show');

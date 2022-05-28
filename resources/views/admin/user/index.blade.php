@@ -54,9 +54,9 @@
                                                         <td> {{ $item->email }}</td>
                                                         <td>
 {{--                                                            I have a problem in this --}}
-                                                            @foreach( $data->roles as $roule)
-                                                                {{$roule->name}}
-                                                            @endforeach
+{{--                                                            @foreach( $data->roles as $roule)--}}
+{{--                                                                {{$roule->name}}--}}
+{{--                                                            @endforeach--}}
                                                         </td>
                                                         @endforeach
                                                         {{--            only when you log in you  can let them work--}}

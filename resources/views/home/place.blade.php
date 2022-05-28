@@ -29,72 +29,28 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xl-8 col-lg-8 col-md-7 col-sm-12 col-12">
-
-                        {{--                        <div class="highlights-section mb60">--}}
-                        {{--                            <h3>Highlights</h3>--}}
-                        {{--                            <p>Nullam eget nisi urnaed mauris purus elementumat mollis acgravida utlacusulla ut velit id metus pellentesque elementumonec dignissim lorem estet egestas lectus pharetra auctorulla facilisi enean sed scelerisque urnaeu feugiat maurisuspendisse non sodales erat. </p>--}}
-                        {{--                            <ul class="angle list-none title-bold mb40">--}}
-                        {{--                                <li>Guided Singapore city tour</li>--}}
-                        {{--                                <li>Sentosa ice land with wings of times show</li>--}}
-                        {{--                                <li>Maritime musuem</li>--}}
-                        {{--                                <li>Sea Aquarium</li>--}}
-                        {{--                                <li>Full day universal Studio + meal coupon</li>--}}
-                        {{--                            </ul>--}}
-                        {{--                            <h4 class="mb30">Singapore Highlights</h4>--}}
-                        {{--                            <div class="slide-thumb-gallery">--}}
-
-                        {{--                                <div class="owl-carousel" data-slider-id="1">--}}
-                        {{--                                    <div><img src="{{ asset('assets/images')}}/slide_big_1.jpg" alt="" class="img-fluid"></div>--}}
-                        {{--                                    <div><img src="{{ asset('assets/images')}}/slide_big_2.jpg" alt="" class="img-fluid"></div>--}}
-                        {{--                                    <div><img src="{{ asset('assets/images')}}/slide_big_3.jpg" alt="" class="img-fluid"></div>--}}
-                        {{--                                    <div><img src="{{ asset('assets/images')}}/slide_big_4.jpg" alt="" class="img-fluid"></div>--}}
-                        {{--                                </div>--}}
-                        {{--                                <div class="owl-thumbs" data-slider-id="1">--}}
-                        {{--                                    <button class="owl-thumb-item"><img src="{{ asset('assets/images')}}/slide_small_1.jpg" alt="" class="img-fluid"></button>--}}
-                        {{--                                    <button class="owl-thumb-item"><img src="{{ asset('assets/images')}}/slide_small_2.jpg" alt="" class="img-fluid"></button>--}}
-                        {{--                                    <button class="owl-thumb-item"><img src="{{ asset('assets/images')}}/slide_small_3.jpg" alt="" class="img-fluid"></button>--}}
-                        {{--                                    <button class="owl-thumb-item"><img src="{{ asset('assets/images')}}/slide_small_4.jpg" alt="" class="img-fluid"></button>--}}
-                        {{--                                </div>--}}
-                        {{--                            </div>--}}
-                        {{--                        </div>--}}
-
-                        {{--                            <div class="well-bg-block">--}}
-                        {{--                                <h4 class="journey-day-title">Day 2 : Sentosa Iceland</h4>--}}
-                        {{--                                <ul class="angle list-none">--}}
-                        {{--                                    <li>Phasellus eget euismod nisinon cursus quamed vitae ipsum augue--}}
-                        {{--                                    <li>Vestibulum rutrum atnuquis pretiuamus sed felisat leo</li>--}}
-                        {{--                                    <li>Fusce in maximus risusat mollis arcutiam consmassa vulputate</li>--}}
-                        {{--                                    <li>Morbi laciniorci venenatis anteiulis consequaorbi sitame</li>--}}
-                        {{--                                    <li>Duis egestas turpis consectetur pulvinar eleifterdum et malesuada</li>--}}
-                        {{--                                </ul>--}}
-                        {{--                            </div>--}}
-                        {{--                            <div class="well-bg-block">--}}
-                        {{--                                <h4 class="journey-day-title">Day 3 : Sunway Lagoon</h4>--}}
-                        {{--                                <ul class="angle list-none">--}}
-                        {{--                                    <li>Fusce in maximus risusat mollis arcutiam consmassa vulputate</li>--}}
-                        {{--                                    <li>Vestibulum rutrum atnuquis pretiuamus sed felisat leo</li>--}}
-                        {{--                                    <li>Phasellus eget euismod nisinon cursus quamed vitae ipsum augue</li>--}}
-                        {{--                                    <li>Duis egestas turpis consecinar eleifterdum et malesuada</li>--}}
-                        {{--                                    <li>Morbi laciniorci venenatis anteiulis consequaorbi sitame</li>--}}
-                        {{--                                </ul>--}}
-                        {{--                            </div>--}}
+                @include('home.message')
 
                     </div>
                     <div class="included-section mb60">
                         <h3 class="mb30">details</h3>
                         <div class="row">
                             {!!$data->detail!!}
-
                         </div>
+
                     </div>
+
                     <div class="reviews-section mb60">
+                        @foreach($reviews as $rs)
+
                         <h3 class="mb40">Customer Reviews</h3>
                         <div class="review-block">
                             <div class="review-img"><img src="{{ asset('assets/images')}}/user_img_1.jpg" alt="" class="rounded-circle"></div>
                             <div class="review-content">
                                 <h5 class="title-bold d-inline">Jennifer Wirtz</h5>
+
                                 <div class="star-rating">
-                                    <span><i class="fa fa-star"></i></span>
+{{--                                    <span><i class="fa fa-star" @if($rs>rate<1)></i></span>--}}
                                     <span><i class="fa fa-star"></i></span>
                                     <span><i class="fa fa-star"></i></span>
                                     <span><i class="fa fa-star"></i></span>
@@ -103,85 +59,109 @@
                                 <p>Vivamus velit ligula tempus id dui apretium imperdiet liguorbi sit amet pharetra leo. Integer tempus enim vel placerat consectetu ecenascula.</p>
                             </div>
                         </div>
-                        <div class="review-block">
-                            <div class="review-img"><img src="{{ asset('assets/images')}}/user_img_2.jpg" alt="" class="rounded-circle"></div>
-                            <div class="review-content">
-                                <h5 class="title-bold d-inline">Maria Hershberger</h5>
-                                <div class="star-rating">
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                </div>
-                                <p>Eempus id dui apretium imperdiet ligorbi sitamet pharetra leonteger tempus enimvel placerat consectaecenas vehicula.</p>
-                            </div>
+
+                        @endforeach
+                        <form action="{{route('storeComment')}}" method="post" >
+                            @csrf
+                        <div class="form-group">
+                            <label for="place_id"></label>
+                            <input type="hidden" class="form-control" name="place_id" value="{{$data->id}}">
                         </div>
-                        <div class="review-form" action="">
-{{--                            I just added--}}
-                            <div class="review-img"><img src="{{ asset('assets/images')}}/user_img_3.jpg" alt="" class="rounded-circle"></div>
-                            <div class="review-content">
-                                <h5 class="title-bold d-inline">Della Betty</h5>
-                                <div class="star-rating">
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                </div>
-                                <p>Nullam orci exegestaset finibus amolestie ut nisuspendisse mollisleo sedcongue iaculis eratneque consectetur nisiquis feugia.</p>
-                            </div>
+                        <div class="form-group">
+                            <label for="subject">Your Subject *</label>
+                            <input type="text" class="form-control" name="subject">
                         </div>
+                        <div class="form-group">
+                            <label for="review">Your Review *</label>
+                            <textarea type="text" class="form-control" name="review">
+                                    </textarea>
+                        </div>
+
+                            <div class="rate">
+                                <input type="radio" id="star5" name="rate" value="5" />
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="rate" value="4" />
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="rate" value="3" />
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="rate" value="2" />
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="rate" value="1" />
+                                <label for="star1" title="text">1 star</label>
+                            </div>
+
+
+                            <div class="rating">
+        <span class="rating_stars">
+            <i class="rating_stars--black" style="width: 100%"></i>
+        </span>
+                                <a href="#product-comments" class="rating_comments">69 Değerlendirme </a>
+                            </div>
+
+                        @auth()
+
+                            <div class="form-control">
+                                <input id="button" type="submit" value="Leave Your Review" class="btn btn-primary px-3">
+                                @else
+                                    <a href="/loginUser"  class="btn btn-primary px-3">For Submit Your Review, Please Login</a>
+                                @endauth
+
+                                </form>
+                    </div>
+                </div>
+            </div>
+
+
                     </div>
 
                     <div  style="width: 100%;">
 
-                        <!-- form -->
-                        <div class="widget-form">
-                            <h3 class="text-white mb30"> write your feedback </h3>
+{{--                        <!-- form -->--}}
+{{--                        <div class="widget-form">--}}
+{{--                            <h3 class="text-white mb30"> write your feedback </h3>--}}
 
-                            <form
-                                {{--                                {{route('storecomment')}--}}
-                                action="{{route('place', ['id' => $data->id])}}" method="get"
-                                enctype="multipart/form-data">
-                                @csrf
-                                <div class="row">
-                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                        <div class="form-group">
-                                            <label class="control-label sr-only" for="select"></label>
+{{--                            <form--}}
+{{--                                --}}{{--                                {{route('storecomment')}--}}
+{{--                                action="{{route('place', ['id' => $data->id])}}" method="get"--}}
+{{--                                enctype="multipart/form-data">--}}
+{{--                                @csrf--}}
+{{--                                <div class="row">--}}
+{{--                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">--}}
+{{--                                        <div class="form-group">--}}
+{{--                                            <label class="control-label sr-only" for="select"></label>--}}
 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <div class="form-group">
-                                        <div class="form-group">
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <div class="form-group">--}}
 
-                                            <label class="text-white mb30">keywords</label>
-                                            <input type="text" class="form-control" id="keywords" placeholder="">
-                                        </div>
+{{--                                            <label class="text-white mb30">keywords</label>--}}
+{{--                                            <input type="text" class="form-control" id="keywords" placeholder="">--}}
+{{--                                        </div>--}}
 
-                                        <div class="form-group">
-                                            <label class="text-white mb30">description</label>
-                                            <input type="text" class="form-control" id="description" placeholder="">
-                                        </div>
+{{--                                        <div class="form-group">--}}
+{{--                                            <label class="text-white mb30">description</label>--}}
+{{--                                            <input type="text" class="form-control" id="description" placeholder="">--}}
+{{--                                        </div>--}}
 
-                                        <div class="form-group">
-                                            <label class="text-white mb30">company</label>
-                                            <input type="text" class="form-control" id="company" placeholder="">
-                                        </div>
+{{--                                        <div class="form-group">--}}
+{{--                                            <label class="text-white mb30">company</label>--}}
+{{--                                            <input type="text" class="form-control" id="company" placeholder="">--}}
+{{--                                        </div>--}}
 
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">--}}
 
 
-                                </div>
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <button type="submit" name="singlebutton" class="btn btn-primary">submit your feedback</button>
-                                </div>
+{{--                                </div>--}}
+{{--                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">--}}
+{{--                                    <button type="submit" name="singlebutton" class="btn btn-primary">submit your feedback</button>--}}
+{{--                                </div>--}}
 
-                        </form>
+{{--                        </form>--}}
                         <!-- /.form -->
                     </div>
                     <!-- /.enguiry-form -->
@@ -279,7 +259,7 @@
                             <div class="input-group add-on">
                                 <input class="form-control" placeholder="email address here" type="text">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-primary newsletter-btn" type="submit">subscribe</button>
+                                    <button  type="submit">subscribe</button>
                                 </div>
                             </div>
                         </form>

@@ -10,8 +10,14 @@ class place extends Model
     use HasFactory;
 
     #many to one
-    public function place()
+    public function category()
     {
         return $this->belongsTo(category::class);
     }
+
+    public function Reviews()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 }

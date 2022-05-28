@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\category;
+//use App\Models\commend;
 use App\Models\massege;
 use App\Models\place;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 //use App\Http\Controllers\HomeController;  // for the home of front-end
@@ -14,7 +16,8 @@ use phpDocumentor\Reflection\Types\Parent_;
 //use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Setting;
-use PhpParser\Comment;
+use App\Models\Comment;
+
 
 
 class HomeController extends Controller
@@ -125,8 +128,8 @@ class HomeController extends Controller
 
     {
         $data= new Comment();
-        $data->user_id = Auth::id();
-        $data->service_id = $request->input('service_id');
+        $data->user_id = Auth::id(); // logged in user id
+        $data->place_id = $request->input('service_id');
         $data->subject = $request->input('subject');
         $data->review = $request->input('review');
         $data->rate = $request->input('rate');
@@ -146,10 +149,11 @@ class HomeController extends Controller
 
         $data=place::find($id);
         $images= DB::table('images')->where('place_id',$id)->get();
-
+        $reviews= Comment::where('place_id',$id)->get();
         return view('home.place',
             [ 'data' => $data  ,
-                'images' => $images
+                'images' => $images ,
+                'reviews' => $reviews
             ]);
     }
 

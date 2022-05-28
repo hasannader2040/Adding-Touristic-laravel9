@@ -14,7 +14,6 @@
         <div class="layout-container">
 
 
-
     <!-- Blank page -->
                 <div class="card-body">
                     <form action="{{route('admin.place.store')}}" method="post" enctype="multipart/form-data">

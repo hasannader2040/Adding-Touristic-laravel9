@@ -3,9 +3,13 @@
 @section('title', 'show place'.$data->title)
 
 @section('content')
+    <!-- Layout wrapper -->
+{{--        <div class="layout-wrapper layout-content-navbar">--}}
+{{--            <div class="layout-container">--}}
 
 
     <!-- Layout wrapper -->
+    <div class="layout-page">
     <div class="card-header d-flex align-items-center justify-content-between">
         <div class="layout-wrapper">
             <!-- Blank page -->

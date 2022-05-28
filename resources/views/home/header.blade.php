@@ -70,23 +70,27 @@
                                         <li ><a href="{{route('reference')}}">Reference</a></li>
 
                                         <li class="has-sub"><a href="#">Categories</a>
+                                            @foreach($Pmaintcategoried as $item)
+                                                <ul>
+                                                    @if(count($item->children))
 
+                                                        <li><a href="blog-default.html">just for test</a></li>
+
+                                                        @include('home.categorytree',['children' => $item->children])
+
+                                                    @endif
+                                                </ul>
+                                        </li>
+                                    @endforeach
 {{--                                            <a href="#" class="dropdown-menu" data-toggle="dropdown">{{$item->title}} </a>--}}
                                         </li>
                                         <li><a href="about.html">About</a></li>
                                         <li class="has-sub"><a href="#">Blog</a>
-{{--                                            @foreach($Pmaintcategoried as $item)--}}
-
                                             <ul>
-{{--                                                @if(count($item->children))--}}
-
-                                                <li><a href="blog-default.html">Blog Default</a></li>
-                                                <li><a href="blog-single.html">Blog Single</a></li>
-{{--                                                    @include('home.categorytree',['children' => $item->children])--}}
-{{--                                                @endif--}}
+                                                    <li><a href="blog-default.html">Blog Default</a></li>
+                                                    <li><a href="blog-single.html">Blog Single</a></li>
                                             </ul>
-                                        </li>
-{{--                                    @endforeach--}}
+
 
                                     <li class="has-sub"><a href="#">Pages</a>
                                             <ul>

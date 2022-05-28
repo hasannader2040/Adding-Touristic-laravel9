@@ -15,7 +15,7 @@ class HomeController extends Controller
     }
 
 //    I made some changes in settings
-    public function setting(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    public function setting()
     {
         $data = setting::first();
         if ($data == null) // if setting table is empty add one record

@@ -11,18 +11,20 @@
 @section('content')
 
 
-
+    <!-- Layout wrapper -->
+{{--    <div class="layout-page">--}}
+{{--        <div class="layout-wrapper layout-content-navbar">--}}
+{{--            <div class="layout-container">--}}
 
                 <!-- Blank page -->
+
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sfm-right">
                     <li class=breadcrumb-item"><a href="{{route('admin.index')}}">Home </a> </li>
                     <li class=breadcrumb-item">edit category </li>
                     </ol>
                 </div>
-
-                <div class="car
-d-body">
+                <div class="card-body">
                  <form action='{{route('admin.place.update',['id'=>$data->id])}}' method="post" enctype="multipart/form-data">
 {{-- for the imeges  enctype="multipart/form-data" --}}
                         @csrf
