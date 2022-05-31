@@ -48,18 +48,19 @@
                                 <button name="image" class="btn btn-outline-primary" type="button" id="inputGroupFileAddon04">Button</button>
                             </div>
 
+
                                 <div class="mb-3">
                                     <label class="form-label"  for="basic-default-company">detail</label>
 {{--                                    I will add a CKeditor 5 --}}
+                                    {{--                                    <div name="detail" id="editor">This is some sample content.</div>--}}
 
-                                    <textarea type="text" name="detail" class="form-control" id="editor" >
+                                    <textarea type="text" name="detail" class="form-control" id="detail" >
                                     </textarea>
-{{--                                    <div name="detail" id="editor">This is some sample content.</div>--}}
 
                                     <script>
                                       //  let ClassicEditor;
                                         ClassicEditor
-                                            .create( document.querySelector( '#editor' ) )
+                                            .create( document.querySelector( '#detail' ) )
                                             .then( editor => {
                                                 console.log( editor );
                                             } )
@@ -69,7 +70,9 @@
                                     </script>
 
                                 </div>
-                                <div class="mb-3">
+
+
+{{--                                <div class="mb-3">--}}
 
                                     <div class="mb-3">
                                         <label class="form-label"  for="basic-default-company">city</label>

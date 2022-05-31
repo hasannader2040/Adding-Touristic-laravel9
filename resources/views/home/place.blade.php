@@ -57,7 +57,7 @@
                                     <span><i class="fa fa-star"></i></span>
                                 </div>
                                 <p>Vivamus velit ligula tempus id dui apretium imperdiet liguorbi sit amet pharetra leo. Integer tempus enim vel placerat consectetu ecenascula.</p>
-                            </div>
+                            </div>commend
                         </div>
 
                         @endforeach

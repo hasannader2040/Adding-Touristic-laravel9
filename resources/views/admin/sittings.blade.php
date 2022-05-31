@@ -4,9 +4,9 @@
 
 @section('content')
 
+
+
     {{--the beginning of the code of that thing --}}
-
-
     <div class="layout-page">
         <div class="layout-wrapper layout-content-navbar">
             <div class="layout-container " style="justify-content: center;">
@@ -222,25 +222,19 @@
                 </form>
 
                 <button type="submit" class="btn btn-primary">Submit Data</button>
+
                 </form>
+            </div>
+
+        </div>
 
             </div>
-        </div>
-            </div>
-        </div>
 
         </div>
 
-    <script>
-        function openCity(cityName) {
-            var i;
-            var x = document.getElementsByClassName("city");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            document.getElementById(cityName).style.display = "block";
-        }
-    </script>
+        </div>
+
+
 
 
 
@@ -774,8 +768,6 @@
     {{--                </div>--}}
     {{--            </div>--}}
     {{--        </div>--}}
-
-
 
 
 @endsection

@@ -11,7 +11,7 @@
             <!-- Blank page -->
             <div class="form-control">
                 <table class="table table-bordered">
-                    <a class="btn btn-danger" href="{{route('admin.place.destroy',['id'=>$data->id ])}}" role="button" >Delete place</a>
+{{--                    <a class="btn btn-danger" href="{{route('admin.message.destroy',[$data->id ])}}" role="button" >Delete place</a>--}}
                     <thead>
                     <tr>
                         <th style="width: 50px">Id</th>
@@ -76,7 +76,7 @@
                                 </div>
                             </form>
 
-                        </th>
+                        </th>d
 
                     <tr>
                         <th> Admin notes for comment</th>

@@ -193,7 +193,8 @@ Route::middleware('admin')->prefix('admin')->name( 'admin.')->group(callback: fu
     });
 
     // ************************ ADMIN PANEL comment ROUTES
-    Route::prefix('/comment')->name('comment.')->controller(\App\Http\Controllers\AdminPanel\commentController::class)->group(function()
+    Route::prefix('/
+    ')->name('comment.')->controller(\App\Http\Controllers\AdminPanel\commentController::class)->group(function()
     {
         Route::get('/', 'index')->name('index');
         Route::get('/show/{id}', 'show')->name('show');
@@ -203,7 +204,7 @@ Route::middleware('admin')->prefix('admin')->name( 'admin.')->group(callback: fu
     });
 
 
-    // ************************ ADMIN PANEL comment ROUTES
+    // ************************ ADMIN PANEL message ROUTES
     Route::prefix('/message')->name('message.')->controller(MessagesController::class)->group(function()
     {
         Route::get('/', 'index')->name('index');

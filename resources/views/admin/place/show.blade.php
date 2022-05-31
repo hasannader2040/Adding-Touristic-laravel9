@@ -3,9 +3,7 @@
 @section('title', 'show place'.$data->title)
 
 @section('content')
-    <!-- Layout wrapper -->
-{{--        <div class="layout-wrapper layout-content-navbar">--}}
-{{--            <div class="layout-container">--}}
+
 
 
     <!-- Layout wrapper -->

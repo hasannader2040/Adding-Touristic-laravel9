@@ -25,24 +25,21 @@
                             <small class="text-muted float-end">it should be</small>
                         </div>
                         <div class="card-body">
-                            <a href="{{route('faq')}}" class="btn btn-primary btn-lg">Add Question</a>
+                            <a href="/admin/faq/create" class="btn btn-primary btn-lg">Add Question</a>
 {{--                            <a href="{{route('admin.faq.create')}}" class="btn btn-primary btn-lg">Add Question</a>--}}
 
-                            {{--    i am not able to check on it --}}
                             <div class="card">
                                 <h5 class="card-header">FAQ list </h5>
                                 <div class="card-body">
                                     <div class="card">
                                         <h2 class="card-header">FAQ list</h2>
-                                        {{-- to write about home place  <h3 a class="card-title" href="/admin/category">--}}
-
 
                                         <table class="table">
                                             <thead>
                                             <tr>
-                                                <th>Id</th>
+                                                <th style="width: 5px" >Id</th>
                                                 <th> Question</th>
-                                                <th> answer</th>
+                                                <th> answer </th>
                                                 <th> status</th>
                                             </thead>
                                             <tbody>
@@ -50,7 +47,8 @@
                                                 <tr>
                                                     <td> {{ $item->id }} </td>
                                                     <td> {{ $item->Question }}</td>
-                                                    <td> {{ $item->answer }}</td>
+                                                    <td> {{  $item->answer }}</td>
+{{--                                        !!        !!    --}}
                                                     <td> {{ $item->status }} </td>
 
                                                     <td><a href={{route('admin.faq.edit',['id'=>$item->id])}} class="btn-info">edit</a></td>

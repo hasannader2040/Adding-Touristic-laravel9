@@ -5,12 +5,10 @@
 @section('content')
 
 
-        <!-- Layout wrapper -->
+    <!-- Layout wrapper -->
+    <div class="layout-page">
         <div class="card-header d-flex align-items-center justify-content-between">
             <div class="layout-wrapper">
-
-
-
                 <!-- Blank page -->
 
                 <div class="form-control">
@@ -19,32 +17,17 @@
                         <a class="btn btn-danger" href="{{route('admin.category.destroy',['id'=>$data->id ])}}" role="button" >Delete Category</a>
                         <thead>
                         <tr>
-                            <th style="width: 50px">Id</th>
-                            <th>{{$data->id}}</th>
+                            <th style="width: 50px">question</th>
+                            <th>{{$data->question}}</th>
                         </tr>
                         <tr>
-                            <th style="width: 50px">Title</th>
-                            <th>{{$data->title}}</th>
+                            <th style="width: 50px">answer</th>
+                            <th>{{$data->answer}}</th>
                         </tr>
-                        <tr>
-                            <th style="width: 50px">keywords</th>
-                            <th>{{$data->keywords}}</th>
-                        </tr>
+
                         <tr>
                             <th style="width: 50px">image</th>
                             <th>{{$data->image}}</th>
-                        </tr>
-                        <tr>
-                            <th style="width: 50px">Status</th>
-                            <th>{{$data->status}}</th>
-                        </tr>
-                        <tr>
-                            <th style="width: 50px">Created at</th>
-                            <th>{{$data->created_at}}</th>
-                        </tr>
-                        <tr>
-                            <th style="width: 50px">Updated at</th>
-                            <th>{{$data->updated_at}}</th>
                         </tr>
 
                         </thead>

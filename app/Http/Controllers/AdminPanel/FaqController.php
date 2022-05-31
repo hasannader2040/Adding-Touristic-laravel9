@@ -79,7 +79,14 @@ class FaqController extends Controller
      */
     public function show($id)
     {
-        //
+        //echo "show area : " ,$id ;
+        $data=Faq::find($id);
+        //return $id;
+        return view("admin.faq.show",
+            [
+                'data'=>$data
+            ]
+        );
     }
 
     /**
@@ -102,9 +109,10 @@ class FaqController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
+     * @return \App\Models\Faq $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request , $id)
     {
 
         $data= Faq::find($id);

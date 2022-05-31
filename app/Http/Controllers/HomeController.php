@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\category;
 //use App\Models\commend;
+use App\Models\Faq;
 use App\Models\massege;
 use App\Models\message;
 use App\Models\place;
@@ -108,6 +109,23 @@ class HomeController extends Controller
             ]);
     }
 
+
+    public function faq()
+    {
+//        echo ' Contact ' ;
+//        exit();
+
+        $setting=setting::first();
+        $datalist=Faq::all();
+//        $faq=Faq::all();
+
+        return view('home.faq',
+            [
+                'setting'=>$setting,
+//                'faq' => $faq
+                    'datalist'=>$datalist
+            ]);
+    }
 
 
     public function storemessage(Request $request)

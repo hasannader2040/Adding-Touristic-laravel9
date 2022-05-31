@@ -6,24 +6,22 @@
     @section('keywords',$setting->keywords)
     @section('icon',\Illuminate\Support\Facades\Storage::url($setting->icon))
 
-
+    @section('content')
 
     {{--        the form of it --}}
     <div class="row">
         <div class="offset-xl-1 col-xl-10 offset-lg-1 col-lg-10 offset-md-1 col-md-10 col-sm-12 col-12">
             {{!! $setting->aboutus !!}}
-            // it should pass the data from setting for about us
+{{--            // it should pass the data from setting for about us--}}
 
             <div class="section-title">
-                <h2>We're here for you all day, everyday!</h2>
+                <h2>About us !</h2>
                 <p>If you have any questions or comments please complete the form below.We'd love to hear from you!</p>
             </div>
 
             <div class="contact-block">
                 <!-- contact-form -->
-                <form
-                    action="{{route('about')}}"
-                      method="get" enctype="multipart/form-data">
+                <form action="{{route('about')}}"  method="get" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -67,7 +65,7 @@
     </div>
 
 
-    @section('contant')
+
 
 
 

@@ -1,9 +1,10 @@
-@extends('layouts.FrontBase')
+@extends('layouts.frontbase')
 
-@section('title', 'Contact Us | '. $setting->title)
-@section('description', $setting->description)
-@section('keywords', $setting->keywords)
-@section('icon',Storage::URL($setting->icon))
+@section('title', 'About us' .$setting->title)
+@section('description',$setting->descraption)
+@section('keywords',$setting->keywords)
+@section('icon',\Illuminate\Support\Facades\Storage::url($setting->icon))
+
 @section('content')
 
 <div class="wrapper">
