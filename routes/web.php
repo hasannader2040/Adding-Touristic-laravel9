@@ -3,6 +3,7 @@ use App\Http\Controllers\AdminPanel\AdminPlaceController;
 use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessagesController;
+use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -126,6 +127,11 @@ route::view('/adminlogin','admin.login')->name('admin.login');
 route::post('/adminlogincheck',[\App\Http\Controllers\HomeController::class,'adminlogincheck'])->name('adminlogincheck');
 
 
+//  *********   user Auth control
+ route::middleware('auth')->group(function(){  // to send us to make login
+
+     Route::prefix('userpanel')->name( 'userpanel.')->controller(UserController::class)->group(callback: function () {
+         Route::get('/', [UserController::class, 'index'])->name('index');
 
 
 // ****************     ADMIN PANEL ROUTES
@@ -211,7 +217,6 @@ Route::middleware('admin')->prefix('admin')->name( 'admin.')->group(callback: fu
         Route::get('/show', 'show')->name('show');
         Route::post('/update', 'update')->name('update');// it should be post
         Route::get('/destroy/{id}','destroy')->name('destroy');
-
     });
 
     // ************************ ADMIN PANEL user ROUTES
@@ -228,4 +233,8 @@ Route::middleware('admin')->prefix('admin')->name( 'admin.')->group(callback: fu
 
     });
 
+  });
+
 });
+
+ });

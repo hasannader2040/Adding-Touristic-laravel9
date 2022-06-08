@@ -3,6 +3,12 @@
 @section('content')
 
 
+{{--    <!-- Layout wrapper -->--}}
+{{--    <div class="layout-page">--}}
+{{--        <div class="layout-wrapper layout-content-navbar">--}}
+{{--            <div class="layout-container">--}}
+
+
     <div class="layout-page">
     <!-- Content wrapper -->
     <div class="content-wrapper">

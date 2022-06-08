@@ -1,6 +1,6 @@
 @extends('layouts.adminWindow')
 
-@section('title', 'show messages : '.$data->title)
+@section('title', 'show messages : ')
 
 @section('content')
 

@@ -147,18 +147,20 @@ class HomeController extends Controller
     }
 
 
-    public function storecomment(Request $request)
+    public function storeComment(Request $request)
 
     {
+        /*dd($request);*/
+
         $data= new Comment();
         $data->user_id = Auth::id(); // logged in user id
-        $data->place_id = $request->input('service_id');
+        $data->place_id = $request->input('place_id');
         $data->subject = $request->input('subject');
         $data->review = $request->input('review');
         $data->rate = $request->input('rate');
         $data->ip=request()->ip();
         $data->save();
-        return redirect()->route('service',['id'=>$request->input('service_id')])->with('success','Your Comment has been Sent , Thank you.');
+        return redirect()->route('place',['id'=>$request->input('place_id')])->with('success','Your Comment has been Sent , Thank you.');
 
     }
 

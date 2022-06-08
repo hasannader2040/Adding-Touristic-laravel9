@@ -1,7 +1,24 @@
 
+
 <!-- slider -->
 <div class="slider">
-    <div class="owl-carousel owl-one owl-theme owl-loaded owl-drag">
+    <div class="owl-carousel owl-one owl-theme">
+        <!-- item -->
+        <div class="item">
+            <div class="slider-img">
+                <img src="{{ asset('assets') }}/images/slider_1.jpg" alt=""></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="slider-captions">
+                            <h1 class="slider-title">Get travel website template</h1>
+                            <a href="#" class="btn btn-primary">Get Template</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.item -->
         <!-- item -->
         <div class="item">
             <div class="slider-img"><img src="{{ asset('assets') }}/images/slider_2.jpg" alt=""></div>
@@ -16,8 +33,8 @@
                 </div>
             </div>
         </div>
-
         <!-- /.item -->
+        <!-- item -->
         <div class="item">
             <div class="slider-img"><img src="{{ asset('assets') }}/images/slider_3.jpg" alt=""></div>
             <div class="container">
@@ -31,104 +48,16 @@
                 </div>
             </div>
         </div>
-        <!-- item -->
-
-
-        <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-3048px, 0px, 0px); transition: all 0.25s ease 0s; width: 7112px;"><div class="owl-item cloned" style="width: 1016px;"><div class="item">
-                        <div class="slider-img"><img src="{{ asset('assets') }}/images/slider_2.jpg" alt=""></div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                                    <div class="slider-captions">
-                                        <h1 class="slider-title">Travel air agency Website template</h1>
-                                        <a href="#" class="btn btn-primary">Download Template</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div></div><div class="owl-item cloned" style="width: 1016px;"><div class="item">
-                        <div class="slider-img"><img src="{{ asset('assets') }}/images/slider_3.jpg" alt=""></div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                                    <div class="slider-captions">
-                                        <h1 class="slider-title">Get tourism website template</h1>
-                                        <a href="#" class="btn btn-primary">View Packages</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div></div><div class="owl-item" style="width: 1016px;"><div class="item">
-                        <div class="slider-img">
-                            <img src="{{ asset('assets') }}/images/slider_1.jpg" alt=""></div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                                    <div class="slider-captions">
-                                        <h1 class="slider-title">Get travel website template</h1>
-                                        <a href="#" class="btn btn-primary">Get Template</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div></div><div class="owl-item active" style="width: 1016px;"><div class="item">
-                        <div class="slider-img"><img src="{{ asset('assets') }}/images/slider_2.jpg" alt=""></div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                                    <div class="slider-captions">
-                                        <h1 class="slider-title">Travel air agency Website template</h1>
-                                        <a href="#" class="btn btn-primary">Download Template</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div></div><div class="owl-item" style="width: 1016px;"><div class="item">
-                        <div class="slider-img"><img src="{{ asset('assets') }}/images/slider_3.jpg" alt=""></div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                                    <div class="slider-captions">
-                                        <h1 class="slider-title">Get tourism website template</h1>
-                                        <a href="#" class="btn btn-primary">View Packages</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div></div><div class="owl-item cloned" style="width: 1016px;"><div class="item">
-                        <div class="slider-img">
-                            <img src="{{ asset('assets') }}/images/slider_1.jpg" alt=""></div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                                    <div class="slider-captions">
-                                        <h1 class="slider-title">Get travel website template</h1>
-                                        <a href="#" class="btn btn-primary">Get Template</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div></div><div class="owl-item cloned" style="width: 1016px;"><div class="item">
-                        <div class="slider-img"><img src="{{ asset('assets') }}/images/slider_2.jpg" alt=""></div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                                    <div class="slider-captions">
-                                        <h1 class="slider-title">Travel air agency Website template</h1>
-                                        <a href="#" class="btn btn-primary">Download Template</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- /.item -->
+    </div>
 </div>
+<!-- /.slider -->
 
 
-    <div class="container">
-        <!-- tour-1 -->
+
+
+{{--    <div class="container">--}}
+{{--        <!-- tour-1 -->--}}
 
 {{--        <div class="row ">--}}
 {{--            <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb40">--}}
@@ -150,7 +79,7 @@
 {{--        @endforeach--}}
 
         <!-- /.tour-1 -->
-    </div>
+
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
         <div class="section-title">
             <h2>Top Destinations</h2>
@@ -479,6 +408,15 @@
     </div>
 </div>
 <!-- testimonial-section -->
+
+
+
+<!-- /.slider -->
+
+
+
+
+
 
 
 

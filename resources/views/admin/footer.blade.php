@@ -57,7 +57,6 @@
 {{--<!-- build:js assets/vendor/js/core.js -->--}}
 {{--<script href="{{asset('assets')}}/panel/vendor/libs/jquery/jquery.js"></script>--}}
 {{--<script href="{127.0.0.1:8000/assets/panel/vendor/libs/jquery/jquery.js></script>--}}
-{{--http://127.0.0.1:8000/assets/panel/vendor/js/bootstrap.js--}}
 
 
 <script href="{{ asset('assets') }}/panel/vendor/libs/popper/popper.js"></script>
@@ -76,15 +75,15 @@
 <!-- Page JS -->
 <script href="{{ asset('assets') }}/panel/vendor/js/dashboards-analytics.js"></script>
 
-<script>
-    $("li[role='tab']").click(function(){
-        $("li[role='tab']").attr("aria-selected","false"); //deselect all the tabs
-        $(this).attr("aria-selected","true");  // select this tab
-        var tabpanid= $(this).attr("aria-controls"); //find out what tab panel this tab controls
-        var tabpan = $("#"+tabpanid);
-        $("div[role='tabpanel']").attr("aria-hidden","true"); //hide all the panels
-        tabpan.attr("aria-hidden","false");  // show our panel
-    });
-</script>
+{{--<script>--}}
+{{--    $("li[role='tab']").click(function(){--}}
+{{--        $("li[role='tab']").attr("aria-selected","false"); //deselect all the tabs--}}
+{{--        $(this).attr("aria-selected","true");  // select this tab--}}
+{{--        var tabpanid= $(this).attr("aria-controls"); //find out what tab panel this tab controls--}}
+{{--        var tabpan = $("#"+tabpanid);--}}
+{{--        $("div[role='tabpanel']").attr("aria-hidden","true"); //hide all the panels--}}
+{{--        tabpan.attr("aria-hidden","false");  // show our panel--}}
+{{--    });--}}
+{{--</script>--}}
 
 

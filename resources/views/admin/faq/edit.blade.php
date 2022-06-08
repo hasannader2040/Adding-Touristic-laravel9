@@ -6,10 +6,13 @@
 @section('content')
 
 
+<div class="layout-page">
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
 
     <!-- Blank page -->
-
-    <div class="col-sm-6">
+    <nav aria-label="breadcrumb">
+        <div class="col-sm-6">
         <ol class="breadcrumb float-sfm-right">
             <li class=breadcrumb-item"><a href="{{route('admin.index')}}">Home </a> </li>
 {{--            <li class=breadcrumb-item">edit place </li>--}}
@@ -98,5 +101,8 @@
            class="btn btn-danger btn-buy-now">Upgrade to Pro</a>
 
     </div>
+    </nav>
+</div>
+
 
 @endsection

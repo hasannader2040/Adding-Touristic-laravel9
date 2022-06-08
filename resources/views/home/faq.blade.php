@@ -29,25 +29,33 @@
                 <!-- contact-form -->
                 <div id="accordion">
                     <h1>Frequently asked questions</h1>
-                    @foreach($datalist as $item)
-                        <div class="card">
-                            <div class="card-header">
-                                <a class="card-link" data-toggle="collapse{{$loop->iteration}}" href="#collapseOne">
-                                   <h3> {{$item->qustion}}</h3>
-                                </a>
-                            </div>
-                            <div id="collapseOne{{$loop->iteration}}" class="collapse @once show @endonce" data-parent="#accordion">
-                                <div class="card-body">
-                                    <h3> {{$item->answer}} </h3>
-                            </div>
-                            </div>
-                            @endforeach
-                        </div>
+                    <div class="container-fluid pt-5">
+                        @foreach($datalist as $rs)
+                            <div id="accordion">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq1" aria-expanded="false">
+                                            <h5> {!! $rs->question !!} </h5>
+                                        </button>
+                                    </div>
+                                    <div id="faq1" class="collapse" data-parent="#accordion" style="">
+                                        <div class="card-body">
+                                            {!! $rs->answer !!}
+                                        </div>
+                                    </div>
 
-                        <!-- contact-form -->
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
                 </div>
             </div>
         </div>
+
+                        <!-- contact-form -->
+                </div>
+
 
 
 

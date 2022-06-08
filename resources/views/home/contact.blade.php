@@ -1,6 +1,6 @@
 @extends('layouts.frontbase')
 
-@section('title', 'About us' .$setting->title)
+@section('title', 'contact' .$setting->title)
 @section('description',$setting->descraption)
 @section('keywords',$setting->keywords)
 @section('icon',\Illuminate\Support\Facades\Storage::url($setting->icon))
@@ -47,6 +47,9 @@
                                 <input id="subject" type="text"  name="subject"  placeholder="Your Subject" class="form-control" required="">
                             </div>
                         </div>
+                        <div class="input-checkbox">
+                            {!! $setting->contant !!}
+                        </div>
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="form-group">
                                 <label class="control-label" for="textarea">Messages</label>
@@ -62,3 +65,5 @@
             </div>
         </div>
     </div>
+</div>
+

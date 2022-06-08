@@ -58,11 +58,14 @@ class MessagesController extends Controller
      */
     public function show()
     {
-//        dd('$data');
-//        exit();
+
+
         $data= message::find();
+//        dd('$data');
         $data->status='Read';
-        return view('admin.message.show',[
+
+        return view('admin.message.show',
+            [
                 'data'=>$data
             ]
         );

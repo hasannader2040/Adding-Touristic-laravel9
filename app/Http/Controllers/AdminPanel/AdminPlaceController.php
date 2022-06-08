@@ -62,6 +62,7 @@ class AdminPlaceController extends Controller
     {
         $data = new place();  // its  fot inserting it
         //$data->id ;
+//        return $request;
         $data->category_id=$request->category_id;
         $data->user_id = 0; //$request->category_id;
         $data->title = $request->title;
@@ -73,7 +74,7 @@ class AdminPlaceController extends Controller
         $data->location = $request->location;
         $data->status = $request->status;
 
-        if ($request->file('image')->store('images')) {
+        if ($request->file('image')('images')) {
             $data->image = $request->file('image')->store('images');
         }
         $data->save();
@@ -116,7 +117,7 @@ class AdminPlaceController extends Controller
          $categories = category::all();
         $category = category::find($data->category_id);
 
-        return view("admin.place.edit",
+            return view("admin.place.edit",
             [
                 'data'=>$data,
                 'categories' => $categories,
@@ -150,6 +151,17 @@ class AdminPlaceController extends Controller
         if ($request->file('image')->store('images')){
             $data->image=$request->file('image')->store('images');
         }
+
+//        if ($req->file('image'))
+//        {
+//            $data->image = $req->file('image')->store('images');
+//        }
+//        else
+//        {
+//            $data->image=$data->images;
+//
+//        }
+
         $data->save();
         return redirect('admin/place');
 

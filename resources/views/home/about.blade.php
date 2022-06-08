@@ -11,7 +11,8 @@
     {{--        the form of it --}}
     <div class="row">
         <div class="offset-xl-1 col-xl-10 offset-lg-1 col-lg-10 offset-md-1 col-md-10 col-sm-12 col-12">
-            {{!! $setting->aboutus !!}}
+{{--            {!! $setting->aboutus !!}--}}
+            {!! $setting->aboutus !!}
 {{--            // it should pass the data from setting for about us--}}
 
             <div class="section-title">
@@ -63,13 +64,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
 
 
     @endsection

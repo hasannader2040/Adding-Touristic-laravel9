@@ -2,7 +2,7 @@
 
 
 
-<div class="wrapper">
+{{--<div class="wrapper">--}}
     <!-- header-section-->
     <div class="header-wrapper">
         <div class="top-header">
@@ -39,86 +39,89 @@
                     </div>
                     <div class="col-xl-9 col-lg-10 col-md-9 col-sm-12 col-12">
 
-{{--                        <button class="btn btn-primary btn-lg" type="button">login</button>--}}
+                    <!-- navigations-->
+                    {{--   I have here my subcategory --}}
+                    @php
+                        $Pmaintcategoried = \App\Http\Controllers\HomeController::maincategorylist();
+                    @endphp
+                    <div id="navigation">
+                        <ul>
 
-{{-- -----------------for log in and out -----------------------}}
-                        @auth()
-                                <a href="/" class="btn btn-primary">{{Auth::user()->name}}</a>
-                                <a href="/logoutUser" class="btn btn-primary btn-lg">Logout</a>
-                                @endauth
-                                @guest()
-                                    <a href="/loginUser" class="btn btn-primary btn-lg">Login</a>
+                            {{--                                    start working at  about us and References--}}
+                            <li class="active"><a href="{{route('home')}}">Home</a></li>
+                            <li ><a href="{{route('about')}}">about us</a></li>
+                            <li ><a href="{{route('reference')}}">Reference</a></li>
 
-                                    <a href="/registerUser" class="btn btn-primary btn-lg">Register</a>
-                                    @endguest
-                                    </a>
-                        {{-- -----------------for log in and out -----------------------}}
+                            <li class="has-sub"><a href="#">Categories</a>
+                                @foreach($Pmaintcategoried as $item)
+                                    <ul>
+                                        @if(count($item->children))
 
+                                            <li><a href="blog-default.html">just for test</a></li>
 
-                        <!-- navigations-->
-{{--   I have here my subcategory --}}
-                        <div class="navigation">
-                            @php
-                                $Pmaintcategoried = \App\Http\Controllers\HomeController::maincategorylist()
-                            @endphp
-                            <div id="navigation">
+                                            @include('home.categorytree',['children' => $item->children])
+
+                                        @endif
+                                    </ul>
+                            </li>
+                            @endforeach
+                            {{--                                            <a href="#" class="dropdown-menu" data-toggle="dropdown">{{$item->title}} </a>--}}
+                            </li>
+                            <li><a href="about.html">About</a></li>
+                            <li class="has-sub"><a href="#">Blog</a>
                                 <ul>
-
-{{--                                    start working at  about us and References--}}
-                                        <li class="active"><a href="{{route('home')}}">Home</a></li>
-                                        <li ><a href="{{route('about')}}">about us</a></li>
-                                        <li ><a href="{{route('reference')}}">Reference</a></li>
-
-                                        <li class="has-sub"><a href="#">Categories</a>
-                                            @foreach($Pmaintcategoried as $item)
-                                                <ul>
-                                                    @if(count($item->children))
-
-                                                        <li><a href="blog-default.html">just for test</a></li>
-
-                                                        @include('home.categorytree',['children' => $item->children])
-
-                                                    @endif
-                                                </ul>
-                                        </li>
-                                    @endforeach
-{{--                                            <a href="#" class="dropdown-menu" data-toggle="dropdown">{{$item->title}} </a>--}}
-                                        </li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li class="has-sub"><a href="#">Blog</a>
-                                            <ul>
-                                                    <li><a href="blog-default.html">Blog Default</a></li>
-                                                    <li><a href="blog-single.html">Blog Single</a></li>
-                                            </ul>
-
-
-                                    <li class="has-sub"><a href="#">Pages</a>
-                                            <ul>
-                                                <li><a href="testimonials.html">Clients Reviews</a> </li>
-                                                <li><a href="tour-booking.html">Tour Booking</a> </li>
-                                                <li><a href="tab.html">Tabs</a> </li>
-                                                <li><a href="alerts.html">Alerts</a> </li>
-                                                <li><a href="accordions.html">Accordions</a> </li>
-                                                <li><a href="gallery.html">Gallery</a> </li>
-                                                <li><a href="404-page.html">404 page</a> </li>
-                                                <li><a href="call-to-action.html">Call To Actions</a></li>
-                                                <li><a href="styleguide.html">styleguide</a> </li>
-                                            </ul>
-                                        </li>
-{{--                                        <li> <a href="#">Pages</a>--}}
-                                        <li><a href="{{'contact'}}">Contact</a></li>
-                                        <li><a href="{{'Contact Form Messages '}}">Contact Form Messages </a></li>
+                                    <li><a href="">places</a></li>
+{{--                                    {{route('place', ['id' => $data->id])}}--}}
+                                    <li><a href="blog-single.html">anything else </a></li>
                                 </ul>
-                            </div>
-                        </div>
 
-                        <!-- /.navigations-->
+
+                            <li class="has-sub"><a href="#">Pages</a>
+                                <ul>
+                                    <li><a href="/reference">references</a> </li>
+                                    <li><a href="tour-booking.html">Tour Booking</a> </li>
+                                    <li><a href="tab.html">Tabs</a> </li>
+                                    <li><a href="alerts.html">Alerts</a> </li>
+                                    <li><a href="accordions.html">Accordions</a> </li>
+                                    <li><a href="gallery.html">Gallery</a> </li>
+                                    <li><a href="404-page.html">404 page</a> </li>
+                                    <li><a href="call-to-action.html">Call To Actions</a></li>
+                                    <li><a href="styleguide.html">styleguide</a> </li>
+                                </ul>
+                            </li>
+                            {{--                                        <li> <a href="#">Pages</a>--}}
+                            <li><a href="{{'contact'}}">Contact</a></li>
+                            <li><a href="{{'Contact Form Messages '}}">Contact Form Messages </a></li>
+                        </ul>
+                    </div>
+                    </div>
+                    <!-- /.navigations-->
+
+
+                    <div class="col-xl-9 col-lg-10 col-md-9 col-sm-12 col-12">
+
+
+{{--                        -----------------for log in and out -----------------------}}
+                        @auth()
+                            <a href="/" class="btn btn-primary">{{Auth::user()->name}}</a>
+                            <a href="/logoutUser" class="btn btn-primary btn-lg">Logout</a>
+                        @endauth
+                        @guest()
+                            <a href="/loginUser" class="btn btn-primary btn-lg">Login</a>
+
+                            <a href="/registerUser" class="btn btn-primary btn-lg">Register</a>
+                            @endguest
+                            </a>
+{{--                            -----------------for log in and out -----------------------}}
+
 
                     </div>
+
+{{--         I should make here  @include()--}}
                 </div>
             </div>
         </div>
-    </div>
+
     <!-- /. header-section-->
 </div>
 
