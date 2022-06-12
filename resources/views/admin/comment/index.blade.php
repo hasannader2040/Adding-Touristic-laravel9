@@ -8,9 +8,9 @@
     <div class="layout-page">
         <div class="content-wrapper">
             <!-- Content -->
-            <a href="/admin/place/create" class="btn btn-primary btn-lg">comment list </a>
+            <a href="/admin/comment" class="btn btn-primary btn-lg">comment list </a>
 
-            {{--{{ route('admin.place.create') }}--}}
+            {{--{{ route('admin.comment') }}--}}
 
             <div class="container-xxl flex-grow-1 container-p-y">
                 <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> comment list </h4>
@@ -37,11 +37,15 @@
                                                 <tr>
                                                     <th style="width: 5px">Id</th>
                                                     <th>Name</th>
-{{--                                                    <th>place</th>--}}
-                                                    <th> subject</th>
+                                                    {{--                                                    <th>place</th>--}}
+                                                    <th> subject </th>
                                                     <th> Review</th>
                                                     <th> Rate</th>
                                                     <th> status</th>
+{{--                                                    <th> image gallery</th>--}}
+
+                                                    <th style="width: 5px"> show</th>
+                                                    <th style="width: 5px"> delete</th>
                                                 {{--                                            there are delete and show--}}
                                                 </thead>
 
@@ -49,22 +53,13 @@
                                                 @foreach($data as $item)
                                                     <tr>
                                                         <td> {{ $item->id }} </td>
-                                                        <td>
-                                                            <a href="{{route('admin.place.show',['id'=>$item->user->id])}}">
-                                                                {{ $item->place->title }} </a>
-                                                        </td>
+                                                        <td> {{ $item->user->name}} </td>
                                                         {{--       there is a relationship bettwen comment and place--}}
-                                                        <td> {{ $item->user->name }} </td>
+
                                                         <td> {{ $item->subject }}</td>
                                                         <td> {{ $item->review }}</td>
                                                         <td> {{ $item->rate }}</td>
-                                                        <td>
-                                                            <a href="{{route('admin.image.index',['Pid'=>$item->id])}}" class="btn-info"
-                                                               onclick="return !window.open(this.href, '','top=50 left')">
-                                                                <img src="{{ asset('assets/panel') }}/img/gallery.png" style="height: 50px">
-                                                            </a>
-                                                        </td>
-
+                                                        <td> {{ $item->status }}</td>
                                                         <td><a href={{route('admin.comment.show',['id'=>$item->id])}} class="btn-info"
                                                                onclick="return !window.open(this.href, '','top=50 left')" >show</a></td>
                                                         <td><a href={{route('admin.comment.destroy',['id'=>$item->id])}} class="btn-danger"

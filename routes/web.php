@@ -124,14 +124,19 @@ route::view('/loginUser','home.login')->name('loginUser');
 route::view('/registerUser','home.register')->name('registerUser');
 route::get('/logoutUser',[\App\Http\Controllers\HomeController::class,'logout'])->name('logout');
 route::view('/adminlogin','admin.login')->name('admin.login');
-route::post('/adminlogincheck',[\App\Http\Controllers\HomeController::class,'adminlogincheck'])->name('adminlogincheck');
+route::get('/adminlogincheck',[\App\Http\Controllers\HomeController::class,'adminlogincheck'])->name('adminlogincheck');
 
+
+//  *********   user panel in front-end page routes
+
+Route::prefix('userpanel')->name( 'userpanel.')->controller(UserController::class)->group(callback: function () {
+    Route::get('/', [UserController::class, 'index'])->name('index');
+    Route::get('/reviews', [UserController::class, 'reviews'])->name('reviews');
+    Route::get('/reviewdestroy/{id}','reviewdestroy')->name('reviewdestroy');
+});
 
 //  *********   user Auth control
  route::middleware('auth')->group(function(){  // to send us to make login
-
-     Route::prefix('userpanel')->name( 'userpanel.')->controller(UserController::class)->group(callback: function () {
-         Route::get('/', [UserController::class, 'index'])->name('index');
 
 
 // ****************     ADMIN PANEL ROUTES
@@ -139,6 +144,7 @@ route::post('/adminlogincheck',[\App\Http\Controllers\HomeController::class,'adm
 
 Route::middleware('admin')->prefix('admin')->name( 'admin.')->group(callback: function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');
+
 
 
 // ADMIN PANEL CATEGORY ROUTES
@@ -154,11 +160,14 @@ Route::middleware('admin')->prefix('admin')->name( 'admin.')->group(callback: fu
     });
 
 
-    // ADMIN PANEL settings ROUTES
+    // ADMIN PANEL setting ROUTES
     // HomeController has two definition for home and admin panel
+
+//    Route::prefix('/setting')->name('setting.')->controller(HomeController::class)->group(function()
+
     {
         Route::get('setting', [HomeController::class, 'setting'])->name('setting');
-        Route::post('setting', [HomeController::class, 'settingUpdate'])->name('setting.update');
+        Route::post('setting', [HomeController::class, 'settingsUpdate'])->name('setting.update');
     }
 
 // ADMIN PANEL place ROUTES
@@ -199,8 +208,7 @@ Route::middleware('admin')->prefix('admin')->name( 'admin.')->group(callback: fu
     });
 
     // ************************ ADMIN PANEL comment ROUTES
-    Route::prefix('/
-    ')->name('comment.')->controller(\App\Http\Controllers\AdminPanel\commentController::class)->group(function()
+    Route::prefix('comment')->name('comment.')->controller(\App\Http\Controllers\AdminPanel\commentController::class)->group(function()
     {
         Route::get('/', 'index')->name('index');
         Route::get('/show/{id}', 'show')->name('show');
@@ -233,7 +241,7 @@ Route::middleware('admin')->prefix('admin')->name( 'admin.')->group(callback: fu
 
     });
 
-  });
+
 
 });
 

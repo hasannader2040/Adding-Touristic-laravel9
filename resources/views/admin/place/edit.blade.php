@@ -6,15 +6,15 @@
 
 @section('head')
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
-
+@endsection
 
 @section('content')
 
 
     <!-- Layout wrapper -->
-{{--    <div class="layout-page">--}}
-{{--        <div class="layout-wrapper layout-content-navbar">--}}
-{{--            <div class="layout-container">--}}
+{<div class="layout-page" style="margin-left: 200px; margin-bottom: 200px;">
+        <div class="layout-wrapper layout-content-navbar">
+            <div class="layout-container " style="justify-content: center; flex-direction: column;">
 
                 <!-- Blank page -->
 
@@ -52,6 +52,18 @@
                                     <input class="form-control" type="text" name="title" value="{{$data->title}}"title>
                                 </div>
                             </div>
+
+
+                            <div class="mb-3">
+                                <h1> edit {{$data->keywords}}</h1>
+                                <div class="form-group row">
+                                    <label for="title" class="col-sm-12 col-md-12 col-form-label"><b>Text</b></label>
+                                    <div class="col-sm-12 col-md-10">
+                                        <input class="form-control" type="text" name="keywords" value="{{$data->keywords}}"title>
+                                    </div>
+                                </div>
+
+
                             <div class="form-group row">
                                 <label for="description" class="col-sm-12 col-md-12 col-form-label"><b>description</b></label>
                                 <div class="col-sm-12 col-md-10">

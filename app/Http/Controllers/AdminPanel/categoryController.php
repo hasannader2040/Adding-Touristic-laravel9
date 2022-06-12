@@ -80,9 +80,14 @@ class categoryController extends Controller
         $data->keywords = $request->keywords;
         $data->description = $request->description;
         $data->status = $request->status;
-        if ($request->file('image')) {
-            $data->image = $request->file('image')->store('images');
-        }
+
+      if($request->file('image')){
+        $data->image=$request->file('image')->store('images');
+}
+
+
+
+
         $data->save();
         return redirect('admin/category');
     }
@@ -118,8 +123,10 @@ class categoryController extends Controller
 
         $data=category::find($id);
         $datalist = category::all();
+//        dd($datalist);
         return view("admin.category.edit",
             [
+
                 'data'=>$data,
                 'datalist' => $datalist
             ]
@@ -146,7 +153,7 @@ class categoryController extends Controller
         }
 
         $data->save();
-        return redirect('admin/place');
+        return redirect('admin/category');
 
     }
 

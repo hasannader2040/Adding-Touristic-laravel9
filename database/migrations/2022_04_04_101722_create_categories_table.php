@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image',100)->nullable();
             $table->string('status', 6)->default('false');
             $table->timestamps();
         });

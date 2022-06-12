@@ -9,8 +9,8 @@ class Image extends Model
 {
     use HasFactory;
 
-    /**
-     * @var false|mixed|string
-     */
-    public mixed $Image;
+//    /**
+//     * @var false|mixed|string
+//     */
+//    public mixed $Image;
 }

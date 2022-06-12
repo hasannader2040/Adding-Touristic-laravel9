@@ -8,7 +8,7 @@
     <div class="layout-page">
         <div class="content-wrapper">
             <!-- Content -->
-            <a href="{{ 'admin.place.create' }}" class="btn btn-primary btn-lg">Add place </a>
+            <a href="/admin/place/create" class="btn btn-primary btn-lg">Add place </a>
 
 
 
@@ -39,12 +39,15 @@
                                                     <tr>
                                                         <th style="width: 5px">Id</th>
                                                         <th>title</th>
+                                                        <th>keywords</th>
                                                         <th> description</th>
                                                         <th> image</th>
                                                         <th> image gallery</th>
                                                         <th> detail </th>
                                                         <th> city </th>
                                                         <th> country</th>
+                                                        <th> location</th>
+
                                                         <th> status</th>
                                                 </thead>
 
@@ -73,9 +76,10 @@
                                                     {{-- <td> <img src="{{ asset('assets/panel') }}/admin/img/gallery.jpg"> </td> --}}
 
                                                     {{-- there is a problem here --}}
-                                                    <td> {{ $item->detail }}</td>
+                                                    <td> {!! $item->detail !!}</td>
                                                     <td> {{ $item->city }}</td>
                                                     <td> {{ $item->country }}</td>
+                                                    <td> {{ $item->location }}</td>
                                                     <td> {{ $item->status }} </td>
 
                                                     <td><a href={{ route('admin.place.edit', ['id' => $item->id]) }}

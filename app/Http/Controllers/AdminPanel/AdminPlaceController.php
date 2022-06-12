@@ -63,7 +63,7 @@ class AdminPlaceController extends Controller
         $data = new place();  // its  fot inserting it
         //$data->id ;
 //        return $request;
-        $data->category_id=$request->category_id;
+        $data->category_id = $request->category_id;
         $data->user_id = 0; //$request->category_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
@@ -74,7 +74,7 @@ class AdminPlaceController extends Controller
         $data->location = $request->location;
         $data->status = $request->status;
 
-        if ($request->file('image')('images')) {
+        if ($request->file('image')) {
             $data->image = $request->file('image')->store('images');
         }
         $data->save();
@@ -148,9 +148,23 @@ class AdminPlaceController extends Controller
         $data->country = $request->country;
         $data->location = $request->location;
         $data->status = $request->status;
-        if ($request->file('image')->store('images')){
-            $data->image=$request->file('image')->store('images');
+//        dd($request->all());
+
+
+        if ($request->file('image')){
+            $data->image= $request->file('image')->store('images');
         }
+        $data->save();
+
+//        if ($request->file('image') == null) {
+//            $data = "";
+//        }else{
+//            $data = $request->file('image')->store('images');
+//        }
+
+        return redirect('admin/place');
+
+    }
 
 //        if ($req->file('image'))
 //        {
@@ -162,11 +176,12 @@ class AdminPlaceController extends Controller
 //
 //        }
 
-        $data->save();
-        return redirect('admin/place');
-
-    }
-
+    // this ocde insted of save but its not saving it
+//        if($data != ""){
+//            $data->save();
+//        }
+//        ************
+//        $data->save();
     /**
      * Remove the specified resource from storage.
      *

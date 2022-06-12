@@ -6,18 +6,18 @@
 
 
     <!-- Layout wrapper -->
-
-    <div class="card-header d-flex align-items-center justify-content-between">
-        <div class="layout-wrapper">
+    <div class="layout-page">
+        <div class="card-header d-flex align-items-center justify-content-between">
+            <div class="layout-wrapper">
             <!-- Blank page -->
             <div class="form-control">
                 <table class="table table-bordered">
-                    <a class="btn btn-danger" href="{{route('admin.place.edit',['id'=>$data->id ])}}" role="button" >Edit place</a>
-                    <a class="btn btn-danger" href="{{route('admin.place.destroy',['id'=>$data->id ])}}" role="button" >Delete place</a>
+                    <a class="btn btn-danger" href="{{route('admin.user.edit',['id'=>$data->id ])}}" role="button" >Edit place</a>
+                    <a class="btn btn-danger" href="{{route('admin.user.destroy',['id'=>$data->id ])}}" role="button" >Delete place</a>
                     <thead>
                     <tr>
                         <th style="width: 50px">name</th>
-                        <th>{{$name->name}}</th>
+                        <th>{{$data->name}}</th>
                     </tr>
 
                     <tr>
@@ -39,12 +39,12 @@
 
                         <th> Add role to User : < </th>
                         <td>
-                            <form role="form" action="{{route('admin.user.addrole',['id'=>@$data->id])}}" method="get">
+                            <form role="form" action="{{route('admin.user.addrole',['id'=>@$data->id])}}" method="post">
                                 @csrf
-                                <select name="roule_id">
+                                <select name="role_id">
 
-                                        @foreach( $roles as $roule)
-                                        <option value="{{$roule->id}}"->{{$roule->name}} </option>
+                                        @foreach( $roles as $role)
+                                        <option value="{{$role->id}}"->{{$role->name}} </option>
                                         @endforeach
                                 </select>
                                 <button type="submit"> add Role</button>

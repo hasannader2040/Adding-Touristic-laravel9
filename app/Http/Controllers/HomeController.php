@@ -92,7 +92,8 @@ class HomeController extends Controller
 //        echo ' Reference ' ;
 //        exit();
         $setting=setting::first();
-        return view('home.Reference',
+//        dd($setting);
+        return view('home.references',
             [
                 'setting' => $setting
             ]);
@@ -174,7 +175,8 @@ class HomeController extends Controller
 
         $data=place::find($id);
         $images= DB::table('images')->where('place_id',$id)->get();
-        $reviews= Comment::where('place_id',$id)->get();
+        $reviews= Comment::where('place_id','=',$id)->get();
+
         return view('home.place',
             [ 'data' => $data  ,
                 'images' => $images ,

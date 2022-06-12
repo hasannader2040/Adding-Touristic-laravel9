@@ -5,6 +5,11 @@
 
 @section('content')
 
+
+    <div class="layout-page" style="margin-left: 200px; margin-bottom: 200px;">
+        <div class="layout-wrapper layout-content-navbar">
+            <div class="layout-container " style="justify-content: center; flex-direction: column;">
+
     <!-- Blank page -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sfm-right">
@@ -56,6 +61,7 @@
 
 
                 <div class="form-group">
+{{--                    <img src="{{ url("storage/" . $data->image) }}" alt="{{$data->title}}" height="50">--}}
                     <label><b>Custom file input</b></label>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" name="image" id="image">

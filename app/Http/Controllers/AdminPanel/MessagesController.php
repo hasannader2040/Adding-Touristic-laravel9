@@ -58,15 +58,16 @@ class MessagesController extends Controller
      */
     public function show()
     {
+//dd($id);
 
-
-        $data= message::find();
+        $data= message::find(1);
 //        dd('$data');
         $data->status='Read';
-
+//        $data->$id;
         return view('admin.message.show',
             [
-                'data'=>$data
+                'data'=>$data,
+//                'id'=>$id
             ]
         );
     }
@@ -91,7 +92,8 @@ class MessagesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data=message::find($id);
+        $data= message::findOrFail($id);
+//        dd($data->note=$request->note);
         $data->note=$request->note;
         $data->save();
         return redirect(route('admin.message.show',['id'=>$id]));

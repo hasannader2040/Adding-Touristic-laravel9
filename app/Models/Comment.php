@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Couchbase\User;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 //use App\Models\Comment;

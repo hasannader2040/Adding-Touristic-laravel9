@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
+use App\Models\commend;
 use App\Models\Comment;
+use App\Models\message;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -55,15 +57,27 @@ class commentController extends Controller
      */
     public function show($id)
     {
-        $data=User::with('roles')->find($id);
+        //$data=User::with('roles')->find($id);
         //$data= User::find($id);
-        $roles= Comment::all();
+        //$roles= Comment::all();
+        $comment=Comment::find($id);
+        $user_id=$comment->user_id;
+        $user=User::find($user_id);
         return view('admin.comment.show',[
-                'data'=>$data
+                'comment'=>$comment,'user'=>$user
 
             ]
         );
     }
+
+//    public function show($id)
+//    {
+//        $data= User::find($id);
+//        $roles= Comment::all();
+//        return view('admin.comment.show',compact('data','roles')
+//
+//        );
+//    }
 
     /**
      * Show the form for editing the specified resource.
@@ -99,6 +113,18 @@ class commentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data=Comment:: find($id);
+
+        $data->delete();
+        return redirect()->route('admin.comment.index');
     }
 }
+
+//public function destroy($id)
+//{
+//    $data=commend:: find($id);
+//
+//    $data->delete();
+//    return redirect()->route('admin.comment.index',compact('data')));
+//    }
+//}

@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <body>
+
     <!-- Layout wrapper -->
     <div class="layout-page">
     <div class="layout-wrapper layout-content-navbar">
@@ -48,9 +48,15 @@
                             <div class="form-text">You can use letters, numbers &amp; periods</div>
                         </div>
 
+
+{{--                        <div class="input-group">--}}
+{{--                            <input type="file" name="image"  class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">--}}
+{{--                            <button name="image" class="btn btn-outline-primary" type="button" id="inputGroupFileAddon04">Button</button>--}}
+{{--                        </div>--}}
+
                         <div class="input-group">
-                            <input type="file" name="image" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                            <button class="btn btn-outline-primary" type="button" id="inputGroupFileAddon04">Button</button>
+                            <input type="file" name="image" class="form-control">
+
                         </div>
 
                         {{--  to make select --}}

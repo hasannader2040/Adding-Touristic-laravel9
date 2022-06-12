@@ -30,11 +30,16 @@
 
                         </div>
 
-
                         <div class="mb-3">
                             <h1>add place</h1>
                             <label class="form-label" for="basic-default-fullname">title</label>
                             <input type="text" class="form-control" name="title" id="basic-default-fullname" value="0" placeholder="John Doe">
+                        </div>
+
+                        <div class="mb-3">
+                            <h1>add place</h1>
+                            <label class="form-label" for="basic-default-fullname">keywords</label>
+                            <input type="text" class="form-control" name="keywords" id="basic-default-fullname" value="0" placeholder="John Doe">
                         </div>
 
                         <div class="mb-3">
@@ -105,7 +110,7 @@
 
                         {{--  to make select --}}
                         <div class="mb-3">
-                            <label for="exampleFormControlSelect2" class="form-label">Example multiple select</label>
+                            <label for="exampleFormControlSelect2" class="form-label"></label>
 
                             <select name="status" class="form-select form-controll" id="exampleFormControlSelect2" aria-label="Multiple select example" >
                                 <option selected="">status</option>
@@ -117,9 +122,14 @@
                         <button type="submit" class="btn btn-primary">Send</button>
                     </form>
                 </div>
+
         </div>
+
     </div>
 
+    </div>
+        </div>
+    </div>
     </div>
 
                     @endsection

@@ -2,6 +2,11 @@
 
 @section('title', 'add category')
 
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+@endsection
+
+
 @section('content')
 
     <body>
@@ -30,24 +35,24 @@
 
                                 <textarea type="text" name="answer" class="form-control" id="answer" >
                                     </textarea>
-                            @section('script')
-                                <script>
-                                    //  let ClassicEditor;
-                                    ClassicEditor
-                                        .create( document.querySelector( '#answer' ) )
-                                        // .then( editor => {
-                                        //     console.log( editor );
-                                        // } )
-                                        .catch( error => {
-                                            console.error(error);
-                                        } );
-                                </script>
+{{--                            @section('script')--}}
+                            <script>
+                                //  let ClassicEditor;
+                                ClassicEditor
+                                    .create( document.querySelector( '#answer' ) )
+                                    .then( editor => {
+                                        console.log( editor );
+                                    } )
+                                    .catch( error => {
+                                        console.error(error);
+                                    } );
+                            </script>
 
 {{--                            </div>--}}
                         </div>
 
-{{--                        <div class="mb-3">--}}
-                            @endsection
+
+{{--                            @endsection--}}
 
                         {{--  to make select --}}
                         <div class="mb-3">

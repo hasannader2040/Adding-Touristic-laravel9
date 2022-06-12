@@ -6,9 +6,9 @@
 @section('content')
 
 
-<div class="layout-page">
-    <div class="layout-wrapper layout-content-navbar">
-        <div class="layout-container">
+    <div class="layout-page" style="margin-left: 200px; margin-bottom: 200px;">
+        <div class="layout-wrapper layout-content-navbar">
+            <div class="layout-container " style="justify-content: center; flex-direction: column;">
 
     <!-- Blank page -->
     <nav aria-label="breadcrumb">
@@ -30,9 +30,9 @@
 
                 <div class="form-group row">
 
-                    <label for="title" class="col-sm-12 col-md-12 col-form-label"><b>Text</b></label>
+                    <label for="title" class="col-sm-12 col-md-12 col-form-label"><b>question</b></label>
                     <div class="col-sm-12 col-md-10">
-                        <input class="form-control" type="text" name="title" value="{{$data->question}}"question>
+                        <input class="form-control" type="text" name="question" value="{{$data->question}}"question>
                     </div>
                 </div>
 
@@ -43,15 +43,7 @@
                                     </textarea>
                 </div>
 
-                <div class="form-group">
-                    <label><b>Custom file input</b></label>
-                    <img src="{{ url("storage/" . $data->image) }}"  height="50">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="image" id="image">
-                        <label class="custom-file-label"><b>Choose file</b></label>
-                    </div>
-                </div>
-            </div>
+
 
             <div>
                 <label for="status"  class="col-sm-12 col-md-12"><b>Status</b></label>

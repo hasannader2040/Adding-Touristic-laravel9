@@ -53,7 +53,58 @@
 </div>
 <!-- /.slider -->
 
-
+<div class="bg-default enquiry-form ">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                <!-- form -->
+                <form>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-3 col-12">
+                            <div class="form-group">
+                                <label class="control-label sr-only" for="select"></label>
+                                <div class="select">
+                                    <select id="select" name="city" class="form-control">
+                                        <option value="">Where you want to go</option>
+                                        <option value="">Singapore</option>
+                                        <option value="">Thailand</option>
+                                        <option value="">Vietnam</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-3 col-12">
+                            <div class="form-group">
+                                <label class="control-label sr-only" for="datepicker"></label>
+                                <div class="input-group">
+                                    <input id="datepicker" name="datepicker" type="text" placeholder="Date" class="form-control hasDatepicker" required="">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-3 col-12">
+                            <div class="form-group">
+                                <label class="control-label sr-only" for="select"></label>
+                                <div class="select">
+                                    <select id="select" name="select" class="form-control">
+                                        <option value="">Number of Peoples</option>
+                                        <option value="">6</option>
+                                        <option value="">10</option>
+                                        <option value="">25</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-12 col-md-6 col-sm-3 col-12">
+                            <button type="submit" name="singlebutton" class="btn btn-primary btn-lg">Enquiry Now</button>
+                        </div>
+                    </div>
+                </form>
+                <!-- /.form -->
+            </div>
+        </div>
+    </div>
+</div>
 
 
 {{--    <div class="container">--}}
@@ -182,8 +233,6 @@
     </div>
 
 
-</div>
-
 <!-- about-section -->
 <div class="space-medium">
     <div class="container">
@@ -264,6 +313,9 @@
     </div>
 </div>
 <!-- /.about-section -->
+
+
+
 <!-- service-section -->
 <div class="space-medium service-wrapper" style="">
     <div class="container">

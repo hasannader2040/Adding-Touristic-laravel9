@@ -66,33 +66,36 @@
                                  <th style="width: 50px">admin Note</th>
                         <th>
 
-                            <textarea  clos="20" id='note' name="note">{{$data->note}} </textarea>
+{{--                            <textarea  clos="20" id='note' name="note">{{$data->note}} </textarea>--}}
 
                             <form role="form" action="{{route('admin.message.update',['id=>$data->id'])}}" method="post">
                                 @csrf
+{{--                                {{dd($data)}}--}}
+{{--                                {{exit()}}--}}
                                 <textarea cols="100" id='note' name="note">{{$data->note}} </textarea>
-                                <div class="card-footer">
+{{--                                <div class="card-footer">--}}
                                 <button type="submit" class="btn-primary"> Update note </button>
-                                </div>
+{{--                                </div>--}}
                             </form>
 
-                        </th>d
+                        </th>
 
-                    <tr>
-                        <th> Admin notes for comment</th>
-                        <td>
-                            <form role="form" action="{{route('admin.comment.update',['id'=>$data->id])}}" method="post">
-                            @csrf
+{{--                    <tr>--}}
+{{--                        <th> Admin notes for comment</th>--}}
+{{--                        <td>--}}
+{{--                            <form role="form" action="{{route('admin.comment.update',['id'=>$data->id])}}" method="post">--}}
+{{--                            @csrf--}}
 {{--                                <textarea cols="100" id="note" name=" note">{{$data->note}} </textarea>--}}
-                                <select name="status">
-                                    <option selected> {{$data->status}}</option>
-                                    <option> True</option>
-                                    <option> False</option>
-                                </select>
-                                <button type="submit" class="btn btn-primary"> update comment </button>
-                            </form>
-                        </td>
-                    </tr>
+{{--                                <select name="status">--}}
+{{--                                    <option selected> {{$data->status}}</option>--}}
+{{--                                    <option> True</option>--}}
+{{--                                    <option> False</option>--}}
+{{--                                </select>--}}
+{{--                                <button type="submit" class="btn btn-primary"> update comment </button>--}}
+{{--                            </form>--}}
+{{--                        </td>--}}
+{{--                    </tr>--}}
+
                     </thead>
 
 

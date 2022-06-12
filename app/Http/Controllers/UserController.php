@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\category;
+use App\Models\Comment;
+use App\Models\setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -15,6 +20,20 @@ class UserController extends Controller
     {
         return view('home.user.index');
     }
+
+    public function reviews()
+    {
+//   echo ' userpanel/reviews ' ;
+//   exit();
+
+        $comments=Comment::where('user_id','=',Auth::id())->get();
+//        dd($comments);
+        return view('home.user.comments',
+            [
+                'comments' => $comments
+            ]);
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -77,8 +96,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function reviewdestroy()
     {
-        //
+
+        $data=Comment:: find();
+
+        return redirect(route('userpanel.review'));
     }
 }

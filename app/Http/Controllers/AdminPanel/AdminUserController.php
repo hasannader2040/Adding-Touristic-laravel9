@@ -9,7 +9,7 @@ use App\Models\RoleUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\Storage;
-//use ;
+use App\Http\Controllers\AdminPanel\Roule;
 
 class AdminUserController extends Controller
 {
@@ -59,10 +59,14 @@ class AdminUserController extends Controller
     {
         $data=User::with('roles')->find($id);
         //$data= User::find($id);
-        $roles= Roule::all();
+
+
+        $roles= Role::all();
+//        dd($roles);
+
         return view('admin.user.show',[
                 'data'=>$data,
-                'rules'=>$roles
+                'roles'=>$roles
 
             ]
         );
@@ -86,12 +90,16 @@ class AdminUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function addrole(Request $request, $id)
+    public function addrole(Request $request, $id) // it should be worked
     {
         $data = new RoleUser();
         $data->user_id=$id;
-        $data->roule_id=$request->roule_id;
+
+
+        $data->role_id=$request->role_id;
         $data->save();
+//        dd($data);
+
         return redirect(route('admin.user.show',['id'=>$id]));
     }
 
@@ -109,9 +117,9 @@ class AdminUserController extends Controller
 //        return redirect('admin.use.show',['id'=>$uid]);
 //    }
     {
-        $user=\http\Client\Curl\User:: find($rid); #many to many relation delete related data
+        $user=User:: find($uid); #many to many relation delete related data
 
-        $user->delete();
+        $user->roles()->detach($rid);
         return redirect('admin.use.show',['id'=>$uid]);
     }
 

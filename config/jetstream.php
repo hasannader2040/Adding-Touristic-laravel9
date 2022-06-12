@@ -1,6 +1,7 @@
 <?php
 
 use Laravel\Jetstream\Features;
+use Laravel\Jetstream\Http\Middleware\AuthenticateSession;
 
 return [
 
@@ -15,7 +16,7 @@ return [
     |
     */
 
-    'stack' => 'inertia',
+    'stack' => 'livewire',
 
     /*
      |--------------------------------------------------------------------------
@@ -29,6 +30,8 @@ return [
      */
 
     'middleware' => ['web'],
+
+    'auth_session' => AuthenticateSession::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -58,7 +61,7 @@ return [
         // Features::termsAndPrivacyPolicy(),
         // Features::profilePhotos(),
         // Features::api(),
-        Features::teams(['invitations' => true]),
+        // Features::teams(['invitations' => true]),
         Features::accountDeletion(),
     ],
 

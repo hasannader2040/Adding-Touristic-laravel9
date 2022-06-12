@@ -42,18 +42,18 @@
                                                     <th>subject</th>
                                                     <th>message</th>
                                                     <th>status</th>
+                                                    <th style="width: 40px"> show</th>
                                                     <th style="width: 40px"> delete</th>
-                                                    <th style="width: 40px"> status</th>
                                                 {{--                                            there are delete and show--}}
                                                 </thead>
                                                 <tbody>
                                                 @foreach($data as $item)
                                                     <tr>
                                                         <td> {{ $item->id }} </td>
-                                                        <td>
-                                                            {{--   <a href="{{route('admin.place.show')}}">--}}
-                                                            {{--   {{ $item->product->title }} </a>--}}
-                                                        </td>
+{{--                                                        <td>--}}
+{{--                                                            --}}{{--   <a href="{{route('admin.place.show')}}">--}}
+{{--                                                            --}}{{--   {{ $item->product->title }} </a>--}}
+{{--                                                        </td>--}}
                                                         <td> {{ $item->name }} </td>
                                                         <td> {{ $item->email }} </td>
                                                         <td> {{ $item->phone }}</td>

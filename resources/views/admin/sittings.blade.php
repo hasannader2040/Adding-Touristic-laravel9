@@ -7,8 +7,12 @@
             display: none !important;
         }
     </style>
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js" > </script>
 @endsection
+
+{{--@section('head')--}}
+{{--      <script  src=""   > </script>--}}
+{{--@endsection--}}
 
 @section('title', 'sittings ')
 @include('admin.sidebar')
@@ -16,67 +20,84 @@
 @section('content')
 
 
-{{--    <div class="nav-align-top mb-4" style="margin-left:500px; z-index:500000">--}}
-{{--        <ul class="nav nav-tabs" role="tablist">--}}
-{{--            <li class="nav-item">--}}
-{{--                <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-home" aria-controls="navs-top-home" aria-selected="true">--}}
-{{--                    Home--}}
-{{--                </button>--}}
-{{--            </li>--}}
-{{--            <li class="nav-item">--}}
-{{--                <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-profile" aria-controls="navs-top-profile" aria-selected="false">--}}
-{{--                    Profile--}}
-{{--                </button>--}}
-{{--            </li>--}}
-{{--            <li class="nav-item">--}}
-{{--                <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-messages" aria-controls="navs-top-messages" aria-selected="false">--}}
-{{--                    Messages--}}
-{{--                </button>--}}
-{{--            </li>--}}
-{{--        </ul>--}}
-{{--        <div class="tab-content">--}}
-{{--            <div class="tab-pane fade active show" id="navs-top-home" role="tabpanel">--}}
-{{--                <p>--}}
-{{--                    Icing pastry pudding oat cake. Lemon drops cotton candy caramels cake caramels sesame snaps--}}
-{{--                    powder. Bear claw candy topping.--}}
-{{--                </p>--}}
-{{--                <p class="mb-0">--}}
-{{--                    Tootsie roll fruitcake cookie. Dessert topping pie. Jujubes wafer carrot cake jelly. Bonbon--}}
-{{--                    jelly-o jelly-o ice cream jelly beans candy canes cake bonbon. Cookie jelly beans marshmallow--}}
-{{--                    jujubes sweet.--}}
-{{--                </p>--}}
-{{--            </div>--}}
-{{--            <div class="tab-pane fade" id="navs-top-profile" role="tabpanel">--}}
-{{--                <p>--}}
-{{--                    Donut dragée jelly pie halvah. Danish gingerbread bonbon cookie wafer candy oat cake ice--}}
-{{--                    cream. Gummies halvah tootsie roll muffin biscuit icing dessert gingerbread. Pastry ice cream--}}
-{{--                    cheesecake fruitcake.--}}
-{{--                </p>--}}
-{{--                <p class="mb-0">--}}
-{{--                    Jelly-o jelly beans icing pastry cake cake lemon drops. Muffin muffin pie tiramisu halvah--}}
-{{--                    cotton candy liquorice caramels.--}}
-{{--                </p>--}}
-{{--            </div>--}}
-{{--            <div class="tab-pane fade" id="navs-top-messages" role="tabpanel">--}}
-{{--                <p>--}}
-{{--                    Oat cake chupa chups dragée donut toffee. Sweet cotton candy jelly beans macaroon gummies--}}
-{{--                    cupcake gummi bears cake chocolate.--}}
-{{--                </p>--}}
-{{--                <p class="mb-0">--}}
-{{--                    Cake chocolate bar cotton candy apple pie tootsie roll ice cream apple pie brownie cake. Sweet--}}
-{{--                    roll icing sesame snaps caramels danish toffee. Brownie biscuit dessert dessert. Pudding jelly--}}
-{{--                    jelly-o tart brownie jelly.--}}
-{{--                </p>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-
-
 {{--    the beginning of the code of that thing --}}
 
-    <div class="layout-page">
+    <div class="layout-page" style="margin-left: 150px; margin-bottom: 150px;">
         <div class="layout-wrapper layout-content-navbar">
-            <div class="layout-container " style="justify-content: center;">
+            <div class="layout-container " style="justify-content: center; flex-direction: column;">
+
+{{--                <div class="col-xl-6">--}}
+{{--                    <h6 class="text-muted">Basic</h6>--}}
+{{--                    <div class="nav-align-top mb-4">--}}
+{{--                        <ul class="nav nav-tabs" role="tablist">--}}
+{{--                            <li class="nav-item">--}}
+{{--                                <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-home" aria-controls="navs-top-home" aria-selected="false">--}}
+{{--                                    Home--}}
+{{--                                </button>--}}
+{{--                            </li>--}}
+{{--                            <li class="nav-item">--}}
+{{--                                <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-profile" aria-controls="navs-top-profile" aria-selected="false">--}}
+{{--                                    Profile--}}
+{{--                                </button>--}}
+{{--                            </li>--}}
+{{--                            <li class="nav-item">--}}
+{{--                                <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-messages" aria-controls="navs-top-messages" aria-selected="true">--}}
+{{--                                    Messages--}}
+{{--                                </button>--}}
+{{--                            </li>--}}
+{{--                            <li class="nav-item">--}}
+{{--                                <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#trial" aria-controls="trial" aria-selected="true">--}}
+{{--                                    Trials--}}
+{{--                                </button>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                        <div class="tab-content">--}}
+{{--                            <div class="tab-pane fade" id="navs-top-home" role="tabpanel">--}}
+{{--                                <p>--}}
+{{--                                    Icing pastry pudding oat cake. Lemon drops cotton candy caramels cake caramels sesame snaps--}}
+{{--                                    powder. Bear claw candy topping.--}}
+{{--                                </p>--}}
+{{--                                <p class="mb-0">--}}
+{{--                                    Tootsie roll fruitcake cookie. Dessert topping pie. Jujubes wafer carrot cake jelly. Bonbon--}}
+{{--                                    jelly-o jelly-o ice cream jelly beans candy canes cake bonbon. Cookie jelly beans marshmallow--}}
+{{--                                    jujubes sweet.--}}
+{{--                                </p>--}}
+{{--                            </div>--}}
+{{--                            <div class="tab-pane fade" id="navs-top-profile" role="tabpanel">--}}
+{{--                                <p>--}}
+{{--                                    Donut dragée jelly pie halvah. Danish gingerbread bonbon cookie wafer candy oat cake ice--}}
+{{--                                    cream. Gummies halvah tootsie roll muffin biscuit icing dessert gingerbread. Pastry ice cream--}}
+{{--                                    cheesecake fruitcake.--}}
+{{--                                </p>--}}
+{{--                                <p class="mb-0">--}}
+{{--                                    Jelly-o jelly beans icing pastry cake cake lemon drops. Muffin muffin pie tiramisu halvah--}}
+{{--                                    cotton candy liquorice caramels.--}}
+{{--                                </p>--}}
+{{--                            </div>--}}
+{{--                            <div class="tab-pane fade active show" id="navs-top-messages" role="tabpanel">--}}
+{{--                                <p>--}}
+{{--                                    Oat cake chupa chups dragée donut toffee. Sweet cotton candy jelly beans macaroon gummies--}}
+{{--                                    cupcake gummi bears cake chocolate.--}}
+{{--                                </p>--}}
+{{--                                <p class="mb-0">--}}
+{{--                                    Cake chocolate bar cotton candy apple pie tootsie roll ice cream apple pie brownie cake. Sweet--}}
+{{--                                    roll icing sesame snaps caramels danish toffee. Brownie biscuit dessert dessert. Pudding jelly--}}
+{{--                                    jelly-o tart brownie jelly.--}}
+{{--                                </p>--}}
+{{--                            </div>--}}
+{{--                            <div class="tab-pane fade active show" id="trial" role="tabpanel">--}}
+{{--                                <p>--}}
+{{--                                    Trial 1--}}
+{{--                                </p>--}}
+{{--                                <p class="mb-0">--}}
+{{--                                    Trial 2--}}
+{{--                                </p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+
+
 
                 <section class="au-breadcrumb2">
                     <div class="container">
@@ -188,6 +209,7 @@
                                             <label for="description" class=" form-control-label">Description</label>
                                         </div>
                                         <div class="col-12 col-md-9">
+                                            class="col-12 col-md-9"
                                             <input type="text" id="description" value="{{$data->description}}" name="description"
                                                    placeholder="Description" class="form-control">
                                         </div>
@@ -254,6 +276,7 @@
                                 <!--second tab content-->
                                 <div class="tab-pane fade" id="second-tab-pane" role="tabpanel" aria-labelledby="second-tab"
                                      tabindex="0">
+
 
                                     <div class="row form-group">
                                         <div class="col col-md-3">
@@ -354,6 +377,28 @@
                                         </div>
                                         <div class="col-12 col-md-9">
                                             <textarea name="contact" rows="2" id="contact-text" class="form-control border p-2" >{{$data->contact}}</textarea>
+
+                                            <script>
+                                                //  let ClassicEditor;
+
+                                                {{--{--}}
+                                                {{--    cloudServices: {--}}
+                                                {{--        // tokenUrl: 'https://example.com/cs-token-endpoint',--}}
+                                                {{--        uploadUrl: {{ asset('assets')}}--}}
+                                                {{--    }--}}
+                                                {{--})--}}
+                                                ClassicEditor
+                                                    .create( document.querySelector( '#contact-text' )
+
+                                                    )
+                                                    .then( editor => {
+                                                        console.log( editor );
+                                                    } )
+                                                    .catch( error => {
+                                                        console.error(error);
+                                                    } );
+                                            </script>
+
                                         </div>
                                     </div>
                                 </div>
@@ -368,6 +413,9 @@
                                         <div class="col-12 col-md-9">
                                             <textarea name="references" rows="2" id="references-text" class="form-control border p-2" >{{$data->references}}</textarea>
                                         </div>
+
+
+
                                         <div class="card-footer">
                                             <button type="submit" class="btn btn-primary btn-lg">
                                                 <i class="fa fa-dot-circle-o"></i> Update
@@ -381,6 +429,7 @@
                         </div>
                     </form>
                 </div>
+
 
     {{--the end of the code of that thing --}}
 
@@ -874,7 +923,7 @@
     {{--                <a class="list-group-item list-group-item-action" id="home-list-item" data-bs-toggle="list" href="#horizontal-home">Home</a>--}}
     {{--                <a class="list-group-item list-group-item-action" id="profile-list-item" data-bs-toggle="list" href="#horizontal-profile">Profile</a>--}}
     {{--                <a class="list-group-item list-group-item-action active" id="messages-list-item" data-bs-toggle="list" href="#horizontal-messages">Messages</a>--}}
-    {{--                <a class="list-group-item list-group-item-action" id="settings-list-item" data-bs-toggle="list" href="#horizontal-settings">Settings</a>--}}
+    {{--                <a class="list-group-item list-group-item-action" id="setting-list-item" data-bs-toggle="list" href="#horizontal-setting">Settings</a>--}}
     {{--            </div>--}}
     {{--            <div class="tab-content px-0 mt-0">--}}
     {{--                <div class="tab-pane fade" id="horizontal-home">--}}
@@ -900,7 +949,7 @@
     {{--                    gingerbread powder halvah. Muffin bonbon fruitcake dragée sweet sesame snaps oat cake--}}
     {{--                    marshmallow cheesecake. Cupcake donut sweet bonbon cheesecake soufflé chocolate bar.--}}
     {{--                </div>--}}
-    {{--                <div class="tab-pane fade" id="horizontal-settings">--}}
+    {{--                <div class="tab-pane fade" id="horizontal-setting">--}}
     {{--                    Marzipan cake oat cake. Marshmallow pie chocolate. Liquorice oat cake donut halvah jelly-o.--}}
     {{--                    Jelly-o muffin macaroon cake gingerbread candy cupcake. Cake lollipop lollipop jelly brownie--}}
     {{--                    cake topping chocolate. Pie oat cake jelly. Lemon drops halvah jelly cookie bonbon cake--}}

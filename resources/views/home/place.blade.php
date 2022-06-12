@@ -5,16 +5,17 @@
 
 
         <!-- page-header -->
-        <div class="tour-pageheader">
-            <div class="container">
+        <div class="baackground-img">
+            <img src="{{Storage::URL($data->image)}}">
+            <div class="container" style="margin-top: -442px;">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="tour-caption">
                             <h1 class="text-white tour-title">{{$data->title}}</h1>
                             <p class="tour-caption-text text-white">
-                                <strong class="tour-rate">
-                                    <del>{{$data->price}}</del>
-                                    <ins>${{1499 - (1499 * 5 / 100 )}}</ins>
+{{--                                <strong class="tour-rate">--}}
+{{--                                    <del>{{$data->price}}</del>--}}
+{{--                                    <ins>${{1499 - (1499 * 5 / 100 )}}</ins>--}}
                                 </strong>{{$data->description}}</p>
                             <a href="#" class="btn btn-primary mb10">Book Your Tour</a>
                             <a href="#" class="btn btn-white mb10">view map</a>
@@ -26,13 +27,10 @@
         <!-- /.page-header-->
 
         <div class="content">
+            @include('home.message')
             <div class="container">
-                <div class="row">
-                    <div class="col-xl-8 col-lg-8 col-md-7 col-sm-12 col-12">
-                @include('home.message')
-
-                    </div>
-                    <div class="included-section mb60">
+                <div class="">
+                    <div class="included-section">
                         <h3 class="mb30">details</h3>
                         <div class="row">
                             {!!$data->detail!!}
@@ -47,7 +45,7 @@
                         <div class="review-block">
                             <div class="review-img"><img src="{{ asset('assets/images')}}/user_img_1.jpg" alt="" class="rounded-circle"></div>
                             <div class="review-content">
-                                <h5 class="title-bold d-inline">Jennifer Wirtz</h5>
+                                <h5 class="title-bold d-inline">{{$rs->user->name}}</h5>
 
                                 <div class="star-rating">
 {{--                                    <span><i class="fa fa-star" @if($rs>rate<1)></i></span>--}}
@@ -56,7 +54,7 @@
                                     <span><i class="fa fa-star"></i></span>
                                     <span><i class="fa fa-star"></i></span>
                                 </div>
-                                <p>Vivamus velit ligula tempus id dui apretium imperdiet liguorbi sit amet pharetra leo. Integer tempus enim vel placerat consectetu ecenascula.</p>
+                                <p>{{$rs->review}}</p>
                             </div>commend
                         </div>
 
@@ -65,14 +63,14 @@
 
                         <form action="{{route('storeComment')}}" method="post" >
                             @csrf
-                        <div class="form-group">
+                        <div class="form-group" style="width: 100%;">
                             <label for="place_id"></label>
                             <input type="hidden" class="form-control" name="place_id" value="{{$data->id}}">
                             it has a relationship
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="width: 100%;">
                             <label for="subject">Your Subject *</label>
-                            <input type="text" class="form-control" name="subject">
+                            <input type="text" class="form-control" name="subject" style="width: 100%;">
                         </div>
                         <div class="form-group">
                             <label for="review">Your Review *</label>
@@ -80,28 +78,38 @@
                                     </textarea>
                         </div>
 
-                            <div class="rate">
+                            <div class="rate starrating risingstar d-flex justify-content-center flex-row-reverse" >
                                 <input type="radio" id="star5" name="rate" value="5" />
-                                <label for="star5" title="text">5 stars</label>
+                                <label for="star5" title="text"></label>
                                 <input type="radio" id="star4" name="rate" value="4" />
-                                <label for="star4" title="text">4 stars</label>
+                                <label for="star4" title="text"></label>
                                 <input type="radio" id="star3" name="rate" value="3" />
-                                <label for="star3" title="text">3 stars</label>
+                                <label for="star3" title="text"></label>
                                 <input type="radio" id="star2" name="rate" value="2" />
-                                <label for="star2" title="text">2 stars</label>
+                                <label for="star2" title="text"></label>
                                 <input type="radio" id="star1" name="rate" value="1" />
-                                <label for="star1" title="text">1 star</label>
+                                <label for="star1" title="text"></label>
                             </div>
                             <div class="rating">
         <span class="rating_stars">
             <i class="rating_stars--black" style="width: 100%"></i>
         </span>
-                                <a href="#product-comments" class="rating_comments">69 Değerlendirme </a>
+                                <a href="#product-comments" class="rating_comments"> </a>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="exampleFormControlSelect2" class="form-label"></label>
+
+                                <select name="status" class="form-select form-controll" id="exampleFormControlSelect2" aria-label="Multiple select example" >
+                                    <option selected="">status</option>
+                                    <option value="1">true</option>
+                                    <option value="2">false</option>
+                                </select>
                             </div>
 
                         @auth()
 
-                            <div class="form-control">
+
                                 <input id="button" type="submit" value="Leave Your Review" class="btn btn-primary px-3">
                                 @else
                                     <a href="/loginUser"  class="btn btn-primary px-3">For Submit Your Review, Please Login</a>
@@ -197,7 +205,11 @@
                                 <h3 class="mb20 text-white">Singapore</h3>
                                 <ul class="angle list-none">
                                     <li>4 Nights / 3 days</li>
-                                    <li>3 Star hotel</li>
+{{--                                    I should make them dynamic--}}
+                                    <li>
+
+
+                                    </li>
                                     <li>Breakfast and Dinner</li>
                                 </ul>
                                 <p class="price">$1599</p>

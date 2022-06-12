@@ -16,8 +16,8 @@
 {{--           <h1> user profile </h1>--}}
 
             <div class="section-title">
-{{--                @include('profile.show')--}}
-
+                @include('profile.show');
+{{--            I am getttin an error because of this include--}}
                 <h2>User profile</h2>
 
             </div>

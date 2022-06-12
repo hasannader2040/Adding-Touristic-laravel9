@@ -47,7 +47,7 @@
                                                 <tr>
                                                     <td> {{ $item->id }} </td>
                                                     <td> {{ $item->Question }}</td>
-                                                    <td> {{  $item->answer }}</td>
+                                                    <td> {!! $item->answer !!}</td>
 {{--                                        !!        !!    --}}
                                                     <td> {{ $item->status }} </td>
 
