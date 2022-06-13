@@ -44,19 +44,20 @@
                                                     {{--                                                <th> description</th>--}}
                                                     <th> image</th>
                                                     <th> status</th>
-
+                                                    <th>edit</th>
+                                                    <th>delete</th>
+                                                    <th>show</th>
                                                 </thead>
 
                                                 <tbody>
                                                 @foreach($data as $item)
                                                     <tr>
                                                         <td> {{ $item->id }} </td>
-                                                        <td> {{ $item->title }}</td>
+                                                        <td> {{ $item->parent_id }} </td>
                                                         <td> {{\App\Http\Controllers\AdminPanel\categoryController::getParentsTree($item,$item->title)}}</td>
                                                         <td> {{ $item->keywords }}</td>
                                                         {{--                                                    <td> {{ $item->description }}</td>--}}
                                                         <td>
-
                                                             @if($item->images)
                                                                 <img src="{{Storage::url($item->image)}}"
                                                                      style="height: 40px">

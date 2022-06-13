@@ -68,7 +68,7 @@
 
 {{--                            <textarea  clos="20" id='note' name="note">{{$data->note}} </textarea>--}}
 
-                            <form role="form" action="{{route('admin.message.update',['id=>$data->id'])}}" method="post">
+                            <form role="form" action="{{route('admin.message.update',['id'=>$data->id])}}" method="post">
                                 @csrf
 {{--                                {{dd($data)}}--}}
 {{--                                {{exit()}}--}}

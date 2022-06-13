@@ -1,15 +1,19 @@
 
 
 @foreach( $children as $subcategory)
-<ul class="list-group">
     @if(count($subcategory->children))
-    <li >{{$subcategory->title}}</li>
-    <ul class="list-disc">
-{{--        @include('home.categorytree', [ 'children' => $subcategory->children])--}}
-    </ul>
+    <li class="has-sub">
+        <span class="submenu-button"></span>
+        <a href="#">{{$subcategory->title}}</a>
+        <ul>
+           @include('home.categorytree', [ 'children' => $subcategory->children])
+        </ul>
+    </li>
     <hr>
     @else
-    <li> <a href="{{route('categoryplace',['id'=>$subcategory->id, 'slug'=>$subcategory->title])}}">{{$subcategory->title}}</a> </li>
+    <li>
+        <a href="{{route('categoryplace',['id'=>$subcategory->id, 'slug'=>$subcategory->title])}}">{{$subcategory->title}}</a>
+    </li>
     @endif
-</ul>
+
 @endforeach

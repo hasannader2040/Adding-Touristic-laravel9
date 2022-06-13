@@ -92,7 +92,7 @@ class MessagesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data= message::findOrFail($id);
+        $data= message::find($id);
 //        dd($data->note=$request->note);
         $data->note=$request->note;
         $data->save();

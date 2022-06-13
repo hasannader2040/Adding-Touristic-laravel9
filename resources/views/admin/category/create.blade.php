@@ -49,15 +49,14 @@
                         </div>
 
 
-{{--                        <div class="input-group">--}}
-{{--                            <input type="file" name="image"  class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">--}}
-{{--                            <button name="image" class="btn btn-outline-primary" type="button" id="inputGroupFileAddon04">Button</button>--}}
-{{--                        </div>--}}
-
                         <div class="input-group">
-                            <input type="file" name="image" class="form-control">
-
+                            <input type="file" name="image"  class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                            <button  class="btn btn-outline-primary" type="button" id="inputGroupFileAddon04">Button</button>
                         </div>
+
+{{--                        <div class="input-group">--}}
+{{--                            <input type="file" name="image" class="form-control">--}}
+{{--                        </div>--}}
 
                         {{--  to make select --}}
                         <div class="mb-3">
@@ -69,7 +68,6 @@
                                 <option value="2">false</option>
                             </select>
                         </div>
-
                         <button type="submit" class="btn btn-primary">Send</button>
                     </form>
 

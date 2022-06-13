@@ -6,9 +6,9 @@
 
     <!--  Blank page -->
 
-    <!-- Layout container -->
-    <div class="layout-page">
-        <!-- Navbar -->
+    <<div class="layout-page" style="margin-left: 200px; margin-bottom: 200px;">
+        <div class="layout-wrapper layout-content-navbar">
+            <div class="layout-container " style="justify-content: center; flex-direction: column;">
 
 
     <div class="content-wrapper">

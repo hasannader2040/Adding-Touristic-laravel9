@@ -73,7 +73,7 @@ class categoryController extends Controller
 
     public function store(Request $request)
     {
-
+        //dd($request);
         $data = new category();  // its  fot inserting it
         $data->parent_id = $request->parent_id; // its important
         $data->title = $request->title;
@@ -83,11 +83,7 @@ class categoryController extends Controller
 
       if($request->file('image')){
         $data->image=$request->file('image')->store('images');
-}
-
-
-
-
+      }
         $data->save();
         return redirect('admin/category');
     }
@@ -167,6 +163,7 @@ class categoryController extends Controller
     {
 
         $data=category:: find($id);
+        $update = category::where('parent_id','=',$data->id)->update(['parent_id' => $data->parent_id]);
         if ( $data->category && Storage::disk('public')->exists('data->category')) // I have to understand it much better
         {
             Storage::delete($data->category);

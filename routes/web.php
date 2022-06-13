@@ -223,7 +223,7 @@ Route::middleware('admin')->prefix('admin')->name( 'admin.')->group(callback: fu
     {
         Route::get('/', 'index')->name('index');
         Route::get('/show', 'show')->name('show');
-        Route::post('/update', 'update')->name('update');// it should be post
+        Route::post('/update/{id}', 'update')->name('update');// it should be post
         Route::get('/destroy/{id}','destroy')->name('destroy');
     });
 

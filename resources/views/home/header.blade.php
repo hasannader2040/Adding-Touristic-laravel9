@@ -52,23 +52,33 @@
                             <li class="active"><a href="{{route('home')}}">Home</a></li>
                             <li ><a href="{{route('about')}}">about us</a></li>
                             <li ><a href="{{route('reference')}}">Reference</a></li>
-
-                            <li class="has-sub"><a href="#">Categories</a>
-                                @foreach($Pmaintcategoried as $item)
-                                    <ul>
-{{--                                        {{$item->children}}--}}
+                            <li class="has-sub" style="z-index: 100;">
+                                <span class="submenu-button"></span>
+                                <a href="#">Categories</a>
+                                <ul>
+                                    @foreach($Pmaintcategoried as $item)
                                         @if(count($item->children))
+                                            <li class="has-sub">
+                                                <span class="submenu-button"></span>
+                                                <a href="#">{{$item->title}}</a>
+                                                <ul>
+                                                    @include('home.categorytree',['children' => $item->children])
+                                                </ul>
 
-                                            <li><a href="blog-default.html">just for test
-                                            @include('home.categorytree',['children' => $item->children])
-                                                </a></li>
+                                            </li>
+                                        @else
+                                            <li>
+                                                <a href="">
+                                                    {{$item->title}}
+                                                </a>
+                                            </li>
                                         @endif
-                                    </ul>
+                                    @endforeach
+                                </ul>
                             </li>
-                            @endforeach
                             {{--                                            <a href="#" class="dropdown-menu" data-toggle="dropdown">{{$item->title}} </a>--}}
                             </li>
-                            <li ><a href="/place/5">places</a></li>
+{{--                            <li ><a href="/place/5">places</a></li>--}}
 {{--                            {{route('place',['id'=>$data->id])}}--}}
                             <li class="has-sub"><a href="/faq">FAQ</a></li>
                             <li class="has-sub"><a href="/userpanel">user panel</a></li>

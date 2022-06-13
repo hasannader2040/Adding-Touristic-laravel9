@@ -3,10 +3,14 @@
 
 @section('title', 'edit faq'.@$data->title)
 
+@section('head')
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+@endsection
+
 @section('content')
 
 
-    <div class="layout-page" style="margin-left: 200px; margin-bottom: 200px;">
+    <<div class="layout-page" style="margin-left: 200px; margin-bottom: 200px;">
         <div class="layout-wrapper layout-content-navbar">
             <div class="layout-container " style="justify-content: center; flex-direction: column;">
 
@@ -38,11 +42,33 @@
 
                 <div class="mb-3">
                     <label class="form-label"  for="basic-default-company">answer</label>
-                    <textarea type="text" name="detail" class="form-control" id="editor" >
-                                    {{$data->answer}}
+                    <textarea type="text" name="answer" class="form-control" id="editor" > value="{!! $data->answer !!}"
+
                                     </textarea>
                 </div>
 
+{{--                @section('foot')--}}
+                    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+                    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+{{--                @endsection--}}
+
+
+                <script>
+                    jQuery(function () {
+                        // summernote
+                        // jQuery('.textarea').ckeditor()
+                        ClassicEditor
+                            .create( document.querySelector( '#editor' ) )
+                            .then( editor => {
+                                console.log( editor );
+                            } )
+                            .catch( error => {
+                                console.error(error);
+                            } );
+                    })
+                </script>
 
 
             <div>
@@ -56,43 +82,44 @@
                 <button type="submit" class="btn btn-primary">Edit Data</button>
 
             </div>
-        </form>
+
     </div>
 
     <div class="content-backdrop fade"></div>
 
     <div class="layout-overlay layout-menu-toggle"></div>
+        </form>
 
-    <!-- / Layout wrapper -->
+{{--    <!-- / Layout wrapper -->--}}
 
-    @section('foot')
-        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+{{--    @section('foot')--}}
+{{--        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>--}}
+{{--        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>--}}
 
-        <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+{{--        <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>--}}
 
-        <script>
-            jQuery(function () {
-                // summernote
-                // jQuery('.textarea').ckeditor()
-                ClassicEditor
-                    .create( document.querySelector( '#editor' ) )
-                    .then( editor => {
-                        console.log( editor );
-                    } )
-                    .catch( error => {
-                        console.error(error);
-                    } );
-            })
-        </script>
-    @endsection
+{{--        <script>--}}
+{{--            jQuery(function () {--}}
+{{--                // summernote--}}
+{{--                // jQuery('.textarea').ckeditor()--}}
+{{--                ClassicEditor--}}
+{{--                    .create( document.querySelector( '#editor' ) )--}}
+{{--                    .then( editor => {--}}
+{{--                        console.log( editor );--}}
+{{--                    } )--}}
+{{--                    .catch( error => {--}}
+{{--                        console.error(error);--}}
+{{--                    } );--}}
+{{--            })--}}
+{{--        </script>--}}
+{{--    @endsection--}}
 
 
-    <div class="buy-now">
-        <a href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/" target="_blank"
-           class="btn btn-danger btn-buy-now">Upgrade to Pro</a>
+{{--    <div class="buy-now">--}}
+{{--        <a href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/" target="_blank"--}}
+{{--           class="btn btn-danger btn-buy-now">Upgrade to Pro</a>--}}
 
-    </div>
+{{--    </div>--}}
     </nav>
 </div>
 
