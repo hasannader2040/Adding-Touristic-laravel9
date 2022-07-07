@@ -12,8 +12,8 @@
             <!-- Blank page -->
             <div class="form-control">
                 <table class="table table-bordered">
-                    <a class="btn btn-danger" href="{{route('admin.user.edit',['id'=>$data->id ])}}" role="button" >Edit place</a>
-                    <a class="btn btn-danger" href="{{route('admin.user.destroy',['id'=>$data->id ])}}" role="button" >Delete place</a>
+{{--                    <a class="btn btn-danger" href="{{route('admin.user.edit',['id'=>$data->id ])}}" role="button" >Edit place</a>--}}
+{{--                    <a class="btn btn-danger" href="{{route('admin.user.destroy',['id'=>$data->id ])}}" role="button" >Delete place</a>--}}
                     <thead>
                     <tr>
                         <th style="width: 50px">name</th>

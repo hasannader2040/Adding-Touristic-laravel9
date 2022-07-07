@@ -8,7 +8,7 @@
     <div class="layout-page">
         <div class="content-wrapper">
             <!-- Content -->
-{{--            <a href="{{ 'user/create' }}" class="btn btn-primary btn-lg">Add user </a>--}}
+            {{--            <a href="{{ 'user/create' }}" class="btn btn-primary btn-lg">Add user </a>--}}
 
 
 
@@ -21,7 +21,7 @@
                         <div class="card mb-4">
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <h5 class="mb-0">  </h5>
-{{--                                <small class="text-muted float-end">it should be as you want</small>--}}
+                                {{--                                <small class="text-muted float-end">it should be as you want</small>--}}
                             </div>
                             <div class="card-body">
 
@@ -41,7 +41,7 @@
                                                     <th>Name</th>
                                                     <th>email</th>
                                                     <th>Role</th>
-{{--                                                    <th>status</th>--}}
+                                                    {{--                                                    <th>status</th>--}}
                                                     <th style="width: 5px"> show</th>
                                                     <th style="width: 5px"> delete</th>
                                                 </thead>
@@ -52,15 +52,15 @@
                                                         <td> {{ $item->id }} </td>
                                                         <td> {{ $item->name }}</td>
                                                         <td> {{ $item->email }}</td>
-{{--                                                        <td> {{$item->roles->name}}</td>--}}
+                                                        {{--                                                        <td> {{$item->roles->name}}</td>--}}
                                                         <td>
 
-{{--                                                            I have a problem in this--}}
+                                                            {{--                                                            I have a problem in this--}}
                                                             @foreach( $item->roles as $roule)
                                                                 {{$roule->name}}
                                                             @endforeach
                                                         </td>
-                                                        @endforeach
+
                                                         {{--            only when you log in you  can let them work--}}
 
                                                         <a href='{{route('admin.user.show',['id'=>$item->id])}}' class="btn-info"
@@ -68,16 +68,16 @@
                                                         </a>
                                                         {{--                                                    <td> <img src="{{ asset('assets/panel') }}/admin/img/gallery.jpg"> </td>--}}
 
-{{--                                                        <td><a href={{route('admin.user.edit',['id'=>$item->id])}} class="btn-info">edit</a></td>--}}
+                                                        {{--                                                        <td><a href={{route('admin.user.edit',['id'=>$item->id])}} class="btn-info">edit</a></td>--}}
                                                         <td><a href={{route('admin.user.destroy',['id'=>$item->id])}} class="btn-danger"
                                                                onclick="return confirm('Are you sure you want to delete this item?')">delete</a></td>
                                                         <td><a href={{route('admin.user.show',['id'=>$item->id])}} class="btnbtn-success">show</a></td>
                                                         {{-- <button type="button" class="btn btn-primary">Primary</button>--}}
-
+                                                        @endforeach
                                                         {{-- it needs to understand it much better --}}
                                                         {{-- //<button type="button">Success</button> --}}
                                                     </tr>
                                                 </tbody>
                                             </table>
                                             <!-- / Blank page -->
-@endsection
+                                                 @endsection

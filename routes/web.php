@@ -20,6 +20,15 @@ use App\Http\Controllers\AdminPanel\User;
 use App\Http\Controllers\AdminPanel\CommentContoller;
 // I just added this
 
+Route::get('omar', function () {
+    \Artisan::call('cache:clear');
+ \Artisan::call('route:clear'); 
+\Artisan::call('config:clear');
+\Artisan::call('storage:link');
+ 
+    return 'welcome to Turkiye';
+});
+
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),

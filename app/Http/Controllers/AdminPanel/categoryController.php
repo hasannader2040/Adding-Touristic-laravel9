@@ -82,7 +82,14 @@ class categoryController extends Controller
         $data->status = $request->status;
 
       if($request->file('image')){
-        $data->image=$request->file('image')->store('images');
+
+        $file = $request->file('image');
+          $extention = $file->getClientOriginalExtension();
+          $filename = time() . '.' . $extention;
+          $file->move('product/', $filename);
+          $data->image = $filename;
+
+
       }
         $data->save();
         return redirect('admin/category');

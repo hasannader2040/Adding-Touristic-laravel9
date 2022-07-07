@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Types\Parent_;
 //use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Setting;
+use App\Models\setting;
 use App\Models\Comment;
 
 
@@ -52,6 +52,9 @@ class HomeController extends Controller
 //         echo "index function";
 //     }
 
+
+   
+
     public static function maincategorylist()
     {
         return category::where('Parent_id', '=' , 0)->with('children')->get();
@@ -60,12 +63,20 @@ class HomeController extends Controller
 
      public function index()
      {
+    //       \Artisan::call('cache:clear'); 
+    // \Artisan::call('route:clear');
+    // \Artisan::call('config:cache'); dd('done');
+    
+    // \Artisan::call('cache:clear'); 
+    // \Artisan::call('route:clear'); 
+    // \Artisan::call('config:cache');
+    // \Artisan::call('storage:link');dd('done');
 //       echo 'home';
 //       exit();
          $page='home';
          $sliderdata=place::limit(4)->get();
          $placelist1=place::limit(6)->get();
-         $setting=setting::first();
+         $setting=Setting::first();
 
    //dd($sliderdata);
          return view('home.index',

@@ -114,7 +114,7 @@
 {{--            <div class="col-xl-4 col-lg-4 offset-md-1 col-md-4 col-sm-12 col-12 mb40">--}}
 {{--                @foreach( $placelist1 as $rs )--}}
 {{--                <div class="tour-img">--}}
-{{--                    <a href="#" class="imghover"> <img src="{{Storage::URL($rs->image)}}" alt="" class="img-fluid" style="width: 200px;height: 250px"></a>--}}
+{{--                    <a href="#" class="imghover"> <img src="{{asset() . $rs->image}}" alt="" class="img-fluid" style="width: 200px;height: 250px"></a>--}}
 {{--                </div>--}}
 {{--            </div>--}}
 {{--            <div class="col-xl-5 col-lg-5 offset-md-1 col-md-5 col-sm-12 col-12 mb40">--}}
@@ -146,8 +146,9 @@
             <div class="destination-block">
 
                 <div class="desti-img">
-                    <img src="{{Storage::URL($rs->image)}}" style="width: 400px;height: 250px">
-                    <a href="{{route('place',['id'=>$rs->id])}}"  class="desti-title">{{$rs->title}}</a>
+                    
+                    <img src="{{asset('/').'storage/'. $rs->image}}" style="width: 400px;height: 250px">
+                    <a href="{('place,$rs-id)}"  class="desti-title">{{$rs->title}}</a>
                     <div class="overlay">
                     </div>
                     <div class="text">
